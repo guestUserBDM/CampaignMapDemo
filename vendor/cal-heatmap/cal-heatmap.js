@@ -1648,12 +1648,13 @@ CalHeatMap.prototype = {
 				date: this.formatDate(new Date(d.t), this.options.subDomainDateFormat)
 			});
 		} else {
-			var value = d.v;
+			//OJO TOCO EL VENDOR
+			//SAMUEL: ÑAPA OVERRIDE no extendible
+			var value = Math.round(d.v*100)/100;
 			// Consider null as 0
 			if (value === null && this.options.considerMissingDataAsZero) {
 				value = 0;
 			}
-
 			return (this.options.subDomainTitleFormat.filled).format({
 				count: this.formatNumber(value),
 				name: this.options.itemName[(value !== 1 ? 1: 0)],
