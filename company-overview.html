@@ -19,7 +19,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="nav navbar-nav mr-auto"></ul> 
+        <ul class="nav navbar-nav mr-auto"></ul>
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="#">
@@ -294,15 +294,15 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="vendor/popperJs/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="vendor/moment.js/moment.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
+    <script type="text/javascript" src="vendor/d3js/d3.v3.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="vendor/cal-heatmap/cal-heatmap.css" />
     <script type="text/javascript" src="vendor/cal-heatmap/cal-heatmap.js"></script>
-    
+
     <script type="text/javascript">
       var legend_ranges =  [2, 4, 6, 8,10]
       var legend_ranges_detail = []
@@ -493,7 +493,7 @@ var total = new CalHeatMap();
       }
 
       /*CAMPAÑA VOLAR */
-      
+
       var data_json_volar = {
         "1485734400":0.67808981670842,
 "1486339200":5.88792238838733,
@@ -776,7 +776,7 @@ var total = new CalHeatMap();
       });
       /*/CAMPAÑA VOLAR */
       /*CAMPAÑA LIMÓN */
-      
+
       var data_json_limon = {
    "1496016000":0.269694898424358,
 "1496620800":3.49248229910031,
@@ -1166,7 +1166,7 @@ var total = new CalHeatMap();
       /*BBVA*/
 
             /*CAMPAÑA BCONOMY */
-      
+
       var data_json_bco = {
    "1505692800":0.778038688027777,
 "1506297600":6.32320359428284,
@@ -1431,7 +1431,8 @@ var total = new CalHeatMap();
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
-        //subDomainTextFormat: "%W",
+        //subDomainTextFormat: "%W",sudo dpkg -i web-office-fonts.deb
+
         subDomainTitleFormat: {
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} € de {name} para la  {date}"
@@ -1460,7 +1461,7 @@ var total = new CalHeatMap();
     </script>
 
     <script type="text/javascript">
-      $(function() {   
+      $(function() {
         $('.list-group-item').on('click', function() {
           $('.oi', this)
             .toggleClass('oi-chevron-right')
