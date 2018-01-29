@@ -25,26 +25,30 @@
     </nav> <!-- navbar -->
     <!-- container -->
     <div class="container">
-      <div id="bit-header" class="row mt-2 pt-1">
-           <div id="bit-logo" class="col-4">
-            <a href="/timeline"><img alt="logo" src="assets/images/bufete_logo.png"></a>
+      <div class="row"> <!--Row for layout -->
+        <div class="col-1"></div> <!--col for layout -->
+        <div id="bit-header" class="col-10 row mt-2 pt-1">
+         <div id="bit-logo" class="col-4">
+          <a href="/timeline"><img alt="logo" src="assets/images/bufete_logo.png"></a>
           </div>
-            <div id="bit-mainmenu" class="col-6 float-right bit-mainmenu-bootstrap hidden-phone" style="min-width: 570px">
-              <div class="large-margin-left dashboard ">
-                <a href="/dashboard"></a>
-              </div>
-              <div class="observatory active">
-                <a href="/timeline"></a>
-              </div>
-              <div class="analysis ">
-                <a href="/analyses"></a>
-              </div>
-              <div class="reports ">
-                <a href="/reports"></a>
-              </div>
+          <div id="bit-mainmenu" class="col-8 bit-mainmenu-bootstrap hidden-phone" style="min-width: 570px">
+            <div class="reports float-right">
+              <a href="http://bit.bufetedemarketing.com/"></a>
             </div>
+            <div class="analysis float-right">
+              <a href="http://bit.bufetedemarketing.com/"></a>
+            </div>
+            <div class="observatory float-right active ">
+              <a href="http://bit.bufetedemarketing.com/"></a>
+            </div>
+            <div class="large-margin-left dashboard float-right">
+              <a href="http://bit.bufetedemarketing.com/"></a>
+            </div>
+          </div>
       </div>
-      <!-- buttons filters -->
+      <div class="col-1"></div> <!--col for layout -->
+    </div> <!--/Row for layout -->
+    <!-- buttons filters -->
        <!-- <div class="row mb-3 mt-3">
           <div class="col text-center">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -60,241 +64,245 @@
             </div>
           </div> 
         </div> --> <!-- buttons filters -->
-      <!-- DATA SPACE -->
-        <div class="row just-padding">
-          <!-- LIST PLACE -->
-          <div class="list-group list-group-root well">
-            <!-- TOTAL ROW - FIRST LEVEL -->
-            <div class="row level-step">
-              <div class="col-2 company_name">
-                <a href="#" class="list-group-item list-group-item-action" >
-                  <span class="ml-1 company-title">TOTAL</span>
-                </a>
-              </div>
-              <div class="col-10 full_investment list-group-item">
+        <div class="row"> <!--Row for layout -->
+          <div class="col-1"></div><!--col for layout -->
+          <!-- DATA SPACE -->
+          <div class="col-10 just-padding">
+            <!-- LIST PLACE -->
+            <div class="list-group list-group-root well">
+              <!-- TOTAL ROW - FIRST LEVEL -->
+              <div class="row level-step">
+                <div class="col-2 company_name">
+                  <a href="#" class="list-group-item list-group-item-action" >
+                    <span class="ml-1 company-title">TOTAL</span>
+                  </a>
+                </div>
+                <div class="col-10 full_investment list-group-item">
                   <div id="total_total"></div>
+                </div>
               </div>
-            </div>
-            <!-- /TOTAL ROW - FIRST LEVEL -->
-            <!-- COMPANY ROW - FIRST LEVEL -->
-            <div class="row level-step">
-              <div class="col-2 company_name">
-                <a href="#item-1" class="list-group-item list-group-item-action" data-toggle="collapse">
-                  <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">ING</span>
-                </a>
-              </div>
-              <div class="col-10 full_investment list-group-item">
+              <!-- /TOTAL ROW - FIRST LEVEL -->
+              <!-- COMPANY ROW - FIRST LEVEL -->
+              <div class="row level-step">
+                <div class="col-2 company_name">
+                  <a href="#item-1" class="list-group-item list-group-item-action" data-toggle="collapse">
+                    <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">ING</span>
+                  </a>
+                </div>
+                <div class="col-10 full_investment list-group-item">
                   <div id="total_ing"></div>
+                </div>
               </div>
-            </div>
-            <!-- /COMPANY ROW - FIRST LEVEL -->
-            <!--  CAMPAIGN ROW LIST -->
-            <div class="list-group collapse show" id="item-1">
-              <!-- CAMPIGN 1 -->
-              <!-- CAMPAGIN 1 TOTAL -->
-              <div class="row level-step">
-              <div class="col-2 campaign_name">
-                <a href="#item-1-1" class="list-group-item list-group-item-action" data-toggle="collapse">
-                  <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>¿Eres... VOLAR?
-                </a>
-              </div>
-              <div class="col-10 full_investment list-group-item">
-                <div id="campaign_volar" class="graph-container"></div>
-              </div>
-            </div><!-- /CAMPAGIN 1 TOTAL -->
-            <!-- CAMPAIGN 1 MEDIA -->
-            <div class="list-group collapse " id="item-1-1">
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    TV
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_volar_tv" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    RADIO
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_volar_radio" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    PRENSA
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_volar_prensa" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    ON LINE
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_volar_online" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-            </div><!-- /CAMPAIGN 1 MEDIA -->
-              <!-- /CAMPAIGN 1 -->
+              <!-- /COMPANY ROW - FIRST LEVEL -->
+              <!--  CAMPAIGN ROW LIST -->
+              <div class="list-group collapse show" id="item-1">
+                <!-- CAMPIGN 1 -->
+                <!-- CAMPAGIN 1 TOTAL -->
+                <div class="row level-step">
+                  <div class="col-2 campaign_name">
+                    <a href="#item-1-1" class="list-group-item list-group-item-action" data-toggle="collapse">
+                      <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>¿Eres... VOLAR?
+                    </a>
+                  </div>
+                  <div class="col-10 full_investment list-group-item">
+                    <div id="campaign_volar" class="graph-container"></div>
+                  </div>
+                </div><!-- /CAMPAGIN 1 TOTAL -->
+                <!-- CAMPAIGN 1 MEDIA -->
+                <div class="list-group collapse " id="item-1-1">
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        TV
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_volar_tv" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        RADIO
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_volar_radio" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        PRENSA
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_volar_prensa" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        ON LINE
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_volar_online" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                </div><!-- /CAMPAIGN 1 MEDIA -->
+                <!-- /CAMPAIGN 1 -->
 
-              <!-- CAMPAIGN 2 -->
-              <!-- CAMPAIGN 2 TOTAL -->
-              <div class="row level-step">
-                <div class="col-2 campaign_name">
-                  <a href="#item-1-2" class="list-group-item list-group-item-action" data-toggle="collapse">
-                    <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>¿Por qué... limón?
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_limon" class="graph-container"></div>
-                </div>
-              </div> <!-- /CAMPAIGN 2 TOTAL -->
-            <!-- CAMPAIGN 1 MEDIA -->
-            <div class="list-group collapse" id="item-1-2">
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    TV
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_limon_tv" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    RADIO
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_limon_radio" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    PRENSA
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_limon_prensa" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    ON LINE
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_limon_online" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-            </div><!-- /CAMPAIGN 1 MEDIA -->
-            <!-- /CAMPAIGN 2 -->
-            </div> <!--  /CAMPAIGN ROW LIST -->
+                <!-- CAMPAIGN 2 -->
+                <!-- CAMPAIGN 2 TOTAL -->
+                <div class="row level-step">
+                  <div class="col-2 campaign_name">
+                    <a href="#item-1-2" class="list-group-item list-group-item-action" data-toggle="collapse">
+                      <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>¿Por qué... limón?
+                    </a>
+                  </div>
+                  <div class="col-10 full_investment list-group-item">
+                    <div id="campaign_limon" class="graph-container"></div>
+                  </div>
+                </div> <!-- /CAMPAIGN 2 TOTAL -->
+                <!-- CAMPAIGN 1 MEDIA -->
+                <div class="list-group collapse" id="item-1-2">
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        TV
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_limon_tv" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        RADIO
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_limon_radio" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        PRENSA
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_limon_prensa" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        ON LINE
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_limon_online" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                </div><!-- /CAMPAIGN 1 MEDIA -->
+                <!-- /CAMPAIGN 2 -->
+              </div> <!--  /CAMPAIGN ROW LIST -->
 
 
-            <!-- COMPANY ROW - FIRST LEVEL -->
-            <div class="row level-step">
-              <div class="col-2 company_name">
-                <a href="#item-2" class="list-group-item list-group-item-action" data-toggle="collapse">
-                  <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/bbva.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">BBVA</span>
-                </a>
-              </div>
-              <div class="col-10 full_investment list-group-item">
+              <!-- COMPANY ROW - FIRST LEVEL -->
+              <div class="row level-step">
+                <div class="col-2 company_name">
+                  <a href="#item-2" class="list-group-item list-group-item-action" data-toggle="collapse">
+                    <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/bbva.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">BBVA</span>
+                  </a>
+                </div>
+                <div class="col-10 full_investment list-group-item">
                   <div id="total_bbva"></div>
+                </div>
               </div>
-            </div>
-            <!-- /COMPANY ROW - FIRST LEVEL -->
-            <!--  CAMPAIGN ROW LIST -->
-            <div class="list-group collapse show" id="item-2">
-              <!-- CAMPIGN 1 -->
-              <!-- CAMPAGIN 1 TOTAL -->
-              <div class="row level-step">
-              <div class="col-2 campaign_name">
-                <a href="#item-2-1" class="list-group-item list-group-item-action" data-toggle="collapse">
-                  <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>Bconomy
-                </a>
-              </div>
-              <div class="col-10 full_investment list-group-item">
-                <div id="campaign_bco" class="graph-container"></div>
-              </div>
-            </div><!-- /CAMPAGIN 1 TOTAL -->
-            <!-- CAMPAIGN 1 MEDIA -->
-            <div class="list-group collapse" id="item-2-1">
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    TV
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_bco_tv" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    RADIO
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_bco_radio" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    PRENSA
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_bco_prensa" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-              <!-- MEDIA -->
-              <div class="row level-step">
-                <div class="col-2 media_name">
-                  <a href="#" class="list-group-item">
-                    ON LINE
-                  </a>
-                </div>
-                <div class="col-10 full_investment list-group-item">
-                  <div id="campaign_bco_online" class="graph-container"></div>
-                </div>
-              </div> <!-- MEDIA -->
-            </div><!-- /CAMPAIGN 1 MEDIA -->
-              <!-- /CAMPAIGN 1 -->
-            </div> <!--  /CAMPAIGN ROW LIST -->
+              <!-- /COMPANY ROW - FIRST LEVEL -->
+              <!--  CAMPAIGN ROW LIST -->
+              <div class="list-group collapse show" id="item-2">
+                <!-- CAMPIGN 1 -->
+                <!-- CAMPAGIN 1 TOTAL -->
+                <div class="row level-step">
+                  <div class="col-2 campaign_name">
+                    <a href="#item-2-1" class="list-group-item list-group-item-action" data-toggle="collapse">
+                      <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>Bconomy
+                    </a>
+                  </div>
+                  <div class="col-10 full_investment list-group-item">
+                    <div id="campaign_bco" class="graph-container"></div>
+                  </div>
+                </div><!-- /CAMPAGIN 1 TOTAL -->
+                <!-- CAMPAIGN 1 MEDIA -->
+                <div class="list-group collapse" id="item-2-1">
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        TV
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_bco_tv" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        RADIO
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_bco_radio" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        PRENSA
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_bco_prensa" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                  <!-- MEDIA -->
+                  <div class="row level-step">
+                    <div class="col-2 media_name">
+                      <a href="#" class="list-group-item">
+                        ON LINE
+                      </a>
+                    </div>
+                    <div class="col-10 full_investment list-group-item">
+                      <div id="campaign_bco_online" class="graph-container"></div>
+                    </div>
+                  </div> <!-- MEDIA -->
+                </div><!-- /CAMPAIGN 1 MEDIA -->
+                <!-- /CAMPAIGN 1 -->
+              </div> <!--  /CAMPAIGN ROW LIST -->
 
 
 
-          </div> <!-- /LIST PLACE -->
-        </div> <!-- /DATA SPACE -->
-    </div> <!-- /.container -->
+            </div> <!-- /LIST PLACE -->
+          </div> <!-- /DATA SPACE -->
+          <div class="col-1"></div> <!--col for layout -->
+        </div> <!-- /Row for layout -->
+      </div> <!-- /.container -->
 
 
     <!-- Optional JavaScript -->
