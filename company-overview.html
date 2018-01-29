@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/map.css">
+
     <!-- open-iconic-bootstrap (icon set for bootstrap) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
   <title>Company Overview</title>
@@ -44,10 +45,13 @@
             <div class="large-margin-left dashboard float-right">
               <a href="http://bit.bufetedemarketing.com/"></a>
             </div>
+
           </div>
       </div>
+
       <div class="col-1"></div> <!--col for layout -->
     </div> <!--/Row for layout -->
+
     <!-- buttons filters -->
        <!-- <div class="row mb-3 mt-3">
           <div class="col text-center">
@@ -295,6 +299,11 @@
               </div> <!--  /CAMPAIGN ROW LIST -->
             </div> <!-- /LIST PLACE -->
           </div> <!-- /DATA SPACE -->
+          <div class="">
+            <button class="btn btn-default" href="#" data-placement="bottom" data-toggle="popover" title="Header text" data-content="texto con cosas">
+              <span class="oi oi-menu"  aria-hidden="true"></span>
+            </button>
+          </div>
       </div> <!-- /.container -->
       <footer class="footer md-4">
         <div class="container text-center fixed-bottom pb-4">
@@ -314,6 +323,9 @@
     <script type="text/javascript" src="vendor/cal-heatmap/cal-heatmap.js"></script>
 
     <script type="text/javascript">
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
       var legend_ranges =  [2, 4, 6, 8,10]
       var legend_ranges_detail = []
       var strong_color = "rgb(33, 37, 41)"
