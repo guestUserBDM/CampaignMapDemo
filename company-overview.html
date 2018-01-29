@@ -19,28 +19,33 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="nav navbar-nav mr-auto"></ul> 
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              <button type="button" class="btn btn-outline-dark btn-lg">Entidades</button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="campaign-map.html">
-              <button class="btn btn-outline-secondary btn-lg" type="button">Campañas</button>
-            </a>
-          </li>
-        </ul>
-        <a class="navbar-brand float-right ml-4" href="#">
-          <img lass="d-inline-block align-top float-right" src="assets/images/bit_logo_b.png" width="40" height="40" alt="Bufete de Márketing">
-        </a>
-      </div>
+         <ul class="nav navbar-nav mr-auto"></ul> 
+        <span class="float-right font-weight-light mr-2"><img class="mr-1" alt="es" height="16" src="assets/images/flags/es.png" width="16">demo@bufetedemarketing.com</span>
+    </div>
     </nav> <!-- navbar -->
     <!-- container -->
-    <div class="container-fluid">
+    <div class="container">
+      <div id="bit-header" class="row mt-2 pt-1">
+           <div id="bit-logo" class="col-4">
+            <a href="/timeline"><img alt="logo" src="assets/images/bufete_logo.png"></a>
+          </div>
+            <div id="bit-mainmenu" class="col-6 float-right bit-mainmenu-bootstrap hidden-phone" style="min-width: 570px">
+              <div class="large-margin-left dashboard ">
+                <a href="/dashboard"></a>
+              </div>
+              <div class="observatory active">
+                <a href="/timeline"></a>
+              </div>
+              <div class="analysis ">
+                <a href="/analyses"></a>
+              </div>
+              <div class="reports ">
+                <a href="/reports"></a>
+              </div>
+            </div>
+      </div>
       <!-- buttons filters -->
-        <div class="row mb-3 mt-3">
+       <!-- <div class="row mb-3 mt-3">
           <div class="col text-center">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="ml-1 mr-1 btn btn-outline-dark rounded active">
@@ -53,10 +58,10 @@
                 <input type="radio" name="options" id="option3" autocomplete="off"> Categoría
               </label>
             </div>
-          </div>
-        </div> <!-- buttons filters -->
+          </div> 
+        </div> --> <!-- buttons filters -->
       <!-- DATA SPACE -->
-        <div class="just-padding">
+        <div class="row just-padding">
           <!-- LIST PLACE -->
           <div class="list-group list-group-root well">
             <!-- TOTAL ROW - FIRST LEVEL -->
@@ -363,6 +368,8 @@ var total = new CalHeatMap();
         data: json_total,
         domain: "month",
         subDomain: "week",
+        domainDynamicDimension: true,
+        domainMargin:0,
         cellSize: 12,
         cellRadius: 3,
         domainLabelFormat: function(date) {
