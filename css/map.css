@@ -266,3 +266,12 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
   right: 8rem;
   top: 8.1rem;
 }
+.axis {
+	font-size: 12px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #e6e6e6;
+  shape-rendering: crispEdges;
+}

@@ -52,7 +52,9 @@
 
       <div class="col-1"></div> <!--col for layout -->
     </div> <!--/Row for layout -->
-
+    <div class="row mt-4">
+      <h2>Mapa de campañas</h2>
+    </div>
     <!-- buttons filters -->
        <!-- <div class="row mb-3 mt-3">
           <div class="col text-center">
@@ -73,6 +75,12 @@
           <div class=" just-padding">
             <!-- LIST PLACE -->
             <div class="list-group list-group-root well">
+              <div class="row level-step">
+                <div class="col-2"></div>
+                <div class="col-9 full_investment list-group-item" >
+                  <div id="chart"></div>
+                </div>
+              </div>
               <!-- TOTAL ROW - FIRST LEVEL -->
               <div class="row level-step">
                 <div class="col-2 company_name">
@@ -447,7 +455,7 @@
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="vendor/cal-heatmap/cal-heatmap.css" />
     <script type="text/javascript" src="vendor/cal-heatmap/cal-heatmap.js"></script>
-
+    <script type="text/javascript" src="js/graphic-bar.js"></script>
     <script type="text/javascript">
 
     function showOrHide(element){
@@ -625,7 +633,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -653,7 +661,6 @@ var total = new CalHeatMap();
         upper: "Más de {max} € de {name}"
       },
       });
-    console.log(getUnix);
     function getRandomFloat(min, max) {
         return Math.random() * (max - min) + min;
       }
@@ -693,7 +700,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -751,7 +758,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -803,7 +810,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -856,7 +863,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -912,7 +919,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -986,7 +993,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1056,7 +1063,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1113,7 +1120,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1173,7 +1180,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1232,7 +1239,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1296,7 +1303,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1324,7 +1331,6 @@ var total = new CalHeatMap();
         upper: "Más de {max} € de {name}"
       },
       });
-    console.log(getUnix);
     function getRandomFloat(min, max) {
         return Math.random() * (max - min) + min;
       }
@@ -1364,7 +1370,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1425,7 +1431,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1480,7 +1486,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1543,7 +1549,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1593,7 +1599,7 @@ var total = new CalHeatMap();
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          console.log(weekOfYear(date)+ ": UNIX: " + (date/1000) + " | UTF: " + date);
+          
           getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
           return string; // Use the moment library to format the Date
         },
@@ -1624,7 +1630,6 @@ var total = new CalHeatMap();
 
       /*/CAMPAÑA BCONOMY */
     </script>
-
     <script type="text/javascript">
       $(function() {
         $('.list-group-item').on('click', function() {
