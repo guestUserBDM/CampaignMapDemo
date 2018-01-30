@@ -252,7 +252,7 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 .wrapper_text{
   margin-left: 2rem;
   font-size: 1.2rem;
-  color: white;
+  color: #343a40;
   margin-top: 1rem;
 }
 .wrapper_subtext{
@@ -278,7 +278,8 @@ a i{
   color: transparent; }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgb(230,230,230);opacity:0.9;
+  border: 1px solid white;
   position: absolute;
   right: -300px;
   top: 0;
@@ -291,7 +292,8 @@ nav {
   /* IT'S OVER 9000! */
 }
 nav #menuToggle {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(230,230,230);opacity:0.6;
+  border: 1px solid white;
   display: block;
   position: relative;
   height: 40px;
@@ -300,7 +302,7 @@ nav #menuToggle {
   width: 50px;
 }
 nav #menuToggle span {
-  background: white;
+  background: #343a40;
   display: block;
   height: 10%;
   left: 10%;
@@ -309,7 +311,7 @@ nav #menuToggle span {
   width: 80%;
 }
 nav #menuToggle span:before, nav #menuToggle span:after {
-  background: white;
+  background: #343a40;
   content: '';
   display: block;
   height: 100%;
@@ -325,9 +327,9 @@ nav #menuToggle span:after {
   top: 250%;
 }
 nav a:nth-child(n+2) {
-  color: white;
+  color: rgba(0,0,0,0.6);
   display: block;
-  font-size: 2rem;
+  font-size: 1.3rem;;
   margin-left: 1rem;
   margin-top: 1rem;
   margin-bottom: -1rem;
@@ -357,7 +359,7 @@ nav a:nth-child(n+2):hover:after {
   top: 45%;
 }
 .open #menuToggle span:before, .open #menuToggle span:after {
-  background: white;
+  background: #343a40;
   top: 0;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
