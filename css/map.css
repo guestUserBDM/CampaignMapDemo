@@ -240,3 +240,29 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 #bit-mainmenu-en DIV.reports:hover {
 	background-position: -409px -120px;
 }
+
+.wrapper_title{
+  margin-bottom: 1rem;
+  z-index: 9999;
+}
+.wrapper_title a{
+  color: #343a40;
+  font-size: 1.2rem;
+}
+.wrapper_text{
+  margin-bottom: 0.2rem;
+  margin-left: 0.4rem;
+}
+.wrapper_subtext{
+  margin-left: 0.8rem;
+}
+.popover-header{
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+#filter-map{
+  display: inline-flex;
+  position: absolute;
+  right: 8rem;
+  top: 8.1rem;
+}
