@@ -454,8 +454,8 @@
 
 
       </div> <!-- /.container -->
-      <footer class="footer md-4">
-        <div class="container text-center fixed-bottom pb-4">
+      <footer id="bit-footer" class="footer md-4">
+        <div class="container text-center mt-4 pb-4 ">
           <img src="assets/images/favicon.ico" alt="">
              Bufete de Marketing © 2018
         </div>
@@ -561,7 +561,7 @@ var total = new CalHeatMap();
         cellRadius: 1,
         cellPadding: 1,
         domainLabelFormat: function(date) {
-          return moment(date).locale('es').format("MMM"); // Use the moment library to format the Date
+          return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
         },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
