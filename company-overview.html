@@ -53,8 +53,139 @@
       <div class="col-1"></div> <!--col for layout -->
     </div> <!--/Row for layout -->
     <div class="row mt-4">
-      <h2>Mapa de campañas</h2>
+      <div class="col-10">
+        <h2>Mapa de campañas</h2>
+      </div>
+
+      <div class="col-1">
+        <button class="btn btn-default" id="filter-map" href="#" data-placement="left" data-toggle="popover" title="Filtros para el mapa de campañas" >
+          <span class="oi oi-menu"  aria-hidden="true"></span>
+          <div id="popover_content_wrapper" style="display: none">
+            <div class="wrapper_title" > <a href="JavaScript:showOrHide('.wrapper1')">Segmento</a>
+              <div class="wrapper1" id="wrapper1" style="display:none">
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Personas</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Banca Patrimonial</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value=""> Empresas y corporativos
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Comercio</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Autónomos</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> PYMES</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wrapper_title">  <a href="JavaScript:showOrHide('.wrapper2')">Linea de producto </a>
+              <div class="wrapper2" id="wrapper2" style="display:none">
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Sin categoría</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Financiero (MX)
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Experiencia de cliente</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Campañas TAC</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Cuentas</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Fondos e inversiones</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Créditos</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Pensiones</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Tarjetas</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Asesoramiento</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Servicios</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Digital</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Canales</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Empresas</div>
+                </div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Financiero (MX)
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > Experiencia de cliente</div>
+                </div>
+                <div class="wrapper_text"><input type="checkbox" name="" value=""> Sin categoría</div>
+              </div>
+            </div>
+
+
+            <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper3')">Categorías de acción </a>
+              <div class="wrapper3" id="wrapper3" style="display:none">
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación con otras empresas</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación de clientes</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación de nuevos saldos</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Cultura</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Deporte</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Digitalización</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Fidelización</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Fomento de uso</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Imagen</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Información</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Información corporativa</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Innovación</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Marca</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > MGM</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Migración</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Nuevas estructuras</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Oferta</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Patrocinio</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Portabilidad</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Portabilidad desde contrato</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Portfolio de productos</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Preventa</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Programas de fidelización</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Promoción</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Prueba gratis</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Reconocimiento a clientes</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Renove</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Retención</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Sector Fin. MX</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Sociales, Solidarias y</div>
+                <div class="wrapper_text"> Sostenible
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > liente</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > cliente</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > liente</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > cliente</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper4')">Entidades </a>
+              <div class="wrapper4" id="wrapper4" style="display:none">
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Bancos
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> BBVA Bancomer</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Citibanamex</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Banorte</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Santander México</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> HSBC</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Sabadell México</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Ixe</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Scotiabank</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Banco Azteca</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Banco Walmart</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value=""> BanRegio</div>
+                </div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Bufete de Marketing
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > Principal</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > American Express</div>
+                  <div class="wrapper_subtext"><input type="checkbox" name="" value="" > Invex</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper5')">Alertas</a>
+              <div class="wrapper5" id="wrapper5" style="display:none">
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Novedad</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Relanzamiento</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Continuidad</div>
+              </div>
+            </div>
+
+            <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper6')">Canales</a>
+              <div class="wrapper6" id="wrapper6" style="display:none">
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Media</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Mensage</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Categoría de acción</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Linea de producto</div>
+                <div class="wrapper_text"><input type="checkbox" name="" value="" > Lista de campañas</div>
+              </div>
+            </div>
+
+          </div>
+        </button>
+      </div>
     </div>
+
     <!-- buttons filters -->
        <!-- <div class="row mb-3 mt-3">
           <div class="col text-center">
@@ -72,388 +203,249 @@
           </div>
         </div> --> <!-- buttons filters -->
           <!-- DATA SPACE -->
-          <div class=" just-padding">
+          <div class="container just-padding">
             <!--UPPER GRAPH -->
+            <div class="container">
               <div class="row mb-3">
                 <div class="col-2 company_name"></div>
-                <div class="col-9 full_investment list-group-item" >
+                <div class="col-9 full_investment list-group-item shadowContainer" >
                   <h3>Total de cuotas 2017</h3>
                   <div id="chart"></div>
                 </div>
               </div>
+            </div>
+
             <!-- /UPPER GRAPH -->
             <!-- LIST PLACE -->
-            <div class="list-group list-group-root well">
-              <!-- TITLE ROW - FIRST LEVEL -->
-              <div class="row level-step">
-                <div class="col-2 company_name"></div>
-                <div class="col-9 full_investment list-group-item pt-2">
-                  <h3>TOP 5 - Campañas</h3>
-                </div>
-              </div>
-              <!-- /TITLE ROW - FIRST LEVEL -->
-              <!-- TOTAL ROW - FIRST LEVEL -->
-              <div class="row level-step">
-                <div class="col-2 company_name">
-                  <a href="#" class="list-group-item list-group-item-action" >
-                    <span class="ml-1 company-title">TOTAL</span>
-                  </a>
-                </div>
-                <div class="col-9 full_investment list-group-item">
-                  <div id="total_total"></div>
-                </div>
-              </div>
-              <!-- /TOTAL ROW - FIRST LEVEL -->
-              <!-- COMPANY ROW - FIRST LEVEL -->
-              <div class="row">
-                <div class="col-2 company_name">
-                  <a href="#item-1" class="list-group-item list-group-item-action" data-toggle="collapse">
-                    <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">ING</span>
-                  </a>
-                </div>
-                <div class="col-9 full_investment list-group-item">
-                  <div id="total_ing"></div>
-                </div>
-              </div>
-              <!-- /COMPANY ROW - FIRST LEVEL -->
-              <!--  CAMPAIGN ROW LIST -->
-              <div class="list-group collapse show" id="item-1">
-                <!-- CAMPIGN 1 -->
-                <!-- CAMPAGIN 1 TOTAL -->
+            <div class="container">
+              <div class="list-group list-group-root well">
+                <!-- TITLE ROW - FIRST LEVEL -->
                 <div class="row level-step">
-                  <div class="col-2 campaign_name">
-                    <a href="#item-1-1" class="list-group-item list-group-item-action" data-toggle="collapse">
-                      <span class="oi oi-chevron-right" aria-hidden="true"></span>¿Eres... VOLAR?
+                  <div class="col-2 company_name"></div>
+                  <div class="col-9 full_investment list-group-item pt-2">
+                    <h3>TOP 5 - Campañas</h3>
+                  </div>
+                </div>
+                <!-- /TITLE ROW - FIRST LEVEL -->
+                <!-- TOTAL ROW - FIRST LEVEL -->
+                <div class="row level-step">
+                  <div class="col-2 company_name">
+                    <a href="#" class="list-group-item list-group-item-action" >
+                      <span class="ml-1 company-title">TOTAL</span>
                     </a>
                   </div>
                   <div class="col-9 full_investment list-group-item">
-                    <div id="campaign_volar" class="graph-container"></div>
+                    <div id="total_total"></div>
                   </div>
-                </div><!-- /CAMPAGIN 1 TOTAL -->
-                <!-- CAMPAIGN 1 MEDIA -->
-                <div class="list-group collapse " id="item-1-1">
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        TV
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_volar_tv" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        RADIO
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_volar_radio" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        PRENSA
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_volar_prensa" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        ON LINE
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_volar_online" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                </div><!-- /CAMPAIGN 1 MEDIA -->
-                <!-- /CAMPAIGN 1 -->
-
-                <!-- CAMPAIGN 2 -->
-                <!-- CAMPAIGN 2 TOTAL -->
-                <div class="row level-step">
-                  <div class="col-2 campaign_name">
-                    <a href="#item-1-2" class="list-group-item list-group-item-action" data-toggle="collapse">
-                      <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>¿Por qué... limón?
-                    </a>
-                  </div>
-                  <div class="col-9 full_investment list-group-item">
-                    <div id="campaign_limon" class="graph-container"></div>
-                  </div>
-                </div> <!-- /CAMPAIGN 2 TOTAL -->
-                <!-- CAMPAIGN 1 MEDIA -->
-                <div class="list-group collapse" id="item-1-2">
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        TV
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_limon_tv" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        RADIO
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_limon_radio" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        PRENSA
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_limon_prensa" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        ON LINE
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_limon_online" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                </div><!-- /CAMPAIGN 1 MEDIA -->
-                <!-- /CAMPAIGN 2 -->
-              </div> <!--  /CAMPAIGN ROW LIST -->
-
-
-              <!-- COMPANY ROW - FIRST LEVEL -->
-              <div class="row level-step">
-                <div class="col-2 company_name">
-                  <a href="#item-2" class="list-group-item list-group-item-action last-company" data-toggle="collapse">
-                    <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/bbva.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">BBVA</span>
-                  </a>
                 </div>
-                <div class="col-9 full_investment list-group-item">
-                  <div id="total_bbva"></div>
-                </div>
-              </div>
-              <!-- /COMPANY ROW - FIRST LEVEL -->
-              <!--  CAMPAIGN ROW LIST -->
-              <div class="list-group collapse show" id="item-2">
-                <!-- CAMPIGN 1 -->
-                <!-- CAMPAGIN 1 TOTAL -->
-                <div class="row level-step">
-                  <div class="col-2 campaign_name">
-                    <a href="#item-2-1" class="list-group-item list-group-item-action last-campaign" data-toggle="collapse">
-                      <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>Bconomy
-                    </a>
-                  </div>
-                  <div class="col-9 full_investment list-group-item">
-                    <div id="campaign_bco" class="graph-container"></div>
-                  </div>
-                </div><!-- /CAMPAGIN 1 TOTAL -->
-                <!-- CAMPAIGN 1 MEDIA -->
-                <div class="list-group collapse" id="item-2-1">
-                  <!-- MEDIA -->
+                <!-- /TOTAL ROW - FIRST LEVEL -->
+                <!-- COMPANY ROW - FIRST LEVEL -->
+
+                <!-- /COMPANY ROW - FIRST LEVEL -->
+                <!--  CAMPAIGN ROW LIST -->
+                <div class="list-group collapse show" id="item-1">
+                  <!-- CAMPIGN 1 -->
+                  <!-- CAMPAGIN 1 TOTAL -->
                   <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        TV
+                    <div class="col-2 campaign_name">
+                      <a href="#item-1-1" class="list-group-item list-group-item-action" data-toggle="collapse">
+                        <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">¿Eres... VOLAR?
                       </a>
                     </div>
                     <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_bco_tv" class="graph-container"></div>
+                      <div id="campaign_volar" class="graph-container"></div>
                     </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
+                  </div><!-- /CAMPAGIN 1 TOTAL -->
+                  <!-- CAMPAIGN 1 MEDIA -->
+                  <div class="list-group collapse " id="item-1-1">
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          TV
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_volar_tv" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          RADIO
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_volar_radio" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          PRENSA
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_volar_prensa" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          ON LINE
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_volar_online" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                  </div><!-- /CAMPAIGN 1 MEDIA -->
+                  <!-- /CAMPAIGN 1 -->
+
+                  <!-- CAMPAIGN 2 -->
+                  <!-- CAMPAIGN 2 TOTAL -->
                   <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        RADIO
+                    <div class="col-2 campaign_name">
+                      <a href="#item-1-2" class="list-group-item list-group-item-action" data-toggle="collapse">
+                        <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">¿Por qué... limón?
                       </a>
                     </div>
                     <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_bco_radio" class="graph-container"></div>
+                      <div id="campaign_limon" class="graph-container"></div>
                     </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
+                  </div> <!-- /CAMPAIGN 2 TOTAL -->
+                  <!-- CAMPAIGN 1 MEDIA -->
+                  <div class="list-group collapse" id="item-1-2">
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          TV
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_limon_tv" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          RADIO
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_limon_radio" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          PRENSA
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_limon_prensa" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          ON LINE
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_limon_online" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                  </div><!-- /CAMPAIGN 1 MEDIA -->
+                  <!-- /CAMPAIGN 2 -->
+                </div> <!--  /CAMPAIGN ROW LIST -->
+
+
+                <!-- COMPANY ROW - FIRST LEVEL -->
+
+                <!-- /COMPANY ROW - FIRST LEVEL -->
+                <!--  CAMPAIGN ROW LIST -->
+                <div class="list-group collapse show" id="item-2">
+                  <!-- CAMPIGN 1 -->
+                  <!-- CAMPAGIN 1 TOTAL -->
                   <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        PRENSA
+                    <div class="col-2 campaign_name">
+                      <a href="#item-2-1" class="list-group-item list-group-item-action last-campaign" data-toggle="collapse">
+                        <img lass="d-inline-block align-top mr-1" src="assets/images/bbva.png" width="20" height="20" alt="Bufete de Márketing">Bconomy
                       </a>
                     </div>
                     <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_bco_prensa" class="graph-container"></div>
+                      <div id="campaign_bco" class="graph-container"></div>
                     </div>
-                  </div> <!-- MEDIA -->
-                  <!-- MEDIA -->
-                  <div class="row level-step">
-                    <div class="col-2 media_name">
-                      <a href="#" class="list-group-item">
-                        ON LINE
-                      </a>
-                    </div>
-                    <div class="col-9 full_investment list-group-item">
-                      <div id="campaign_bco_online" class="graph-container"></div>
-                    </div>
-                  </div> <!-- MEDIA -->
-                </div><!-- /CAMPAIGN 1 MEDIA -->
-                <!-- /CAMPAIGN 1 -->
-              </div> <!--  /CAMPAIGN ROW LIST -->
-            </div> <!-- /LIST PLACE -->
-          </div> <!-- /DATA SPACE -->
+                  </div><!-- /CAMPAGIN 1 TOTAL -->
+                  <!-- CAMPAIGN 1 MEDIA -->
+                  <div class="list-group collapse" id="item-2-1">
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          TV
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_bco_tv" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          RADIO
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_bco_radio" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          PRENSA
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_bco_prensa" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                    <!-- MEDIA -->
+                    <div class="row level-step">
+                      <div class="col-2 media_name">
+                        <a href="#" class="list-group-item">
+                          ON LINE
+                        </a>
+                      </div>
+                      <div class="col-9 full_investment list-group-item">
+                        <div id="campaign_bco_online" class="graph-container"></div>
+                      </div>
+                    </div> <!-- MEDIA -->
+                  </div><!-- /CAMPAIGN 1 MEDIA -->
+                  <!-- /CAMPAIGN 1 -->
+                </div> <!--  /CAMPAIGN ROW LIST -->
+              </div> <!-- /LIST PLACE -->
+            </div> <!-- /DATA SPACE -->
+          </div>
           <div class="row level-step">
             <div class="col-2">
 
             </div>
-            <div class="col-9">
-              <button href="#" class="action-button shadow animate button-color">Ver más campañas</button>
+            <div class="col-9 handCursor">
+              <button href="#" class="action-button shadow animate button-color handCursor">Ver más campañas</button>
             </div>
           </div>
-          <div class="">
-            <button class="btn btn-default" id="filter-map" href="#" data-placement="left" data-toggle="popover" title="Filtros para el mapa de campañas" >
-              <span class="oi oi-menu"  aria-hidden="true"></span>
-              <div id="popover_content_wrapper" style="display: none">
-                <div class="wrapper_title" > <a href="JavaScript:showOrHide('.wrapper1')">Segmento</a>
-                  <div class="wrapper1" id="wrapper1" style="display:none">
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Personas</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Banca Patrimonial</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value=""> Empresas y corporativos
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Comercio</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Autónomos</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> PYMES</div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="wrapper_title">  <a href="JavaScript:showOrHide('.wrapper2')">Linea de producto </a>
-                  <div class="wrapper2" id="wrapper2" style="display:none">
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Sin categoría</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Financiero (MX)
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Experiencia de cliente</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Campañas TAC</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Cuentas</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Fondos e inversiones</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Créditos</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Pensiones</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Tarjetas</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Asesoramiento</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Servicios</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Digital</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Canales</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Empresas</div>
-                    </div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Financiero (MX)
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > Experiencia de cliente</div>
-                    </div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value=""> Sin categoría</div>
-                  </div>
-                </div>
-
-
-                <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper3')">Categorías de acción </a>
-                  <div class="wrapper3" id="wrapper3" style="display:none">
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación con otras empresas</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación de clientes</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Captación de nuevos saldos</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Cultura</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Deporte</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Digitalización</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Fidelización</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Fomento de uso</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Imagen</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Información</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Información corporativa</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Innovación</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Marca</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > MGM</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Migración</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Nuevas estructuras</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Oferta</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Patrocinio</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Portabilidad</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Portabilidad desde contrato</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Portfolio de productos</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Preventa</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Programas de fidelización</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Promoción</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Prueba gratis</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Reconocimiento a clientes</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Renove</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Retención</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Sector Fin. MX</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Sociales, Solidarias y</div>
-                    <div class="wrapper_text"> Sostenible
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > liente</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > cliente</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > liente</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > cliente</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper4')">Entidades </a>
-                  <div class="wrapper4" id="wrapper4" style="display:none">
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Bancos
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> BBVA Bancomer</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Citibanamex</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Banorte</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Santander México</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> HSBC</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Sabadell México</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Ixe</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Scotiabank</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Banco Azteca</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> Banco Walmart</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value=""> BanRegio</div>
-                    </div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Bufete de Marketing
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > Principal</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > American Express</div>
-                      <div class="wrapper_subtext"><input type="checkbox" name="" value="" > Invex</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper5')">Alertas</a>
-                  <div class="wrapper5" id="wrapper5" style="display:none">
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Novedad</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Relanzamiento</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Continuidad</div>
-                  </div>
-                </div>
-
-                <div class="wrapper_title"> <a href="JavaScript:showOrHide('.wrapper6')">Canales</a>
-                  <div class="wrapper6" id="wrapper6" style="display:none">
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Media</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Mensage</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Categoría de acción</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Linea de producto</div>
-                    <div class="wrapper_text"><input type="checkbox" name="" value="" > Lista de campañas</div>
-                  </div>
-                </div>
-
-              </div>
-            </button>
-          </div>
       </div> <!-- /.container -->
       <footer class="footer md-4">
         <div class="container text-center fixed-bottom pb-4">
@@ -638,55 +630,51 @@ var total = new CalHeatMap();
 
       }//end data_json
 
-      var getUnix = "";
-      var cal = new CalHeatMap();
-        cal.init({
-        itemSelector: "#total_ing",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_ing,
-        domain: "month",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat: "",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
+      // var cal = new CalHeatMap();
+      //   cal.init({
+      //   itemSelector: "#total_ing",
+      //   itemName: ["inversión", "inversión"],
+      //   start: new Date(2017, 0, 1),
+      //   data: data_json_ing,
+      //   domain: "month",
+      //   subDomain: "week",
+      //   domainMargin:0,
+      //   domainGutter: 0,
+      //   cellSize: 14,
+      //   cellRadius: 1,
+      //   cellPadding: 1,
+      //   domainLabelFormat: "",
+      //   subDomainDateFormat: function(date,value) {
+      //     weekOfYear = d3.time.format("%W")
+      //     string = "Semana " + weekOfYear(date)
 
-          getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 12,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: "white"
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
-    function getRandomFloat(min, max) {
-        return Math.random() * (max - min) + min;
-      }
+      //     getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
+      //     return string; // Use the moment library to format the Date
+      //   },
+      //   //subDomainTextFormat: "%W",
+      //   subDomainTitleFormat: {
+      //     empty: "NO hay inversión para la fecha: {date}",
+      //     filled: "Hay {count} % de {name} para la  {date}"
+      //   },
+      //   range: 12,
+      //   label: {
+      //     position: "top",
+      //     height: 15
+      //   },
+      //   displayLegend: false,
+      //   legend: legend_ranges,
+      //   legendColors: {
+      //       min: light_color,
+      //       max: strong_color,
+      //       empty: "white"
+      //       // Will use the CSS for the missing keys
+      //   },
+      //   legendTitleFormat: {
+      //   lower: "Menos de {min} € de {name}",
+      //   inner: "Entre {down} € y {up} € de {name}",
+      //   upper: "Más de {max} € de {name}"
+      // },
+      // });
 
       /*CAMPAÑA VOLAR */
 
@@ -1342,51 +1330,51 @@ var total = new CalHeatMap();
 "1514160000":0.0328802337931772,
 
       }
-      var cal2 = new CalHeatMap();
-        cal2.init({
-        itemSelector: "#total_bbva",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_bbva,
-        domain: "month",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat:"",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
-
-          getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 12,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: "white"
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
+      // var cal2 = new CalHeatMap();
+      //   cal2.init({
+      //   itemSelector: "#total_bbva",
+      //   itemName: ["inversión", "inversión"],
+      //   start: new Date(2017, 0, 1),
+      //   data: data_json_bbva,
+      //   domain: "month",
+      //   subDomain: "week",
+      //   domainMargin:0,
+      //   domainGutter: 0,
+      //   cellSize: 10,
+      //   cellRadius: 1,
+      //   cellPadding: 1,
+      //   domainLabelFormat:"",
+      //   subDomainDateFormat: function(date,value) {
+      //     weekOfYear = d3.time.format("%W")
+      //     string = "Semana " + weekOfYear(date)
+      //
+      //     getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
+      //     return string; // Use the moment library to format the Date
+      //   },
+      //   //subDomainTextFormat: "%W",
+      //   subDomainTitleFormat: {
+      //     empty: "NO hay inversión para la fecha: {date}",
+      //     filled: "Hay {count} % de {name} para la  {date}"
+      //   },
+      //   range: 12,
+      //   label: {
+      //     position: "top",
+      //     height: 15
+      //   },
+      //   displayLegend: false,
+      //   legend: legend_ranges,
+      //   legendColors: {
+      //       min: light_color,
+      //       max: strong_color,
+      //       empty: "white"
+      //       // Will use the CSS for the missing keys
+      //   },
+      //   legendTitleFormat: {
+      //   lower: "Menos de {min} € de {name}",
+      //   inner: "Entre {down} € y {up} € de {name}",
+      //   upper: "Más de {max} € de {name}"
+      // },
+      // });
     function getRandomFloat(min, max) {
         return Math.random() * (max - min) + min;
       }
