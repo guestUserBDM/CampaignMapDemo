@@ -211,7 +211,7 @@
                   <div class="row mb-3 no-gutters shadowContainer">
                     <div class="col-2 company_name whiteBack"></div>
                     <div class="col-10 full_investment list-group-item" >
-                      <h3>Total de cuotas 2017</h3>
+                      <h3>Total Inversión 2017</h3>
                       <div id="chart"></div>
                     </div>
                   </div>
@@ -463,8 +463,8 @@
 
 
       </div> <!-- /.container -->
-      <footer class="footer md-4">
-        <div class="container text-center fixed-bottom pb-4">
+      <footer id="bit-footer" class="footer md-4">
+        <div class="container text-center mt-4 pb-4 ">
           <img src="assets/images/favicon.ico" alt="">
              Bufete de Marketing © 2018
         </div>
@@ -570,7 +570,7 @@ var total = new CalHeatMap();
         cellRadius: 1,
         cellPadding: 1,
         domainLabelFormat: function(date) {
-          return moment(date).locale('es').format("MMM"); // Use the moment library to format the Date
+          return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
         },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")

@@ -261,9 +261,18 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
   font-weight: 500;
 }
 
-.axis {
-	font-size: 12px;
+.graph-tooltip {
+	position: absolute;
+	text-align: center;
+	width: 60px;
+	height: 28px;
+	padding: 5px;
+	font: 12px sans-serif;
+	background: rgba(246, 247, 250, 0.88);
+	border: 0.5px solid rgba(0, 0, 0, 0.76);;
+	pointer-events: none;
 }
+
 .axis path,
 .axis line {
   fill: none;
@@ -321,4 +330,8 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
  
 .border5{
   border-radius: 5px;
+}
+#bit-footer{
+  color: #999;
+  font-size: 11px;
 }
