@@ -315,3 +315,6 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 .handCursor{
   cursor: pointer;
 }
+.whiteBack{
+  background-color: white;
+}
