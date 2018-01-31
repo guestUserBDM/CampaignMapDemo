@@ -62,7 +62,20 @@ var data = [
             .attr("class", "stack")
             .style("fill", function (d, i) {
                 return color[i]
-            });
+            })
+            .on("mouseover", function(d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div.html("<br/>loool")
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });;
 
     layer.selectAll("rect")
             .data(function (d) {
@@ -79,36 +92,9 @@ var data = [
               stackHeight = (y(d.y0) - y(d.y + d.y0))/2
                 return stackHeight;
             })
-            .attr("width", stackColumnWidth)
-            .on("mouseover", function() { tooltip.style("display", null); })
-            .on("mouseout", function() { tooltip.style("display", "none"); })
-            .on("mousemove", function(d) {
-              var xPosition = d3.mouse(this)[0] - 15;
-              var yPosition = d3.mouse(this)[1] - 25;
-              tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
-              tooltip.select("text").text(d.y);
-            });
+            .attr("width", stackColumnWidth);
 
     svg.append("g")
             .attr("class", "axis")
             .attr("transform", "translate(0," + (height/2) + ")")
             .call(xAxis);
-
-
-// Prep the tooltip bits, initial display is hidden
-var tooltip = svg.append("g")
-  .attr("class", "tooltip")
-  .style("display", "none");
-    
-tooltip.append("rect")
-  .attr("width", 30)
-  .attr("height", 20)
-  .attr("fill", "white")
-  .style("opacity", 0.5);
-
-tooltip.append("text")
-  .attr("x", 15)
-  .attr("dy", "1.2em")
-  .style("text-anchor", "middle")
-  .attr("font-size", "12px")
-  .attr("font-weight", "bold");
