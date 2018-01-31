@@ -14,7 +14,7 @@ var data = [
     ];
 
     var stackColumnWidth = 30
-    var xData = ["Bankia", "BBVA", "CaixaBank","ING","Santander","Resto"];
+    var xData = ["Resto","Bankia","CaixaBank","Santander","BBVA","ING"];
     var clientWidth = document.getElementById('chart').clientWidth
     var margin = {top: 25, right: 50, bottom: 35, left: 0},
             width = clientWidth - margin.top - margin.bottom,
@@ -24,7 +24,7 @@ var data = [
 
     var y = d3.scale.linear()
             .rangeRound([height, 0]);
-    var color = ["#a8a8a8", "#B9D12E", "#B7D7E9", "#3473BA","#FE0000", "#FE7A22"] 
+    var color = ["#a8a8a8", "#B9D12E", "#B7D7E9","#FE0000", "#3473BA", "#FE7A22"]
 
     var xAxis = d3.svg.axis()
             .scale(x)
