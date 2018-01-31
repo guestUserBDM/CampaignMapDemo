@@ -28,8 +28,7 @@
     <!-- container -->
     <div class="container">
       <div class="row"> <!--Row for layout -->
-        <div class="col-1"></div> <!--col for layout -->
-        <div id="bit-header" class="col-10 row mt-2 pt-1">
+        <div id="bit-header" class="col-11 row mt-2 pt-1 ml-3 pr-5">
          <div id="bit-logo" class="col-4">
           <a href="/timeline"><img alt="logo" src="assets/images/bufete_logo.png"></a>
           </div>
@@ -52,13 +51,34 @@
 
       <div class="col-1"></div> <!--col for layout -->
     </div> <!--/Row for layout -->
-    <div class="row mt-4">
+
+    <!-- buttons filters -->
+       <!-- <div class="row mb-3 mt-3">
+          <div class="col text-center">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="ml-1 mr-1 btn btn-outline-dark rounded active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Segmento
+              </label>
+              <label class="ml-1 mr-1 btn btn-outline-dark rounded">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Medios
+              </label>
+              <label class="ml-1 mr-1 btn btn-outline-dark rounded">
+                <input type="radio" name="options" id="option3" autocomplete="off"> Categoría
+              </label>
+            </div>
+          </div>
+        </div> --> <!-- buttons filters -->
+          <!-- DATA SPACE -->
+          <div class="container just-padding">
+          <!-- FILTER AND TITLE -->
+
+              <div class="row mt-4 pl-3">
       <div class="col-10">
         <h2>Mapa de campañas</h2>
       </div>
 
       <div class="col-1">
-        <button class="btn btn-default" id="filter-map" href="#" data-placement="left" data-toggle="popover" title="Filtros para el mapa de campañas" >
+        <button class="btn btn-default ml-2" id="filter-map" href="#" data-placement="left" data-toggle="popover" title="Filtros para el mapa de campañas" >
           <span class="oi oi-menu"  aria-hidden="true"></span>
           <div id="popover_content_wrapper" style="display: none">
             <div class="wrapper_title" > <a href="JavaScript:showOrHide('.wrapper1')">Segmento</a>
@@ -186,24 +206,10 @@
       </div>
     </div>
 
-    <!-- buttons filters -->
-       <!-- <div class="row mb-3 mt-3">
-          <div class="col text-center">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="ml-1 mr-1 btn btn-outline-dark rounded active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Segmento
-              </label>
-              <label class="ml-1 mr-1 btn btn-outline-dark rounded">
-                <input type="radio" name="options" id="option2" autocomplete="off"> Medios
-              </label>
-              <label class="ml-1 mr-1 btn btn-outline-dark rounded">
-                <input type="radio" name="options" id="option3" autocomplete="off"> Categoría
-              </label>
-            </div>
-          </div>
-        </div> --> <!-- buttons filters -->
-          <!-- DATA SPACE -->
-          <div class="container just-padding">
+          <!-- /FILTER AND TITLE -->
+
+
+
             <!--UPPER GRAPH -->
             <div class="container">
               <div class="row mb-3">

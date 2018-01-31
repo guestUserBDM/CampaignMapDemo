@@ -264,8 +264,8 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 .graph-tooltip {
 	position: absolute;
 	text-align: center;
-	width: 60px;
-	height: 28px;
+	width: auto;
+	height: auto;
 	padding: 5px;
 	font: 12px sans-serif;
 	background: rgba(246, 247, 250, 0.88);

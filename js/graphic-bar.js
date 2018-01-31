@@ -43,7 +43,7 @@ var data = [
 
     var dataIntermediate = xData.map(function (c) {
         return data.map(function (d) {
-            return {x: d.month, y: d[c], value: d[c] };
+            return {x: d.month, y: d[c], company: c , value: d[c] };
         });
     });
 
@@ -63,7 +63,7 @@ var data = [
             .enter().append("g")
             .attr("class", "stack")
             .style("fill", function (d, i) {
-                return color[i]
+                return color[i];
             });
 
     layer.selectAll("rect")
@@ -86,7 +86,7 @@ var data = [
                div.transition()
                  .duration(200)
                  .style("opacity", .9);
-               div.html(d.y + "%")
+               div.html(tooltipString(d.company,d.y))
                  .style("left", (d3.event.pageX) + "px")
                  .style("top", (d3.event.pageY - 28) + "px");
              })
@@ -100,3 +100,11 @@ var data = [
             .attr("class", "axis")
             .attr("transform", "translate(0," + (height/1.85) + ")")
             .call(xAxis);
+
+//FUNCTIONS
+
+//Function that returns styled tooltip string, it recieves company name and value
+
+function tooltipString(company,value) {
+  return "<b>" + company + ":</b> " + value + "%"
+}
