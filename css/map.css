@@ -326,11 +326,10 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 }
 .whiteBack{
   background-color: white;
-}
- 
-.border5{
   border-radius: 5px;
 }
+
+
 #bit-footer{
   color: #999;
   font-size: 11px;
