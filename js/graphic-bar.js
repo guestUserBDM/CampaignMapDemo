@@ -92,7 +92,6 @@ var data = [
                 return (y(d.y + d.y0))/1.85;
             })
             .attr("height", function (d) {
-              debugger
               stackHeight = (y(d.y0) - y(d.y + d.y0))/2
                 return stackHeight;
             })
