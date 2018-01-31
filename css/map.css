@@ -310,11 +310,14 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
   text-shadow: 0px -2px linen;
 }
 .shadowContainer{
-   box-shadow: 0 3px 6px 0 grey;
+   box-shadow: 0px 3px 6px -2px grey;
 }
 .handCursor{
   cursor: pointer;
 }
 .whiteBack{
   background-color: white;
+}
+.maxContainerWidth{
+  max-width:1010px
 }
