@@ -556,12 +556,13 @@ var total = new CalHeatMap();
         data: json_total,
         domain: "month",
         subDomain: "week",
-        domainDynamicDimension: true,
         domainMargin:0,
-        cellSize: 12,
-        cellRadius: 3,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: function(date) {
-          return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
+          return moment(date).locale('es').format("MMM"); // Use the moment library to format the Date
         },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -646,8 +647,11 @@ var total = new CalHeatMap();
         data: data_json_ing,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -713,8 +717,11 @@ var total = new CalHeatMap();
         data: data_json_volar,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -771,8 +778,11 @@ var total = new CalHeatMap();
         domain: "month",
         subDomain: "week",
         //subDomainTextFormat: "%W",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -823,8 +833,11 @@ var total = new CalHeatMap();
         data: data_json_volar_radio,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat:"",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -876,8 +889,11 @@ var total = new CalHeatMap();
         data: data_json_volar_prensa,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -932,8 +948,11 @@ var total = new CalHeatMap();
         data: data_json_volar_online,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1006,8 +1025,11 @@ var total = new CalHeatMap();
         data: data_json_limon,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1076,8 +1098,11 @@ var total = new CalHeatMap();
         data: data_json_limon_tv,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1133,8 +1158,11 @@ var total = new CalHeatMap();
         data: data_json_limon_radio,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1193,8 +1221,11 @@ var total = new CalHeatMap();
         data: data_json_limon_prensa,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1252,8 +1283,11 @@ var total = new CalHeatMap();
         data: data_json_limon_online,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat:"",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1316,8 +1350,11 @@ var total = new CalHeatMap();
         data: data_json_bbva,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat:"",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1383,8 +1420,11 @@ var total = new CalHeatMap();
         data: data_json_bco,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1444,8 +1484,11 @@ var total = new CalHeatMap();
         data: data_json_bco_tv,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1499,8 +1542,11 @@ var total = new CalHeatMap();
         data: data_json_bco_radio,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1562,8 +1608,11 @@ var total = new CalHeatMap();
         data: data_json_bco_prensa,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat: "",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
@@ -1612,8 +1661,11 @@ var total = new CalHeatMap();
         data: data_json_bco_online,
         domain: "month",
         subDomain: "week",
-        cellSize: 12,
-        cellRadius: 3,
+        domainMargin:0,
+        domainGutter: 0,
+        cellSize: 10,
+        cellRadius: 1,
+        cellPadding: 1,
         domainLabelFormat:"",
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")

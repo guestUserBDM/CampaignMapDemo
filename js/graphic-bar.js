@@ -13,14 +13,14 @@ var data = [
         {month: 'Diciembre',Resto:8.55,Bankia:4.03,CaixaBank:21.56,Santander:13.49,BBVA:16.81,ING:35.56}
     ];
 
-    var stackColumnWidth = 60
+    var stackColumnWidth = 30
     var xData = ["Bankia", "BBVA", "CaixaBank","ING","Santander","Resto"];
     var clientWidth = document.getElementById('chart').clientWidth
     var margin = {top: 25, right: 50, bottom: 35, left: 0},
             width = clientWidth - margin.top - margin.bottom,
             height = 300 - margin.top - margin.bottom;
     var x = d3.scale.ordinal()
-        .rangeRoundBands([0,width], 0);
+        .rangeRoundBands([0,width], .3);
 
     var y = d3.scale.linear()
             .rangeRound([height, 0]);
@@ -33,10 +33,13 @@ var data = [
 
     var svg = d3.select("#chart").append("svg")
             .attr("width","100%")
-            .attr("height", (height/1.45))
+            .attr("height", height)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
     var dataIntermediate = xData.map(function (c) {
         return data.map(function (d) {
@@ -64,18 +67,18 @@ var data = [
                 return color[i]
             })
             .on("mouseover", function(d) {
-       div.transition()
-         .duration(200)
-         .style("opacity", .9);
-       div.html("<br/>loool")
-         .style("left", (d3.event.pageX) + "px")
-         .style("top", (d3.event.pageY - 28) + "px");
-       })
-     .on("mouseout", function(d) {
-       div.transition()
-         .duration(500)
-         .style("opacity", 0);
-       });;
+               div.transition()
+                 .duration(200)
+                 .style("opacity", .9);
+               div.html("<br/>loool")
+                 .style("left", (d3.event.pageX) + "px")
+                 .style("top", (d3.event.pageY - 28) + "px");
+             })
+           .on("mouseout", function(d) {
+             div.transition()
+               .duration(500)
+               .style("opacity", 0);
+             });
 
     layer.selectAll("rect")
             .data(function (d) {
@@ -86,7 +89,7 @@ var data = [
                 return x(d.x);
             })
             .attr("y", function (d) {
-                return (y(d.y + d.y0))/2;
+                return (y(d.y + d.y0))/1.85;
             })
             .attr("height", function (d) {
               stackHeight = (y(d.y0) - y(d.y + d.y0))/2
@@ -96,5 +99,5 @@ var data = [
 
     svg.append("g")
             .attr("class", "axis")
-            .attr("transform", "translate(0," + (height/2) + ")")
+            .attr("transform", "translate(0," + (height/1.85) + ")")
             .call(xAxis);
