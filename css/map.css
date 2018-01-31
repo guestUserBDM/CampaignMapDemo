@@ -4,7 +4,7 @@ html {
 }
 body {
 	font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-	background-color: #e6e6e6;
+	background-color: #F0F0F0;
 }
 
 @include media-breakpoint-up(sm) {
@@ -274,4 +274,39 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
   fill: none;
   stroke: #e6e6e6;
   shape-rendering: crispEdges;
+}
+#btnShowMore{
+  width: 100%;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.animate{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button{
+  width: 100%;
+  text-align: center;
+  padding: 10px 40px;
+  float: left;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #6C7582;
+}
+
+.action-button:active{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+.action-button:focus{
+  outline:0px;
+}
+
+.button-color{
+  background-color: #f8f9fa;
+  border-bottom: 5px solid lightgray;
+  text-shadow: 0px -2px linen;
 }
