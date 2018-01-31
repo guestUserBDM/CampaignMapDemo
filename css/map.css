@@ -399,3 +399,10 @@ nav a:nth-child(n+2):hover:after {
   -webkit-transition: top 0.2s linear, -webkit-transform 0.2s linear;
   transition: top 0.2s linear, transform 0.2s linear;
 }
+.filterButtons{
+  width: 100%;
+}
+.filterBotButtons{
+  width: 49%;
+  display: inline-block;
+}
