@@ -1,16 +1,16 @@
 var data = [
-        {month: 'Enero', ING:31.68,Bankia:27.41,BBVA:4.62,CaixaBank:15.20,Santander:13.25,Resto:7.84},
-        {month: 'Febrero', ING:26.63,Bankia:7.84,BBVA:3.37,CaixaBank:14.90,Santander:10.18,Resto:37.09},
-        {month: 'Marzo', ING:18.30,Bankia:6.81,BBVA:22.61,CaixaBank:11.10,Santander:15.76,Resto:25.42},
-        {month: 'Abril', ING:12.33,Bankia:2.49,BBVA:18.84,CaixaBank:17.21,Santander:32.01,Resto:17.12},
-        {month: 'Mayo', ING:14.07,Bankia:3.48,BBVA:23.41,CaixaBank:15.69,Santander:12.95,Resto:30.41},
-        {month: 'Junio', ING:14.90,Bankia:10.10,BBVA:28.90,CaixaBank:11.56,Santander:6.38,Resto:28.16},
-        {month: 'Julio', ING:18.25,Bankia:7.17,BBVA:27.40,CaixaBank:9.98,Santander:15.93,Resto:21.27},
-        {month: 'Agosto', ING:45.21,Bankia:0.89,BBVA:34.56,CaixaBank:5.82,Santander:6.37,Resto:7.15},
-        {month: 'Septiembre', ING:24.11,Bankia:11.19,BBVA:17.55,CaixaBank:19.66,Santander:8.79,Resto:18.71},
-        {month: 'Octubre', ING:16.66,Bankia:2.90,BBVA:17.34,CaixaBank:11.22,Santander:24.02,Resto:27.85},
-        {month: 'Noviembre', ING:25.97,Bankia:5.82,BBVA:24.29,CaixaBank:14.24,Santander:13.74,Resto:15.95},
-        {month: 'Diciembre', ING:35.56,Bankia:4.03,BBVA:16.81,CaixaBank:21.56,Santander:13.49,Resto:8.55}
+        {month: 'Enero',Resto:7.84,Bankia:27.41,CaixaBank:15.20,Santander:13.25,BBVA:4.62,ING:31.68},
+        {month: 'Febrero',Resto:37.09,Bankia:7.84,CaixaBank:14.90,Santander:10.18,BBVA:3.37,ING:26.63},
+        {month: 'Marzo',Resto:25.42,Bankia:6.81,CaixaBank:11.10,Santander:15.76,BBVA:22.61,ING:18.30},
+        {month: 'Abril',Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.33},
+        {month: 'Mayo',Resto:30.41,Bankia:3.48,CaixaBank:15.69,Santander:12.95,BBVA:23.41,ING:14.07},
+        {month: 'Junio',Resto:28.16,Bankia:10.10,CaixaBank:11.56,Santander:6.38,BBVA:28.90,ING:14.90},
+        {month: 'Julio',Resto:21.27,Bankia:7.17,CaixaBank:9.98,Santander:15.93,BBVA:27.40,ING:18.25},
+        {month: 'Agosto',Resto:7.15,Bankia:0.89,CaixaBank:5.82,Santander:6.37,BBVA:34.56,ING:45.21},
+        {month: 'Septiembre',Resto:18.71,Bankia:11.19,CaixaBank:19.66,Santander:8.79,BBVA:17.55,ING:24.11},
+        {month: 'Octubre',Resto:27.85,Bankia:2.90,CaixaBank:11.22,Santander:24.02,BBVA:17.34,ING:16.66},
+        {month: 'Noviembre',Resto:15.95,Bankia:5.82,CaixaBank:14.24,Santander:13.74,BBVA:24.29,ING:25.97},
+        {month: 'Diciembre',Resto:8.55,Bankia:4.03,CaixaBank:21.56,Santander:13.49,BBVA:16.81,ING:35.56}
     ];
 
     var stackColumnWidth = 60
@@ -24,15 +24,16 @@ var data = [
 
     var y = d3.scale.linear()
             .rangeRound([height, 0]);
-    var color = d3.scale.category20();
+    var color = ["#a8a8a8", "#B9D12E", "#B7D7E9", "#3473BA","#FE0000", "#FE7A22"] 
 
     var xAxis = d3.svg.axis()
             .scale(x)
             .orient("bottom");
 
+
     var svg = d3.select("#chart").append("svg")
             .attr("width","100%")
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("height", (height/1.45))
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -60,8 +61,7 @@ var data = [
             .enter().append("g")
             .attr("class", "stack")
             .style("fill", function (d, i) {
-              debugger
-                return color(i)
+                return color[i]
             });
 
     layer.selectAll("rect")
@@ -70,19 +70,45 @@ var data = [
             })
             .enter().append("rect")
             .attr("x", function (d) {
-              console.log(d)
-              console.log(x(d.x))
                 return x(d.x);
             })
             .attr("y", function (d) {
-                return y(d.y + d.y0);
+                return (y(d.y + d.y0))/2;
             })
             .attr("height", function (d) {
-                return y(d.y0) - y(d.y + d.y0);
+              stackHeight = (y(d.y0) - y(d.y + d.y0))/2
+                return stackHeight;
             })
-            .attr("width", stackColumnWidth);
+            .attr("width", stackColumnWidth)
+            .on("mouseover", function() { tooltip.style("display", null); })
+            .on("mouseout", function() { tooltip.style("display", "none"); })
+            .on("mousemove", function(d) {
+              var xPosition = d3.mouse(this)[0] - 15;
+              var yPosition = d3.mouse(this)[1] - 25;
+              tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+              tooltip.select("text").text(d.y);
+            });
 
     svg.append("g")
             .attr("class", "axis")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(0," + (height/2) + ")")
             .call(xAxis);
+
+
+// Prep the tooltip bits, initial display is hidden
+var tooltip = svg.append("g")
+  .attr("class", "tooltip")
+  .style("display", "none");
+    
+tooltip.append("rect")
+  .attr("width", 30)
+  .attr("height", 20)
+  .attr("fill", "white")
+  .style("opacity", 0.5);
+
+tooltip.append("text")
+  .attr("x", 15)
+  .attr("dy", "1.2em")
+  .style("text-anchor", "middle")
+  .attr("font-size", "12px")
+  .attr("font-weight", "bold");
