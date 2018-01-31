@@ -240,16 +240,7 @@
                 </div>
                 <!-- /TOTAL ROW - FIRST LEVEL -->
                 <!-- COMPANY ROW - FIRST LEVEL -->
-                <div class="row level-step">
-                  <div class="col-2 company_name">
-                    <a href="#item-1" class="list-group-item list-group-item-action" data-toggle="collapse">
-                      <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">ING</span>
-                    </a>
-                  </div>
-                  <div class="col-9 full_investment list-group-item">
-                    <div id="total_ing"></div>
-                  </div>
-                </div>
+
                 <!-- /COMPANY ROW - FIRST LEVEL -->
                 <!--  CAMPAIGN ROW LIST -->
                 <div class="list-group collapse show" id="item-1">
@@ -258,7 +249,7 @@
                   <div class="row level-step">
                     <div class="col-2 campaign_name">
                       <a href="#item-1-1" class="list-group-item list-group-item-action" data-toggle="collapse">
-                        <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>¿Eres... VOLAR?
+                        <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">¿Eres... VOLAR?
                       </a>
                     </div>
                     <div class="col-9 full_investment list-group-item">
@@ -319,7 +310,7 @@
                   <div class="row level-step">
                     <div class="col-2 campaign_name">
                       <a href="#item-1-2" class="list-group-item list-group-item-action" data-toggle="collapse">
-                        <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>¿Por qué... limón?
+                        <img lass="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">¿Por qué... limón?
                       </a>
                     </div>
                     <div class="col-9 full_investment list-group-item">
@@ -378,16 +369,7 @@
 
 
                 <!-- COMPANY ROW - FIRST LEVEL -->
-                <div class="row level-step">
-                  <div class="col-2 company_name">
-                    <a href="#item-2" class="list-group-item list-group-item-action last-company" data-toggle="collapse">
-                      <span class="oi oi-chevron-bottom mr-1" aria-hidden="true"></span> <img lass="d-inline-block align-top mr-1" src="assets/images/bbva.png" width="20" height="20" alt="Bufete de Márketing"><span class="ml-1 company-title">BBVA</span>
-                    </a>
-                  </div>
-                  <div class="col-9 full_investment list-group-item">
-                    <div id="total_bbva"></div>
-                  </div>
-                </div>
+
                 <!-- /COMPANY ROW - FIRST LEVEL -->
                 <!--  CAMPAIGN ROW LIST -->
                 <div class="list-group collapse show" id="item-2">
@@ -396,7 +378,7 @@
                   <div class="row level-step">
                     <div class="col-2 campaign_name">
                       <a href="#item-2-1" class="list-group-item list-group-item-action last-campaign" data-toggle="collapse">
-                        <span class="oi oi-chevron-right mr-1" aria-hidden="true"></span>Bconomy
+                        <img lass="d-inline-block align-top mr-1" src="assets/images/bbva.png" width="20" height="20" alt="Bufete de Márketing">Bconomy
                       </a>
                     </div>
                     <div class="col-9 full_investment list-group-item">
@@ -649,51 +631,7 @@ var total = new CalHeatMap();
       }//end data_json
 
       var getUnix = "";
-      var cal = new CalHeatMap();
-        cal.init({
-        itemSelector: "#total_ing",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_ing,
-        domain: "month",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 10,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat: "",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
 
-          getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 12,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: "white"
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
     function getRandomFloat(min, max) {
         return Math.random() * (max - min) + min;
       }
@@ -1352,51 +1290,51 @@ var total = new CalHeatMap();
 "1514160000":0.0328802337931772,
 
       }
-      var cal2 = new CalHeatMap();
-        cal2.init({
-        itemSelector: "#total_bbva",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_bbva,
-        domain: "month",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 10,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat:"",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
-
-          getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 12,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: "white"
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
+      // var cal2 = new CalHeatMap();
+      //   cal2.init({
+      //   itemSelector: "#total_bbva",
+      //   itemName: ["inversión", "inversión"],
+      //   start: new Date(2017, 0, 1),
+      //   data: data_json_bbva,
+      //   domain: "month",
+      //   subDomain: "week",
+      //   domainMargin:0,
+      //   domainGutter: 0,
+      //   cellSize: 10,
+      //   cellRadius: 1,
+      //   cellPadding: 1,
+      //   domainLabelFormat:"",
+      //   subDomainDateFormat: function(date,value) {
+      //     weekOfYear = d3.time.format("%W")
+      //     string = "Semana " + weekOfYear(date)
+      //
+      //     getUnix += "\""+(date/1000)+"\":"+ getRandomFloat(0,3500000) +","
+      //     return string; // Use the moment library to format the Date
+      //   },
+      //   //subDomainTextFormat: "%W",
+      //   subDomainTitleFormat: {
+      //     empty: "NO hay inversión para la fecha: {date}",
+      //     filled: "Hay {count} % de {name} para la  {date}"
+      //   },
+      //   range: 12,
+      //   label: {
+      //     position: "top",
+      //     height: 15
+      //   },
+      //   displayLegend: false,
+      //   legend: legend_ranges,
+      //   legendColors: {
+      //       min: light_color,
+      //       max: strong_color,
+      //       empty: "white"
+      //       // Will use the CSS for the missing keys
+      //   },
+      //   legendTitleFormat: {
+      //   lower: "Menos de {min} € de {name}",
+      //   inner: "Entre {down} € y {up} € de {name}",
+      //   upper: "Más de {max} € de {name}"
+      // },
+      // });
     function getRandomFloat(min, max) {
         return Math.random() * (max - min) + min;
       }
