@@ -318,6 +318,7 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 .whiteBack{
   background-color: white;
 }
-.maxContainerWidth{
-  max-width:1010px
+ 
+.border5{
+  border-radius: 5px;
 }
