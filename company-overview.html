@@ -74,12 +74,12 @@
           <!-- FILTER AND TITLE -->
 
               <div class="row mt-4 pl-3">
-      <div class="col-8">
+      <div class="col-7">
         <h2>Mapa de campañas</h2>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <div class="input-group date customDatepickerWidth">
-            <input type="text" class="form-control customDatepicker" id="datepicker">
+            <input type="text" placeholder="2017-01-01 hasta 2017-12-31" class="form-control customDatepicker" id="datepicker">
 
         </div>
       </div>
@@ -502,21 +502,7 @@
 
     $('#datepicker').datepicker();
 
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
 
-    var yyyy = today.getFullYear();
-    if(dd<10){
-        dd='0'+dd;
-    }
-    if(mm<10){
-        mm='0'+mm;
-    }
-    var today = dd+'/'+mm+'/'+yyyy;
-    $('#datepicker').value = today;
-
-    $('#datepicker').attr("placeholder", today)
 
     function showOrHide(element){
       if ($(element).css('display') == 'block') {

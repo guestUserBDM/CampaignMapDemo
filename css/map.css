@@ -349,7 +349,7 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
   border-bottom: 1px solid rgba(0,0,0,.125)
 }
 .customDatepickerWidth{
-  max-width: 12rem;
+  width: 16rem;
 }
 .customDatepicker{
   height: 2.2rem;
