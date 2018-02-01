@@ -334,3 +334,6 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 }
 .no-border-r {border-right: none !important;}
 .no-border-l {border-left: none;}
+.border5{
+  border-radius:5px;
+}
