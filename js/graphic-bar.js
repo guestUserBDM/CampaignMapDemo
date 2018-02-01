@@ -126,12 +126,12 @@ var dataLine= [
             .orient("bottom")
             .outerTickSize(0)
             .innerTickSize(0)
-            .tickFormat(function(d,i) { 
+            .tickFormat(function(d,i) {
               string="";
               if (isInArray(i,months_week_thicks)) {
                 string = data[i].month
               }
-              return string; 
+              return string;
             });
 
     var svg = d3.select("#chart").append("svg")
@@ -144,7 +144,7 @@ var dataLine= [
     .attr("class", "tooltip graph-tooltip")
     .style("opacity", 0);
 
-    var svgLegend = d3.select("#legend-div").append("svg")
+    var svgLegend = d3.select("#legend-div").append("svg").attr("height", height)
 
     var dataIntermediate = xData.map(function (c) {
         return data.map(function (d) {
@@ -208,29 +208,29 @@ var dataLine= [
             .call(xAxis);
 
 
-    var xDataInverted =  ["ING", "BBVA", "Santander", "CaixaBank", "Bankia", "Resto"] 
-    var legendRectSize = 18;                                  
-    var legendSpacing = 4;                                    
-    var legend = svgLegend.selectAll('.legend')                     
-      .data(xDataInverted)                                   
-      .enter()                                                
-      .append('g')                                            
-      .attr('class', 'legend')                                
-      .attr('transform', function(d, i) {                     
-        var height = legendRectSize + legendSpacing;          
-        var offset =  height * xDataInverted.length / 2;     
-        var horz = legendRectSize + 10;                       
-        var vert = i * height + 20;                       
-        return 'translate(' + horz + ',' + vert + ')';        
-      });                                                     
-    legend.append('rect')                                     
-      .attr('width', legendRectSize)                          
-      .attr('height', legendRectSize)                         
-      .style("fill", function(d, i) {return color.slice().reverse()[i];});                                
-    legend.append('text')                                     
-      .attr('x', legendRectSize + legendSpacing)              
-      .attr('y', legendRectSize - legendSpacing)              
-      .text(function(d) { return d; });                       
+    var xDataInverted =  ["ING", "BBVA", "Santander", "CaixaBank", "Bankia", "Resto"]
+    var legendRectSize = 18;
+    var legendSpacing = 4;
+    var legend = svgLegend.selectAll('.legend')
+      .data(xDataInverted)
+      .enter()
+      .append('g')
+      .attr('class', 'legend')
+      .attr('transform', function(d, i) {
+        var height = legendRectSize + legendSpacing;
+        var offset =  height * xDataInverted.length / 2;
+        var horz = legendRectSize + 10;
+        var vert = i * height + 75;
+        return 'translate(' + horz + ',' + vert + ')';
+      });
+    legend.append('rect')
+      .attr('width', legendRectSize)
+      .attr('height', legendRectSize)
+      .style("fill", function(d, i) {return color.slice().reverse()[i];});
+    legend.append('text')
+      .attr('x', legendRectSize + legendSpacing)
+      .attr('y', legendRectSize - legendSpacing)
+      .text(function(d) { return d; });
 
 
 //FUNCTIONS
