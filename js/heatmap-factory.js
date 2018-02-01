@@ -50,51 +50,51 @@
       }
 
 
-var total = new CalHeatMap();
-        total.init({
-        itemSelector: "#total_total",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: json_total,
-        domain: "month",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat: function(date) {
-          return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
-        },
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string =  "Semana " + weekOfYear(date)
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "No hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 12,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: empty_color
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
+// var total = new CalHeatMap();
+//         total.init({
+//         itemSelector: "#total_total",
+//         itemName: ["inversión", "inversión"],
+//         start: new Date(2017, 0, 1),
+//         data: json_total,
+//         domain: "month",
+//         subDomain: "week",
+//         domainMargin:0,
+//         domainGutter: 0,
+//         cellSize: 14,
+//         cellRadius: 1,
+//         cellPadding: 1,
+//         domainLabelFormat: function(date) {
+//           return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
+//         },
+//         subDomainDateFormat: function(date,value) {
+//           weekOfYear = d3.time.format("%W")
+//           string =  "Semana " + weekOfYear(date)
+//           return string; // Use the moment library to format the Date
+//         },
+//         //subDomainTextFormat: "%W",
+//         subDomainTitleFormat: {
+//           empty: "No hay inversión para la fecha: {date}",
+//           filled: "Hay {count} % de {name} para la  {date}"
+//         },
+//         range: 12,
+//         label: {
+//           position: "top",
+//           height: 15
+//         },
+//         displayLegend: false,
+//         legend: legend_ranges,
+//         legendColors: {
+//             min: light_color,
+//             max: strong_color,
+//             empty: empty_color
+//             // Will use the CSS for the missing keys
+//         },
+//         legendTitleFormat: {
+//         lower: "Menos de {min} € de {name}",
+//         inner: "Entre {down} € y {up} € de {name}",
+//         upper: "Más de {max} € de {name}"
+//       },
+//       });
 
       var data_json_ing = {
         "1485734400":0.67808981670842,
@@ -220,7 +220,9 @@ var total = new CalHeatMap();
         cellSize: 14,
         cellRadius: 1,
         cellPadding: 1,
-        domainLabelFormat: "",
+        domainLabelFormat: function(date) {
+                   return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
+                 },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
