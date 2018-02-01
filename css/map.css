@@ -273,6 +273,12 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 	pointer-events: none;
 }
 
+path {
+  stroke: rgb(74, 74, 74);
+  stroke-width: 2;
+  fill: none;
+}
+
 .axis path,
 .axis line {
   fill: none;

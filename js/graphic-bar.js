@@ -109,16 +109,15 @@ var dataLine= [
 ]
 var stackColumnWidth = 12
 var xData = ["Resto","Bankia","CaixaBank","Santander","BBVA","ING"];
-var clientWidth = document.getElementById('chart').clientWidth
+var clientWidth = document.getElementById('stackedchart').clientWidth
 var margin = {top: 25, right: 50, bottom: 35, left: 0},
-width = clientWidth - margin.top - margin.bottom,
+width = clientWidth - margin.top - margin.bottom;
 height = 300 - margin.top - margin.bottom;
 var x = d3.scale.ordinal().rangeRoundBands([0,clientWidth],-1.4);
 var y = d3.scale.linear().rangeRound([height, 0]);
-    var y1 = d3.scale.linear().range([height, 0]).domain([0,100000000]);//marks can have min 0 and max 100
-    var color = ["#a8a8a8", "#B9D12E", "#B7D7E9","#FE0000", "#3473BA", "#FE7A22"]
+var color = ["#a8a8a8", "#B9D12E", "#B7D7E9","#FE0000", "#3473BA", "#FE7A22"]
     //obligo a la leyenda a aparecer en la 3 semana de cada mes
-    var months_week_thicks = [1,6,10,15,20,25,29,33,37,41,45,49];
+var months_week_thicks = [1,6,10,15,20,25,29,33,37,41,45,49];
     var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
@@ -132,18 +131,18 @@ var y = d3.scale.linear().rangeRound([height, 0]);
       return string; 
     });
 
-    var svg = d3.select("#chart").append("svg")
+    var svg = d3.select("#stackedchart").append("svg")
     .attr("width",clientWidth)
     .attr("height", height)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    //line function for averageLine
-    var averageline = d3.svg.line()
-    .x(function(d,i) { 
-      return x(d.week) + x.rangeBand()/2; })
-    .y(function(d) { return y1(d.total); });
+    // //line function for averageLine
+    // var averageline = d3.svg.line()
+    // .x(function(d) { 
+    //   return x(d.week) + x.rangeBand()/2; })
+    // .y(function(d) { return y1(d.total); });
 
     var div = d3.select("body").append("div")
     .attr("class", "tooltip graph-tooltip")
@@ -214,8 +213,7 @@ var y = d3.scale.linear().rangeRound([height, 0]);
 
 
 
-svg.append("path")        // Add the valueline path.
-.attr("d", averageline(dataLine));
+//svg.append("path").attr("d", averageline(dataLine));// Add the valueline path.
 
 
 
