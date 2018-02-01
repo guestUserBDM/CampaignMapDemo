@@ -90,6 +90,8 @@ var data = [
     .attr("class", "tooltip graph-tooltip")
     .style("opacity", 0);
 
+    var svgLegend = d3.select("#legend-div").append("svg")
+
     var dataIntermediate = xData.map(function (c) {
         return data.map(function (d) {
             return {x: d.week, y: d[c], company: c , value: d[c] };
@@ -150,6 +152,32 @@ var data = [
             .attr("class", "axis")
             .attr("transform", "translate(0," + (height/1.85) + ")")
             .call(xAxis);
+
+
+    var xDataInverted =  ["ING", "BBVA", "Santander", "CaixaBank", "Bankia", "Resto"] 
+    var legendRectSize = 18;                                  
+    var legendSpacing = 4;                                    
+    var legend = svgLegend.selectAll('.legend')                     
+      .data(xDataInverted)                                   
+      .enter()                                                
+      .append('g')                                            
+      .attr('class', 'legend')                                
+      .attr('transform', function(d, i) {                     
+        var height = legendRectSize + legendSpacing;          
+        var offset =  height * xDataInverted.length / 2;     
+        var horz = legendRectSize + 10;                       
+        var vert = i * height + 20;                       
+        return 'translate(' + horz + ',' + vert + ')';        
+      });                                                     
+    legend.append('rect')                                     
+      .attr('width', legendRectSize)                          
+      .attr('height', legendRectSize)                         
+      .style("fill", function(d, i) {return color.slice().reverse()[i];});                                
+    legend.append('text')                                     
+      .attr('x', legendRectSize + legendSpacing)              
+      .attr('y', legendRectSize - legendSpacing)              
+      .text(function(d) { return d; });                       
+
 
 //FUNCTIONS
 
