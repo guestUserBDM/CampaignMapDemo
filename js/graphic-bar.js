@@ -70,6 +70,8 @@ var data = [
     var xAxis = d3.svg.axis()
             .scale(x)
             .orient("bottom")
+            .outerTickSize(0)
+            .innerTickSize(0)
             .tickFormat(function(d,i) { 
               string="";
               if (isInArray(i,months_week_thicks)) {
