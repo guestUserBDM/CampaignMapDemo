@@ -1,7 +1,8 @@
  var legend_ranges =  [2, 4, 6, 8,10]
       var legend_ranges_detail = []
-      var strong_color = "rgb(33, 37, 41)"
-      var light_color = "rgb(218, 226, 137)"
+      var strong_color = "rgb(80,80,80)"
+      var light_color = "rgb(200,200,200)"
+      var empty_color = "rgb(240,240,240)"
 
       var json_total = {
         "1485734400":0.67808981670842,
@@ -85,7 +86,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -175,7 +176,7 @@ var total = new CalHeatMap();
       //   legendColors: {
       //       min: light_color,
       //       max: strong_color,
-      //       empty: "white"
+      //       empty: empty_color
       //       // Will use the CSS for the missing keys
       //   },
       //   legendTitleFormat: {
@@ -242,7 +243,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -302,7 +303,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -356,7 +357,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -412,7 +413,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -471,7 +472,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -548,7 +549,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -621,7 +622,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -681,7 +682,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -744,7 +745,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -806,7 +807,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -873,7 +874,7 @@ var total = new CalHeatMap();
       //   legendColors: {
       //       min: light_color,
       //       max: strong_color,
-      //       empty: "white"
+      //       empty: empty_color
       //       // Will use the CSS for the missing keys
       //   },
       //   legendTitleFormat: {
@@ -943,7 +944,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -1007,7 +1008,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -1065,7 +1066,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -1131,7 +1132,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
@@ -1184,7 +1185,7 @@ var total = new CalHeatMap();
         legendColors: {
             min: light_color,
             max: strong_color,
-            empty: "white"
+            empty: empty_color
             // Will use the CSS for the missing keys
         },
         legendTitleFormat: {
