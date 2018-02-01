@@ -76,7 +76,7 @@
 //           empty: "No hay inversión para la fecha: {date}",
 //           filled: "Hay {count} % de {name} para la  {date}"
 //         },
-//         range: 12,
+//         range: 1,
 //         label: {
 //           position: "top",
 //           height: 15
@@ -166,7 +166,7 @@
       //     empty: "NO hay inversión para la fecha: {date}",
       //     filled: "Hay {count} % de {name} para la  {date}"
       //   },
-      //   range: 12,
+      //   range: 1,
       //   label: {
       //     position: "top",
       //     height: 15
@@ -220,9 +220,10 @@
         cellSize: 14,
         cellRadius: 1,
         cellPadding: 1,
-        subDomainLabelFormat: function(date) {
-                   return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
-                 },
+        domainLabelFormat: "",
+        // domainLabelFormat: function(date) {
+        //            return moment(date).locale('es').format("YYYY"); // Use the moment library to format the Date
+        //          },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
@@ -292,7 +293,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -346,7 +347,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -402,7 +403,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -461,7 +462,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -538,7 +539,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -611,7 +612,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -671,7 +672,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -734,7 +735,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -861,7 +862,7 @@
       //     empty: "NO hay inversión para la fecha: {date}",
       //     filled: "Hay {count} % de {name} para la  {date}"
       //   },
-      //   range: 12,
+      //   range: 1,
       //   label: {
       //     position: "top",
       //     height: 15
@@ -989,7 +990,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -1047,7 +1048,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -1112,7 +1113,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -1166,7 +1167,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
