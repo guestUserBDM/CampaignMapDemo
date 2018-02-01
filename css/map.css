@@ -332,6 +332,19 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
   color: #999;
   font-size: 11px;
 }
-.no-border-r {border-right: none !important;}
-.no-border-l {border-left: none;}
-.company-rect {margin-top: .5px;}
+.no-border-r {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-right: none !important;
+}
+.no-border-l {
+  border-left: none !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+.border5{
+  border-radius:5px;
+}
+.border-bot{
+  border-bottom: 1px solid rgba(0,0,0,.125)
+}
