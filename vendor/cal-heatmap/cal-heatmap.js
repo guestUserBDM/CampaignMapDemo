@@ -31,7 +31,7 @@ var CalHeatMap = function() {
 		// ================================================
 
 		// Number of domain to display on the graph
-		range: 12,
+		range: 1,
 
 		// Size of each cell, in pixel
 		cellSize: 10,
@@ -597,6 +597,7 @@ var CalHeatMap = function() {
 	this._init = function() {
 
 		self.getDomain(self.options.start).map(function(d) { return d.getTime(); }).map(function(d) {
+
 			self._domains.set(d, self.getSubDomain(d).map(function(d) { return {t: self._domainType[self.options.subDomain].extractUnit(d), v: null}; }));
 		});
 
@@ -845,7 +846,6 @@ var CalHeatMap = function() {
 			.enter()
 			.append("g")
 		;
-
 		rect
 			.append("rect")
 			.attr("class", function(d) {
@@ -853,7 +853,8 @@ var CalHeatMap = function() {
 			})
 			.attr("width", options.cellSize)
 			.attr("height", options.cellSize)
-			.attr("x", function(d) { return self.positionSubDomainX(d.t); })
+			.attr("x", function(d) { 
+				return self.positionSubDomainX(d.t); })
 			.attr("y", function(d) { return self.positionSubDomainY(d.t); })
 			.on("click", function(d) {
 				if (options.onClick !== null) {

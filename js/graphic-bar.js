@@ -53,20 +53,20 @@ var data = [
         {week: 'Semana 52',month:"diciembre",Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.45},
     ];
 
-    var stackColumnWidth = 10
+    var stackColumnWidth = 12
     var xData = ["Resto","Bankia","CaixaBank","Santander","BBVA","ING"];
     var clientWidth = document.getElementById('chart').clientWidth
     var margin = {top: 25, right: 50, bottom: 35, left: 0},
             width = clientWidth - margin.top - margin.bottom,
             height = 300 - margin.top - margin.bottom;
     var x = d3.scale.ordinal()
-        .rangeRoundBands([0,width],-.5);
+        .rangeRoundBands([0,clientWidth],-1.4);
 
     var y = d3.scale.linear()
             .rangeRound([height, 0]);
     var color = ["#a8a8a8", "#B9D12E", "#B7D7E9","#FE0000", "#3473BA", "#FE7A22"]
     //obligo a la leyenda a aparecer en la 3 semana de cada mes
-    var months_week_thicks = [3,8,12,17,22,27,31,35,39,43,47,51];
+    var months_week_thicks = [1,6,10,15,20,25,29,33,37,41,45,49];
     var xAxis = d3.svg.axis()
             .scale(x)
             .orient("bottom")
@@ -81,7 +81,7 @@ var data = [
             });
 
     var svg = d3.select("#chart").append("svg")
-            .attr("width","100%")
+            .attr("width",clientWidth)
             .attr("height", height)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -136,7 +136,7 @@ var data = [
                div.transition()
                  .duration(200)
                  .style("opacity", .9);
-               div.html(tooltipString(d.company,d.y))
+               div.html(tooltipString(d.company,d.x))
                  .style("left", (d3.event.pageX) + "px")
                  .style("top", (d3.event.pageY - 28) + "px");
              })

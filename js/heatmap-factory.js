@@ -199,7 +199,7 @@
 "1489968000":2.04957527206337,
 "1490572800":2.29714701728068,
 "1491177600":2.45666280423933,
-"1493596800":0.0103647728042109,
+"1493596800":1.0103647728042109,
 "1494201600":0.00757032223712614,
 "1494806400":0.00412061848937417,
 "1495411200":0.00382429994726338,
@@ -213,29 +213,27 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_volar,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
         cellSize: 14,
         cellRadius: 1,
         cellPadding: 1,
-        domainLabelFormat: function(date) {
+        subDomainLabelFormat: function(date) {
                    return moment(date).locale('es').format("MMMM"); // Use the moment library to format the Date
                  },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-
-
           return string; // Use the moment library to format the Date
         },
         //subDomainTextFormat: "%W",
         subDomainTitleFormat: {
           empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
+          filled: "Hay {count} % de {name} para la {date}"
         },
-        range: 12,
+        range: 5,
         label: {
           position: "top",
           height: 15
@@ -252,21 +250,20 @@
         lower: "Menos de {min} € de {name}",
         inner: "Entre {down} € y {up} € de {name}",
         upper: "Más de {max} € de {name}"
-      },
+        }
       });
 
        var data_json_volar_tv = {
         "1485734400":0.67808981670842,
-"1486339200":5.0936551426622,
-"1486944000":3.75313707020035,
-"1487548800":2.65149171809813,
-"1488153600":2.21617870672273,
-"1488758400":2.22296186594289,
-"1489363200":2.28208086696835,
-"1489968000":1.33628236637104,
-"1490572800":1.37426805800393,
-"1491177600":1.4399139655679,
-
+        "1486339200":5.0936551426622,
+        "1486944000":3.75313707020035,
+        "1487548800":2.65149171809813,
+        "1488153600":2.21617870672273,
+        "1488758400":2.22296186594289,
+        "1489363200":2.28208086696835,
+        "1489968000":1.33628236637104,
+        "1490572800":1.37426805800393,
+        "1491177600":1.4399139655679,
       }
 
       var cal_volar_tv = new CalHeatMap();
@@ -275,7 +272,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_volar_tv,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         //subDomainTextFormat: "%W",
         domainMargin:0,
@@ -330,7 +327,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_volar_radio,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -385,7 +382,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_volar_prensa,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -444,7 +441,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_volar_online,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -521,7 +518,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_limon,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -594,7 +591,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_limon_tv,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -654,7 +651,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_limon_radio,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -717,7 +714,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_limon_prensa,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -759,18 +756,18 @@
 
        var data_json_limon_online = {
         "1496016000":0.113139583623121,
-"1496620800":0.226277177519538,
-"1497225600":0.270967961746797,
-"1497830400":0.200243955085311,
-"1498435200":0.0155877601826708,
-"1499040000":0.117973413620277,
-"1503273600":0.000027462,
-"1503878400":0.252073818433853,
-"1504483200":0.0297458263596653,
-"1505088000":0.00167146087396976,
-"1505692800":0.0688512366955499,
-"1506297600":0.0545478300269981,
-"1506902400":0.00020212307107354,
+        "1496620800":0.226277177519538,
+        "1497225600":0.270967961746797,
+        "1497830400":0.200243955085311,
+        "1498435200":0.0155877601826708,
+        "1499040000":0.117973413620277,
+        "1503273600":0.000027462,
+        "1503878400":0.252073818433853,
+        "1504483200":0.0297458263596653,
+        "1505088000":0.00167146087396976,
+        "1505692800":0.0688512366955499,
+        "1506297600":0.0545478300269981,
+        "1506902400":0.00020212307107354,
       }
 
       var cal_limon_online = new CalHeatMap();
@@ -779,7 +776,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_limon_online,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -790,8 +787,6 @@
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-
-
           return string; // Use the moment library to format the Date
         },
         //subDomainTextFormat: "%W",
@@ -799,7 +794,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -885,9 +880,6 @@
       //   upper: "Más de {max} € de {name}"
       // },
       // });
-    function getRandomFloat(min, max) {
-        return Math.random() * (max - min) + min;
-      }
 
       /*BBVA*/
 
@@ -908,15 +900,14 @@
 "1512345600":0.323877764337938,
 "1512950400":1.39155757717175,
 "1513555200":1.270059136589,
-"1514160000":0.0328802337931772,
       }
       var cal_bco = new CalHeatMap();
         cal_bco.init({
         itemSelector: "#campaign_bco",
         itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
+        start: new Date(2017, 0, 01),
         data: data_json_bco,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -927,8 +918,6 @@
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-
-
           return string; // Use the moment library to format the Date
         },
         //subDomainTextFormat: "%W",
@@ -936,7 +925,7 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
         },
-        range: 12,
+        range: 1,
         label: {
           position: "top",
           height: 15
@@ -978,9 +967,9 @@
         cal_bco_tv.init({
         itemSelector: "#campaign_bco_tv",
         itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
+        start: new Date(2017, 0, 01),
         data: data_json_bco_tv,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -1038,7 +1027,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_bco_radio,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -1094,7 +1083,6 @@
 "1512345600":0.0119278086464682,
 "1512950400":0.00226105307338586,
 "1513555200":0.0172247023130535,
-"1514160000":0.0328802337931772,
 
       }
 
@@ -1104,7 +1092,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_bco_prensa,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -1157,7 +1145,7 @@
         itemName: ["inversión", "inversión"],
         start: new Date(2017, 0, 1),
         data: data_json_bco_online,
-        domain: "month",
+        domain: "year",
         subDomain: "week",
         domainMargin:0,
         domainGutter: 0,
@@ -1165,6 +1153,7 @@
         cellRadius: 1,
         cellPadding: 1,
         domainLabelFormat:"",
+        
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
@@ -1195,6 +1184,9 @@
         inner: "Entre {down} € y {up} € de {name}",
         upper: "Más de {max} € de {name}"
       },
+      onComplete: function() {
+        document.getElementsByClassName('graph-subdomain-group')[0].setAttribute('x',"-14")
+      }
       });
 
       /*/CAMPAÑA BCONOMY */
