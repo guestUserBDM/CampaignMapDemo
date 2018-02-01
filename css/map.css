@@ -362,3 +362,6 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
   margin-left: 0.3rem;
 
 }
+.pl-6{
+  padding-left: 4rem;
+}
