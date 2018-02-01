@@ -1,26 +1,66 @@
 var data = [
-        {month: 'Enero',Resto:7.84,Bankia:27.41,CaixaBank:15.20,Santander:13.25,BBVA:4.62,ING:31.68},
-        {month: 'Febrero',Resto:37.09,Bankia:7.84,CaixaBank:14.90,Santander:10.18,BBVA:3.37,ING:26.63},
-        {month: 'Marzo',Resto:25.42,Bankia:6.81,CaixaBank:11.10,Santander:15.76,BBVA:22.61,ING:18.30},
-        {month: 'Abril',Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.33},
-        {month: 'Mayo',Resto:30.41,Bankia:3.48,CaixaBank:15.69,Santander:12.95,BBVA:23.41,ING:14.07},
-        {month: 'Junio',Resto:28.16,Bankia:10.10,CaixaBank:11.56,Santander:6.38,BBVA:28.90,ING:14.90},
-        {month: 'Julio',Resto:21.27,Bankia:7.17,CaixaBank:9.98,Santander:15.93,BBVA:27.40,ING:18.25},
-        {month: 'Agosto',Resto:7.15,Bankia:0.89,CaixaBank:5.82,Santander:6.37,BBVA:34.56,ING:45.21},
-        {month: 'Septiembre',Resto:18.71,Bankia:11.19,CaixaBank:19.66,Santander:8.79,BBVA:17.55,ING:24.11},
-        {month: 'Octubre',Resto:27.85,Bankia:2.90,CaixaBank:11.22,Santander:24.02,BBVA:17.34,ING:16.66},
-        {month: 'Noviembre',Resto:15.95,Bankia:5.82,CaixaBank:14.24,Santander:13.74,BBVA:24.29,ING:25.97},
-        {month: 'Diciembre',Resto:8.55,Bankia:4.03,CaixaBank:21.56,Santander:13.49,BBVA:16.81,ING:35.56}
+        {week: 'Semana 1',Resto:7.84,Bankia:27.41,CaixaBank:15.20,Santander:13.25,BBVA:4.62,ING:31.68},
+        {week: 'Semana 2',Resto:37.09,Bankia:7.84,CaixaBank:14.90,Santander:10.18,BBVA:3.37,ING:26.63},
+        {week: 'Semana 3',Resto:25.42,Bankia:6.81,CaixaBank:11.10,Santander:15.76,BBVA:22.61,ING:18.30},
+        {week: 'Semana 4',Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.33},
+        {week: 'Semana 5',Resto:30.41,Bankia:3.48,CaixaBank:15.69,Santander:12.95,BBVA:23.41,ING:14.07},
+        {week: 'Semana 6' ,Resto:28.16,Bankia:10.10,CaixaBank:11.56,Santander:6.38,BBVA:28.90,ING:14.90},
+        {week: 'Semana 7',Resto:21.27,Bankia:7.17,CaixaBank:9.98,Santander:15.93,BBVA:27.40,ING:18.25},
+        {week: 'Semana 8',Resto:7.15,Bankia:0.89,CaixaBank:5.82,Santander:6.37,BBVA:34.56,ING:45.21},
+        {week: 'Semana 9',Resto:18.71,Bankia:11.19,CaixaBank:19.66,Santander:8.79,BBVA:17.55,ING:24.11},
+        {week: 'Semana 10',Resto:27.85,Bankia:2.90,CaixaBank:11.22,Santander:24.02,BBVA:17.34,ING:16.66},
+        {week: 'Semana 11',Resto:15.95,Bankia:5.82,CaixaBank:14.24,Santander:13.74,BBVA:24.29,ING:25.97},
+        {week: 'Semana 12',Resto:8.55,Bankia:4.03,CaixaBank:21.56,Santander:13.49,BBVA:16.81,ING:35.56},
+        {week: 'Semana 13',Resto:7.84,Bankia:27.41,CaixaBank:15.20,Santander:13.25,BBVA:4.62,ING:31.68},
+        {week: 'Semana 14',Resto:37.09,Bankia:7.84,CaixaBank:14.90,Santander:10.18,BBVA:3.37,ING:26.63},
+        {week: 'Semana 15',Resto:25.42,Bankia:6.81,CaixaBank:11.10,Santander:15.76,BBVA:22.61,ING:18.30},
+        {week: 'Semana 16',Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.33},
+        {week: 'Semana 17',Resto:30.41,Bankia:3.48,CaixaBank:15.69,Santander:12.95,BBVA:23.41,ING:14.07},
+        {week: 'Semana 18',Resto:28.16,Bankia:10.10,CaixaBank:11.56,Santander:6.38,BBVA:28.90,ING:14.90},
+        {week: 'Semana 19',Resto:21.27,Bankia:7.17,CaixaBank:9.98,Santander:15.93,BBVA:27.40,ING:18.25},
+        {week: 'Semana 20',Resto:7.15,Bankia:0.89,CaixaBank:5.82,Santander:6.37,BBVA:34.56,ING:45.21},
+        {week: 'Semana 21',Resto:18.71,Bankia:11.19,CaixaBank:19.66,Santander:8.79,BBVA:17.55,ING:24.11},
+        {week: 'Semana 22',Resto:27.85,Bankia:2.90,CaixaBank:11.22,Santander:24.02,BBVA:17.34,ING:16.66},
+        {week: 'Semana 23',Resto:15.95,Bankia:5.82,CaixaBank:14.24,Santander:13.74,BBVA:24.29,ING:25.97},
+        {week: 'Semana 24',Resto:8.55,Bankia:4.03,CaixaBank:21.56,Santander:13.49,BBVA:16.81,ING:35.56},
+        {week: 'Semana 25',Resto:7.84,Bankia:27.41,CaixaBank:15.20,Santander:13.25,BBVA:4.62,ING:31.68},
+        {week: 'Semana 26',Resto:37.09,Bankia:7.84,CaixaBank:14.90,Santander:10.18,BBVA:3.37,ING:26.63},
+        {week: 'Semana 27',Resto:25.42,Bankia:6.81,CaixaBank:11.10,Santander:15.76,BBVA:22.61,ING:18.30},
+        {week: 'Semana 28',Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.33},
+        {week: 'Semana 29',Resto:30.41,Bankia:3.48,CaixaBank:15.69,Santander:12.95,BBVA:23.41,ING:14.07},
+        {week: 'Semana 30',Resto:28.16,Bankia:10.10,CaixaBank:11.56,Santander:6.38,BBVA:28.90,ING:14.90},
+        {week: 'Semana 31',Resto:21.27,Bankia:7.17,CaixaBank:9.98,Santander:15.93,BBVA:27.40,ING:18.25},
+        {week: 'Semana 32',Resto:7.15,Bankia:0.89,CaixaBank:5.82,Santander:6.37,BBVA:34.56,ING:45.21},
+        {week: 'Semana 33',Resto:18.71,Bankia:11.19,CaixaBank:19.66,Santander:8.79,BBVA:17.55,ING:24.11},
+        {week: 'Semana 34',Resto:27.85,Bankia:2.90,CaixaBank:11.22,Santander:24.02,BBVA:17.34,ING:16.66},
+        {week: 'Semana 35',Resto:15.95,Bankia:5.82,CaixaBank:14.24,Santander:13.74,BBVA:24.29,ING:25.97},
+        {week: 'Semana 36',Resto:8.55,Bankia:4.03,CaixaBank:21.56,Santander:13.49,BBVA:16.81,ING:35.56},
+        {week: 'Semana 37',Resto:7.84,Bankia:27.41,CaixaBank:15.20,Santander:13.25,BBVA:4.62,ING:31.68},
+        {week: 'Semana 38',Resto:37.09,Bankia:7.84,CaixaBank:14.90,Santander:10.18,BBVA:3.37,ING:26.63},
+        {week: 'Semana 39',Resto:25.42,Bankia:6.81,CaixaBank:11.10,Santander:15.76,BBVA:22.61,ING:18.30},
+        {week: 'Semana 40',Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.33},
+        {week: 'Semana 41',Resto:30.41,Bankia:3.48,CaixaBank:15.69,Santander:12.95,BBVA:23.41,ING:14.07},
+        {week: 'Semana 42',Resto:28.16,Bankia:10.10,CaixaBank:11.56,Santander:6.38,BBVA:28.90,ING:14.90},
+        {week: 'Semana 43',Resto:21.27,Bankia:7.17,CaixaBank:9.98,Santander:15.93,BBVA:27.40,ING:18.25},
+        {week: 'Semana 44',Resto:7.15,Bankia:0.89,CaixaBank:5.82,Santander:6.37,BBVA:34.56,ING:45.21},
+        {week: 'Semana 45',Resto:18.71,Bankia:11.19,CaixaBank:19.66,Santander:8.79,BBVA:17.55,ING:24.11},
+        {week: 'Semana 46',Resto:27.85,Bankia:2.90,CaixaBank:11.22,Santander:24.02,BBVA:17.34,ING:16.66},
+        {week: 'Semana 47',Resto:15.95,Bankia:5.82,CaixaBank:14.24,Santander:13.74,BBVA:24.29,ING:25.97},
+        {week: 'Semana 48',Resto:8.55,Bankia:4.03,CaixaBank:21.56,Santander:13.49,BBVA:16.81,ING:35.56},
+        {week: 'Semana 49',Resto:7.84,Bankia:27.41,CaixaBank:15.20,Santander:13.25,BBVA:4.62,ING:31.68},
+        {week: 'Semana 50',Resto:37.09,Bankia:7.84,CaixaBank:14.90,Santander:10.18,BBVA:3.37,ING:26.63},
+        {week: 'Semana 51',Resto:25.42,Bankia:6.81,CaixaBank:11.10,Santander:15.76,BBVA:22.61,ING:18.30},
+        {week: 'Semana 52',Resto:17.12,Bankia:2.49,CaixaBank:17.21,Santander:32.01,BBVA:18.84,ING:12.45},
     ];
 
-    var stackColumnWidth = 30
+    var stackColumnWidth = 10
     var xData = ["Resto","Bankia","CaixaBank","Santander","BBVA","ING"];
     var clientWidth = document.getElementById('chart').clientWidth
     var margin = {top: 25, right: 50, bottom: 35, left: 0},
             width = clientWidth - margin.top - margin.bottom,
             height = 300 - margin.top - margin.bottom;
     var x = d3.scale.ordinal()
-        .rangeRoundBands([0,width], .3);
+        .rangeRoundBands([0,width],-.5);
 
     var y = d3.scale.linear()
             .rangeRound([height, 0]);
@@ -43,7 +83,7 @@ var data = [
 
     var dataIntermediate = xData.map(function (c) {
         return data.map(function (d) {
-            return {x: d.month, y: d[c], company: c , value: d[c] };
+            return {x: d.week, y: d[c], company: c , value: d[c] };
         });
     });
 
@@ -71,14 +111,15 @@ var data = [
                 return d;
             })
             .enter().append("rect")
+            .attr("class", "company-rect")
             .attr("x", function (d) {
                 return x(d.x);
             })
             .attr("y", function (d) {
-                return (y(d.y + d.y0))/1.85;
+                return (y(d.y + d.y0)/1.85);
             })
             .attr("height", function (d) {
-              stackHeight = (y(d.y0) - y(d.y + d.y0))/2
+              stackHeight = (y(d.y0) - y(d.y + d.y0) - 1)/1.85
                 return stackHeight;
             })
             .attr("width", stackColumnWidth)
