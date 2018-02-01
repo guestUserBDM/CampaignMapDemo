@@ -348,3 +348,17 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 .border-bot{
   border-bottom: 1px solid rgba(0,0,0,.125)
 }
+.customDatepickerWidth{
+  max-width: 12rem;
+}
+.customDatepicker{
+  height: 2.2rem;
+}
+.datepickerIcon{
+  font-size: 2rem;
+}
+
+.calendarDiv{
+  margin-left: 0.3rem;
+
+}

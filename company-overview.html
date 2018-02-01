@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/map.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css">
     <!-- open-iconic-bootstrap (icon set for bootstrap) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
   <title>Company Overview</title>
@@ -68,13 +68,20 @@
             </div>
           </div>
         </div> --> <!-- buttons filters -->
+
           <!-- DATA SPACE -->
           <div class="container just-padding">
           <!-- FILTER AND TITLE -->
 
               <div class="row mt-4 pl-3">
-      <div class="col-10">
+      <div class="col-8">
         <h2>Mapa de campañas</h2>
+      </div>
+      <div class="col-2">
+        <div class="input-group date customDatepickerWidth">
+            <input type="text" class="form-control customDatepicker" id="datepicker">
+
+        </div>
       </div>
 
       <div class="col-1">
@@ -217,7 +224,7 @@
                   <div class="row mb-3 no-gutters shadowContainer border5">
                     <div class="col-2 company_name whiteBack border5 no-border-r border-bot"></div>
                     <div class="col-10 full_investment list-group-item border5 no-border-l" >
-                      <h3>Total Inversión 2017</h3>
+                      <h3>Share of voice - Entidades</h3>
                       <div id="chart"></div>
                     </div>
                   </div>
@@ -238,7 +245,7 @@
                         <div class="row level-step no-gutters pt-2">
                           <div class="col-2 company_name whiteBack"></div>
                           <div class="col-9 full_investment list-group-item pt-">
-                            <h3>TOP 5 - Campañas</h3>
+                            <h3>Top Campañas</h3>
                           </div>
                         </div>
                         <!-- /TITLE ROW - FIRST LEVEL -->
@@ -264,7 +271,7 @@
                           <div class="row level-step no-gutters">
                             <div class="col-2 campaign_name">
                               <a href="#item-1-1" class="list-group-item list-group-item-action whiteBack pl-1 pr-1" data-toggle="collapse">
-                                <img class="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">¿Eres... VOLAR?
+                                <img class="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">Volar
                               </a>
                             </div>
                             <div class="col-9 full_investment list-group-item">
@@ -325,7 +332,7 @@
                           <div class="row level-step no-gutters">
                             <div class="col-2 campaign_name">
                               <a href="#item-1-2" class="list-group-item list-group-item-action whiteBack pl-1 pr-1" data-toggle="collapse">
-                                <img class="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">¿Por qué... limón?
+                                <img class="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">Hipoteca Limón
                               </a>
                             </div>
                             <div class="col-9 full_investment list-group-item">
@@ -485,11 +492,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
     <link rel="stylesheet" href="vendor/cal-heatmap/cal-heatmap.css" />
     <script type="text/javascript" src="vendor/cal-heatmap/cal-heatmap.js"></script>
     <script type="text/javascript" src="js/graphic-bar.js"></script>
     <script type="text/javascript" src="js/heatmap-factory.js"></script>
     <script type="text/javascript">
+
+    $('#datepicker').datepicker();
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+
+    var yyyy = today.getFullYear();
+    if(dd<10){
+        dd='0'+dd;
+    }
+    if(mm<10){
+        mm='0'+mm;
+    }
+    var today = dd+'/'+mm+'/'+yyyy;
+    $('#datepicker').value = today;
+
+    $('#datepicker').attr("placeholder", today)
 
     function showOrHide(element){
       if ($(element).css('display') == 'block') {
