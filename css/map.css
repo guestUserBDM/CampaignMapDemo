@@ -365,3 +365,9 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 .pl-6{
   padding-left: 4rem;
 }
+.pr-36{
+  padding-right: 36rem;
+}
+.rigthCaret{
+  font-size: 0.5rem;
+}
