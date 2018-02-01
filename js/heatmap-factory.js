@@ -1138,7 +1138,6 @@
 "1508716800":1.20589497247246E-07,
 
       }
-
       var cal_bco_online = new CalHeatMap();
         cal_bco_online.init({
         itemSelector: "#campaign_bco_online",
@@ -1153,7 +1152,7 @@
         cellRadius: 1,
         cellPadding: 1,
         domainLabelFormat:"",
-        
+
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
@@ -1185,7 +1184,10 @@
         upper: "Más de {max} € de {name}"
       },
       onComplete: function() {
-        document.getElementsByClassName('graph-subdomain-group')[0].setAttribute('x',"-14")
+        var subDomain = document.getElementsByClassName('graph-subdomain-group')
+        for (var i = 0; i < subDomain.length; i++) {
+          subDomain[i].setAttribute('x',"-14")
+        }
       }
       });
 
