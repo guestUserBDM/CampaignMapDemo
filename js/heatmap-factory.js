@@ -1156,6 +1156,7 @@
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
+          
 
 
           return string; // Use the moment library to format the Date
