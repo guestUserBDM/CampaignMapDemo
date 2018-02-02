@@ -128,11 +128,11 @@ var div = d3.select("body").append("div")
           .attr("cx", function(d,i) { return x(i); })     
           .attr("cy", function(d,i) { return y(d); })
           .style("fill","rgba(240, 240, 240, 0)") 
-          .on("mouseover", function(d) {    
+          .on("mouseover", function(d,i) {    
               div.transition()    
                   .duration(200)    
                   .style("opacity", .9);    
-              div .html(d)  
+              div .html("<b>Semana " + (i+1) + ": </b>" + d + "€")  
                   .style("left", (d3.event.pageX) + "px")   
                   .style("top", (d3.event.pageY - 28) + "px");  
               })          
