@@ -148,7 +148,7 @@ var months_week_thicks = [1,6,10,15,20,25,29,33,37,41,45,49];
     .attr("class", "tooltip graph-tooltip")
     .style("opacity", 0);
 
-    var svgLegend = d3.select("#legend-div").append("svg").attr('height', height);
+    var svgLegend = d3.select("#legend-div").append("svg").attr('height', 380).attr("class", "map-legend");
 
     var dataIntermediate = xData.map(function (c) {
       return data.map(function (d) {

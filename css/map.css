@@ -381,3 +381,7 @@ path {
 .rigthCaret{
   font-size: 0.5rem;
 }
+.map-legend{
+  position: relative;
+  bottom: -156px;
+}
