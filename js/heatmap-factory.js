@@ -239,7 +239,7 @@
           position: "top",
           height: 15
         },
-        displayLegend: false,
+        displayLegend: false, //CARLOS PONER ESTO EN FALSE
         legend: legend_ranges,
         legendColors: {
             min: light_color,
@@ -1157,7 +1157,7 @@
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-          
+
 
 
           return string; // Use the moment library to format the Date
