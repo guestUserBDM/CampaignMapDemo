@@ -383,7 +383,7 @@ path {
 }
 .map-legend{
   position: relative;
-  bottom: -200px;
+  bottom: -123px;
 }
 rect.highlight{
   stroke: #2800ff !important;
