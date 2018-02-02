@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -243,8 +244,9 @@
                   <div class="row mb-3 no-gutters shadowContainer border5">
                     <div id="legend-div" class="col-2 company_name whiteBack border5 no-border-r border-bot"></div>
                     <div class="col-10 full_investment list-group-item border5 no-border-l" >
-                      <h3>Share of voice - Entidades</h3>
+                      <h2>Volumen total de inversión (el gráfico que falta)</h2>
                       <div id="linechart"></div>
+                      <h3>Share of voice - Entidades</h3>
                       <div id="stackedchart"></div>
                     </div>
                   </div>
@@ -757,11 +759,7 @@
     <script type="text/javascript" src="js/graphic-bar.js"></script>
     <script type="text/javascript" src="js/heatmap-factory.js"></script>
     <script type="text/javascript">
-
     $('#datepicker').datepicker();
-
-
-
     function showOrHide(element){
       if ($(element).css('display') == 'block') {
         $(element).css("display", "none")
@@ -769,14 +767,12 @@
         $(element).css("display", "block")
       }
     }
-
     $('#filter-map').popover({
       html : true,
       content: function() {
         return $('#popover_content_wrapper').html();
       }
     });
-
     $(document).ready(function(){
       $('[data-toggle="popover"]').popover();
     });
