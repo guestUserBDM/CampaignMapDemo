@@ -52,6 +52,13 @@ var dataLine= [
 {week: 'Semana 51',month:"diciembre",total:20672806.02},
 {week: 'Semana 52',month:"diciembre",total:14202458.56},
 ]
+
+
+// Define the div for the tooltip
+var div = d3.select("body").append("div") 
+    .attr("class", "tooltip")       
+    .style("opacity", 0);
+
     /* implementation heavily influenced by http://bl.ocks.org/1166403 */
     var clientWidth = document.getElementById('linechart').clientWidth
     // define dimensions of graph
@@ -71,7 +78,7 @@ var dataLine= [
 
     // create a line function that can convert data[] into x and y points
     var line = d3.svg.line()
-      // assign the X function to plot our line as we wish
+      // assig n the X function to plot our line as we wish
       .x(function(d,i) { 
         // verbose logging to show what's actually being done
         console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
@@ -91,9 +98,9 @@ var dataLine= [
             .attr("height", h + m[0] + m[2])
           .append("svg:g")
             .attr("transform", "translate(" + m[3] + "," + m[1] + ")");
-
       // create yAxis
       var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
+
       // // Add the x-axis.
       // graph.append("svg:g")
       //       .attr("class", "x axis")
@@ -109,6 +116,28 @@ var dataLine= [
       //       .attr("transform", "translate(0,0)")
       //       .call(yAxisLeft);
       
-        // Add the line by appending an svg:path element with the data line we created above
+      // Add the line by appending an svg:path element with the data line we created above
       // do this AFTER the axes above so that the line is above the tick-lines
-        graph.append("svg:path").attr("d", line(data));
+      graph.append("svg:path").attr("d", line(data));
+      // Add the scatterplot
+
+      graph.selectAll("dot")  
+          .data(data)     
+      .enter().append("circle")               
+          .attr("r", 5)
+          .attr("cx", function(d,i) { return x(i); })     
+          .attr("cy", function(d,i) { return y(d); })
+          .style("fill","rgba(240, 240, 240, 0)") 
+          .on("mouseover", function(d,i) {    
+              div.transition()    
+                  .duration(200)    
+                  .style("opacity", .9);    
+              div .html("<b>Semana " + (i+1) + ": </b>" + d.toLocaleString('es-ES') + "€")  
+                  .style("left", (d3.event.pageX) + "px")   
+                  .style("top", (d3.event.pageY - 28) + "px");  
+              })          
+          .on("mouseout", function(d) {   
+              div.transition()    
+                  .duration(500)    
+                  .style("opacity", 0); 
+          });
