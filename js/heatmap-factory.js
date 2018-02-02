@@ -1187,19 +1187,25 @@
         upper: "Más de {max} € de {name}"
       },
       onComplete: function() {
+        contador = 0
         var subDomain = document.getElementsByClassName('graph-subdomain-group')
         for (var i = 0; i < subDomain.length; i++) {
           subDomain[i].setAttribute('x',"-14")
           highlightSquare = subDomain[i].getElementsByClassName("highlight")
+          //SAMUEL: Contador y array para saber qué camapaña es según su índice 0= Volar, 1= Limon, 2= Bconomy
+          arrayLinks = [
+          "http://bit.bufetedemarketing.com/trackitems/4571283",
+          "http://bit.bufetedemarketing.com/trackitems/5264376",
+          "http://bit.bufetedemarketing.com/trackitems/5352432"
+          ]
           if (highlightSquare.length > 0) {
-            debugger
-            var link = document.createElement("a");
-            link.href = "http://bit.bufetedemarketing.com/"
-            highlightSquare[0].appendChild(link);
+            str = '<a xlink:href="'+ arrayLinks[contador] +'" target="_blank" width="14" height"14"><text x="' + (highlightSquare[0].x.baseVal.value + 7 ) + '" y="50%" style="text-anchor: middle">&nbsp;&nbsp;</text></a>'
+            var parent= highlightSquare[0].parentNode;
+            parent.insertAdjacentHTML( 'beforeend', str );
+            contador += 1 
           };
         };
       }
-
       });
 
       /*/CAMPAÑA BCONOMY */
