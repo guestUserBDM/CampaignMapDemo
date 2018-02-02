@@ -123,24 +123,24 @@ var months_week_thicks = [1,6,10,15,20,25,29,33,37,41,45,49];
     .orient("bottom")
     .outerTickSize(0)
     .innerTickSize(0)
-    .tickFormat(function(d,i) { 
+    .tickFormat(function(d,i) {
       string="";
       if (isInArray(i,months_week_thicks)) {
         string = data[i].month
       }
-      return string; 
+      return string;
     });
 
     var svg = d3.select("#stackedchart").append("svg")
     .attr("width",clientWidth)
-    .attr("height", height)
+    .attr("height", 168)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
     // //line function for averageLine
     // var averageline = d3.svg.line()
-    // .x(function(d) { 
+    // .x(function(d) {
     //   return x(d.week) + x.rangeBand()/2; })
     // .y(function(d) { return y1(d.total); });
 
@@ -217,29 +217,29 @@ var months_week_thicks = [1,6,10,15,20,25,29,33,37,41,45,49];
 
 
 
-var xDataInverted =  ["ING", "BBVA", "Santander", "CaixaBank", "Bankia", "Resto"] 
-var legendRectSize = 18;                                  
-var legendSpacing = 4;                                    
-var legend = svgLegend.selectAll('.legend')                     
-.data(xDataInverted)                                   
-.enter()                                                
-.append('g')                                            
-.attr('class', 'legend')                                
-.attr('transform', function(d, i) {                     
-  var height = legendRectSize + legendSpacing;          
-  var offset =  height * xDataInverted.length / 2;     
-  var horz = legendRectSize + 10;                       
-  var vert = i * height + 75;                       
-  return 'translate(' + horz + ',' + vert + ')';        
-});                                                     
-legend.append('rect')                                     
-.attr('width', legendRectSize)                          
-.attr('height', legendRectSize)                         
-.style("fill", function(d, i) {return color.slice().reverse()[i];});                                
-legend.append('text')                                     
-.attr('x', legendRectSize + legendSpacing)              
-.attr('y', legendRectSize - legendSpacing)              
-.text(function(d) { return d; });                       
+var xDataInverted =  ["ING", "BBVA", "Santander", "CaixaBank", "Bankia", "Resto"]
+var legendRectSize = 18;
+var legendSpacing = 4;
+var legend = svgLegend.selectAll('.legend')
+.data(xDataInverted)
+.enter()
+.append('g')
+.attr('class', 'legend')
+.attr('transform', function(d, i) {
+  var height = legendRectSize + legendSpacing;
+  var offset =  height * xDataInverted.length / 2;
+  var horz = legendRectSize + 10;
+  var vert = i * height + 75;
+  return 'translate(' + horz + ',' + vert + ')';
+});
+legend.append('rect')
+.attr('width', legendRectSize)
+.attr('height', legendRectSize)
+.style("fill", function(d, i) {return color.slice().reverse()[i];});
+legend.append('text')
+.attr('x', legendRectSize + legendSpacing)
+.attr('y', legendRectSize - legendSpacing)
+.text(function(d) { return d; });
 
 
 //FUNCTIONS
