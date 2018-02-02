@@ -234,12 +234,13 @@
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la {date}"
         },
-        range: 5,
+        range: 1,
         label: {
           position: "top",
           height: 15
         },
-        displayLegend: false, //CARLOS PONER ESTO EN FALSE
+        highlight: new Date("Mon Feb 06 2017 00:00:00 GMT+0100 (CET)"),
+        displayLegend: false,
         legend: legend_ranges,
         legendColors: {
             min: light_color,
@@ -485,31 +486,31 @@
       /*CAMPAÑA LIMÓN */
 
       var data_json_limon = {
-   "1496016000":0.269694898424358,
-"1496620800":3.49248229910031,
-"1497225600":3.64287716377149,
-"1497830400":3.34831568600402,
-"1498435200":0.536097251363252,
-"1499040000":1.67017849510866,
-"1499644800":1.30908037545581,
-"1502668800":0.0129332235797671,
-"1503273600":2.97595673821398,
-"1503878400":4.05320324748553,
-"1504483200":2.27304963311945,
-"1505088000":2.3997098619108,
-"1505692800":1.47406696120977,
-"1506297600":1.5968183417426,
-"1506902400":1.32797075034697,
-"1507507200":0.130914972949041,
-"1508112000":0.608223276740797,
-"1508716800":0.520012059504436,
-"1509321600":1.6764050433569,
-"1509926400":1.64221792088731,
-"1510531200":0.818667023124397,
-"1511136000":0.419244460867207,
-"1511740800":0.297705321329139,
-"1512345600":0.015827371513701,
-"1513555200":0.182120288217653,
+       "1496016000":0.269694898424358,
+    "1496620800":3.49248229910031,
+    "1497225600":3.64287716377149,
+    "1497830400":3.34831568600402,
+    "1498435200":0.536097251363252,
+    "1499040000":1.67017849510866,
+    "1499644800":1.30908037545581,
+    "1502668800":0.0129332235797671,
+    "1503273600":2.97595673821398,
+    "1503878400":4.05320324748553,
+    "1504483200":2.27304963311945,
+    "1505088000":2.3997098619108,
+    "1505692800":1.47406696120977,
+    "1506297600":1.5968183417426,
+    "1506902400":1.32797075034697,
+    "1507507200":0.130914972949041,
+    "1508112000":0.608223276740797,
+    "1508716800":0.520012059504436,
+    "1509321600":1.6764050433569,
+    "1509926400":1.64221792088731,
+    "1510531200":0.818667023124397,
+    "1511136000":0.419244460867207,
+    "1511740800":0.297705321329139,
+    "1512345600":0.015827371513701,
+    "1513555200":0.182120288217653,
 
 
       }
@@ -530,11 +531,10 @@
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + weekOfYear(date)
-
-
           return string; // Use the moment library to format the Date
         },
         //subDomainTextFormat: "%W",
+        highlight: new Date("Mon Aug 28 2017 00:00:00 GMT+0200"),
         subDomainTitleFormat: {
           empty: "NO hay inversión para la fecha: {date}",
           filled: "Hay {count} % de {name} para la  {date}"
@@ -921,6 +921,7 @@
           string = "Semana " + weekOfYear(date)
           return string; // Use the moment library to format the Date
         },
+        highlight: new Date("Mon Oct 02 2017 00:00:00 GMT+0200 "),
         //subDomainTextFormat: "%W",
         subDomainTitleFormat: {
           empty: "NO hay inversión para la fecha: {date}",
@@ -1189,8 +1190,16 @@
         var subDomain = document.getElementsByClassName('graph-subdomain-group')
         for (var i = 0; i < subDomain.length; i++) {
           subDomain[i].setAttribute('x',"-14")
-        }
+          highlightSquare = subDomain[i].getElementsByClassName("highlight")
+          if (highlightSquare.length > 0) {
+            debugger
+            var link = document.createElement("a");
+            link.href = "http://bit.bufetedemarketing.com/"
+            highlightSquare[0].appendChild(link);
+          };
+        };
       }
+
       });
 
       /*/CAMPAÑA BCONOMY */

@@ -385,3 +385,7 @@ path {
   position: relative;
   bottom: -156px;
 }
+rect.highlight{
+  stroke: #2800ff !important;
+  margin-right: 5px;
+}
