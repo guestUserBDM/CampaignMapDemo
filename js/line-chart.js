@@ -132,7 +132,7 @@ var div = d3.select("body").append("div")
               div.transition()    
                   .duration(200)    
                   .style("opacity", .9);    
-              div .html("<b>Semana " + (i+1) + ": </b>" + d.toLocaleString() + "€")  
+              div .html("<b>Semana " + (i+1) + ": </b>" + d.toLocaleString('es-ES') + "€")  
                   .style("left", (d3.event.pageX) + "px")   
                   .style("top", (d3.event.pageY - 28) + "px");  
               })          
