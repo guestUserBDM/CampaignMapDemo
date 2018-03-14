@@ -140,7 +140,7 @@ $.prepareDataForLinearChart = function(data) {
         'Authorization': 'Token token=44d7817dc75942288e8b36425cfbdea12'},
       })
       .done(function( data ) {
-        debugger
+
         arrayData = $.prepareDataForLinearChart(data);
         $.drawLineChart(arrayData);
     })
