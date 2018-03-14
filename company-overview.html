@@ -65,24 +65,6 @@
 
       <div class="col-1"></div> <!--col for layout -->
     </div> <!--/Row for layout -->
-
-    <!-- buttons filters -->
-       <!-- <div class="row mb-3 mt-3">
-          <div class="col text-center">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="ml-1 mr-1 btn btn-outline-dark rounded active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Segmento
-              </label>
-              <label class="ml-1 mr-1 btn btn-outline-dark rounded">
-                <input type="radio" name="options" id="option2" autocomplete="off"> Medios
-              </label>
-              <label class="ml-1 mr-1 btn btn-outline-dark rounded">
-                <input type="radio" name="options" id="option3" autocomplete="off"> Categoría
-              </label>
-            </div>
-          </div>
-        </div> --> <!-- buttons filters -->
-
           <!-- DATA SPACE -->
           <div class="container just-padding">
           <!-- FILTER AND TITLE -->
@@ -246,7 +228,12 @@
                     <div class="col-10 full_investment list-group-item border5 no-border-l" >
                       <h2 style="margin-bottom:-2rem;font-size:1.75rem">Volumen total de inversión</h2>
                       <div id="linechart">
-                        <div style="min-height: 150px;"></div>
+                        <div class="loader-container">
+                            <div class="mx-auto">
+                              <p class="text-center">Estamos cargando datos, por favor espere.</p>
+                            </div>
+                           <div class="mx-auto loader"></div>
+                        </div>
                       </div>
                       <h3 style="margin-bottom:-2rem">Share of voice - Entidades</h3>
                       <div id="stackedchart"></div>
