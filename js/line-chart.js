@@ -123,7 +123,6 @@ $.prepareDataForLinearChart = function(data) {
     }
   
   });
-  //data = [6797580.31,9385745.71,12474134.2,11604372.27,9524675.83,11510681.82,17448712.23,12291860.05,17258005.5,14074585.07,10773836.43,9790242.76,8302301.47,6805755.48,2796408.83,5389803.27,7874928.68,9027273.3,13438836.18,12862035.21,14001664.25,10267089.92,10537409.43,15095536.75,19953532.95,11571210.77,12624911.71,8611103.84,6476242.01,10003579.45,7133941.57,7992528.7,6290937.14,7498056.09,12152122.17,9606325.5,10535749.36,13067549.61,15798996.85,18471142.16,16457513.02,13282888.06,12029552.46,11324425.23,8285594.6,7145376.96,16660421.68,32943982.62,12001507.24,19947660.94,20672806.02,14202458.56];
   return weeks_array
 };
 // END FUNCTION: $.prepareDataForLinearChart()
@@ -133,7 +132,7 @@ $.prepareDataForLinearChart = function(data) {
       method: "GET",
       crossDomain: true,
       dataType: "JSON",
-      url: "http://localhost:3000/comparative/get_campaign_map_json",
+      url: "http:bit-test.bufetedemarketing.com/comparative/get_campaign_map_json",
       beforeSend: function(xhr){
         xhr.setRequestHeader('x-bit-subscription', 20);
       },
@@ -141,6 +140,7 @@ $.prepareDataForLinearChart = function(data) {
         'Authorization': 'Token token=44d7817dc75942288e8b36425cfbdea12'},
       })
       .done(function( data ) {
+        debugger
         arrayData = $.prepareDataForLinearChart(data);
         $.drawLineChart(arrayData);
     })
