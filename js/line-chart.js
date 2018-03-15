@@ -114,8 +114,8 @@ $.prepareDataForLinearChart = function(data) {
   $.each(weeks_array, function(index) {
     if (data[index] != null) {
        total_week = 0
-       $.each(data[index],function(key, value) {
-         total_week += data[index][key]["total"]
+       $.each(data[index]["campaigns"],function(key, value) {
+         total_week += data[index]["campaigns"][key]["total"]
        });
        weeks_array[index] = total_week
     } else {
@@ -127,30 +127,6 @@ $.prepareDataForLinearChart = function(data) {
 };
 // END FUNCTION: $.prepareDataForLinearChart()
 // END define your functions
-// Ajax calls
-    $.ajax({
-      method: "GET",
-      crossDomain: true,
-      dataType: "JSON",
-      url: "http:bit-test.bufetedemarketing.com/comparative/get_campaign_map_json",
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('x-bit-subscription', 20);
-      },
-      headers: {
-        'Authorization': 'Token token=44d7817dc75942288e8b36425cfbdea12'},
-      })
-      .done(function( data ) {
 
-        arrayData = $.prepareDataForLinearChart(data);
-        $.drawLineChart(arrayData);
-    })
-      .fail(function(data) {
-        alert( "Fallo en la carga de datos" );
-    });
- //END Ajax Calls
-
- //BEGUIN render of graph in page
- $.drawLineChart(undefined);
- //END render of graph in page
  //END doc READY
 });

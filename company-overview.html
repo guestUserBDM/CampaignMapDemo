@@ -236,7 +236,14 @@
                         </div>
                       </div>
                       <h3 style="margin-bottom:-2rem">Share of voice - Entidades</h3>
-                      <div id="stackedchart"></div>
+                      <div id="stackedchart">
+                        <div class="loader-container">
+                            <div class="mx-auto">
+                              <p class="text-center">Estamos cargando datos, por favor espere.</p>
+                            </div>
+                           <div class="mx-auto loader"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -970,6 +977,7 @@
     <script type="text/javascript" src="js/line-chart.js"></script>
     <script type="text/javascript" src="js/graphic-bar.js"></script>
     <script type="text/javascript" src="js/heatmap-factory.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
     <script type="text/javascript">
     $('#datepicker').datepicker();
     function showOrHide(element){
