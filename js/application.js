@@ -21,9 +21,8 @@ $( document ).ready(function() {
       .done(function( data ) {
         arrayDataLinearChart = $.prepareDataForLinearChart(data);
         dataBarChart = $.prepareDataForBarChart(arrayDataLinearChart,data)
-        debugger
         $.drawLineChart(arrayDataLinearChart);
-        $.drawBarChart("lol");
+        $.drawBarChart(dataBarChart);
         $.drawLegend();
     })
       .fail(function(data) {

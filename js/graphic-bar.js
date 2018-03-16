@@ -15,60 +15,7 @@ $( document ).ready(function() {
 
 $.drawBarChart = function(data) {
 
-data = [
-{week: '1',month:"enero",Resto:8.16,Bankia:10.42,CaixaBank:17.80,Santander:18.61,BBVA:0.19,ING:44.82},
-{week: '2',month:"enero",Resto:9.57,Bankia:19.18,CaixaBank:20.09,Santander:13.43,BBVA:1.67,ING:36.06},
-{week: '3',month:"enero",Resto:6.32,Bankia:44.87,CaixaBank:9.07,Santander:8.05,BBVA:5.98,ING:25.71},
-{week: '4',month:"enero",Resto:8.58,Bankia:29.20,CaixaBank:10.16,Santander:16.12,BBVA:7.63,ING:28.31},
-{week: '5',month:"febrero",Resto:21.70,Bankia:10.37,CaixaBank:19.07,Santander:18.04,BBVA:9.80,ING:21.02},
-{week: '6',month:"febrero",Resto:27.82,Bankia:4.08,CaixaBank:14.93,Santander:11.86,BBVA:0.51,ING:40.81},
-{week: '7',month:"febrero",Resto:36.31,Bankia:8.09,CaixaBank:24.23,Santander:6.06,BBVA:0.43,ING:24.88},
-{week: '8',month:"febrero",Resto:45.84,Bankia:11.19,CaixaBank:7.43,Santander:10.61,BBVA:1.59,ING:23.33},
-{week: '9',month:"marzo",Resto:34.89,Bankia:7.81,CaixaBank:3.90,Santander:11.13,BBVA:25.04,ING:17.23},
-{week: '10',month:"marzo",Resto:33.64,Bankia:3.39,CaixaBank:8.32,Santander:9.64,BBVA:27.03,ING:17.97},
-{week: '11',month:"marzo",Resto:21.19,Bankia:9.40,CaixaBank:13.48,Santander:20.31,BBVA:16.59,ING:19.04},
-{week: '12',month:"marzo",Resto:19.83,Bankia:10.47,CaixaBank:17.11,Santander:17.58,BBVA:19.16,ING:15.86},
-{week: '13',month:"abril",Resto:12.11,Bankia:1.77,CaixaBank:17.64,Santander:34.03,BBVA:11.98,ING:22.47},
-{week: '14',month:"abril",Resto:15.83,Bankia:0.99,CaixaBank:13.71,Santander:36.38,BBVA:5.04,ING:28.06},
-{week: '15',month:"abril",Resto:14.13,Bankia:11.16,CaixaBank:26.75,Santander:38.43,BBVA:7.30,ING:2.23},
-{week: '16',month:"abril",Resto:21.48,Bankia:2.39,CaixaBank:23.55,Santander:28.35,BBVA:12.66,ING:11.56},
-{week: '17',month:"abril",Resto:16.83,Bankia:1.43,CaixaBank:14.87,Santander:20.93,BBVA:44.48,ING:1.46},
-{week: '18',month:"mayo",Resto:36.16,Bankia:1.77,CaixaBank:12.95,Santander:19.06,BBVA:27.36,ING:2.69},
-{week: '19',month:"mayo",Resto:29.85,Bankia:1.27,CaixaBank:18.68,Santander:14.51,BBVA:16.57,ING:19.11},
-{week: '20',month:"mayo",Resto:29.84,Bankia:1.91,CaixaBank:12.88,Santander:11.48,BBVA:23.18,ING:20.70},
-{week: '21',month:"mayo",Resto:27.92,Bankia:2.77,CaixaBank:18.10,Santander:10.45,BBVA:26.25,ING:14.52},
-{week: '22',month:"junio",Resto:24.42,Bankia:20.29,CaixaBank:12.94,Santander:8.71,BBVA:29.74,ING:3.89},
-{week: '23',month:"junio",Resto:17.65,Bankia:21.02,CaixaBank:11.12,Santander:6.34,BBVA:21.87,ING:22.00},
-{week: '24',month:"junio",Resto:27.29,Bankia:8.21,CaixaBank:11.36,Santander:4.02,BBVA:33.11,ING:16.01},
-{week: '25',month:"junio",Resto:41.42,Bankia:5.08,CaixaBank:7.27,Santander:4.84,BBVA:30.26,ING:11.13},
-{week: '26',month:"julio",Resto:22.60,Bankia:3.87,CaixaBank:18.78,Santander:11.91,BBVA:27.67,ING:15.17},
-{week: '27',month:"julio",Resto:25.21,Bankia:9.17,CaixaBank:11.91,Santander:24.89,BBVA:19.36,ING:9.46},
-{week: '28',month:"julio",Resto:23.93,Bankia:13.45,CaixaBank:11.36,Santander:10.03,BBVA:30.03,ING:11.19},
-{week: '29',month:"julio",Resto:17.42,Bankia:4.76,CaixaBank:7.74,Santander:14.94,BBVA:50.82,ING:4.33},
-{week: '30',month:"julio",Resto:14.10,Bankia:3.22,CaixaBank:5.93,Santander:13.68,BBVA:19.07,ING:43.99},
-{week: '31',month:"agosto",Resto:12.16,Bankia:0.21,CaixaBank:5.81,Santander:2.81,BBVA:24.24,ING:54.77},
-{week: '32',month:"agosto",Resto:4.46,Bankia:0.13,CaixaBank:5.53,Santander:1.54,BBVA:37.87,ING:50.47},
-{week: '33',month:"agosto",Resto:8.11,Bankia:0.34,CaixaBank:6.70,Santander:8.67,BBVA:43.32,ING:32.85},
-{week: '34',month:"agosto",Resto:6.77,Bankia:0.24,CaixaBank:5.75,Santander:8.63,BBVA:35.53,ING:43.08},
-{week: '35',month:"septiembre",Resto:8.91,Bankia:3.10,CaixaBank:5.88,Santander:8.41,BBVA:35.97,ING:37.73},
-{week: '36',month:"septiembre",Resto:10.46,Bankia:5.19,CaixaBank:15.32,Santander:17.21,BBVA:19.87,ING:31.95},
-{week: '37',month:"septiembre",Resto:16.91,Bankia:19.13,CaixaBank:27.50,Santander:11.12,BBVA:0.55,ING:24.80},
-{week: '38',month:"septiembre",Resto:27.34,Bankia:13.53,CaixaBank:26.11,Santander:8.66,BBVA:4.28,ING:20.07},
-{week: '39',month:"octubre",Resto:23.77,Bankia:10.40,CaixaBank:15.09,Santander:4.83,BBVA:26.65,ING:19.26},
-{week: '40',month:"octubre",Resto:24.26,Bankia:1.97,CaixaBank:7.18,Santander:26.06,BBVA:24.16,ING:16.37},
-{week: '41',month:"octubre",Resto:33.84,Bankia:2.28,CaixaBank:8.04,Santander:29.48,BBVA:14.76,ING:11.60},
-{week: '42',month:"octubre",Resto:29.43,Bankia:3.32,CaixaBank:11.15,Santander:27.88,BBVA:12.68,ING:15.54},
-{week: '43',month:"octubre",Resto:26.18,Bankia:3.97,CaixaBank:20.55,Santander:17.82,BBVA:10.89,ING:20.59},
-{week: '44',month:"noviembre",Resto:14.94,Bankia:2.71,CaixaBank:15.23,Santander:15.82,BBVA:29.02,ING:22.28},
-{week: '45',month:"noviembre",Resto:16.63,Bankia:5.48,CaixaBank:18.16,Santander:17.48,BBVA:14.22,ING:28.04},
-{week: '46',month:"noviembre",Resto:18.65,Bankia:6.66,CaixaBank:19.40,Santander:12.97,BBVA:19.53,ING:22.79},
-{week: '47',month:"noviembre",Resto:19.30,Bankia:5.43,CaixaBank:11.36,Santander:11.89,BBVA:28.91,ING:23.12},
-{week: '48',month:"diciembre",Resto:6.47,Bankia:8.33,CaixaBank:14.96,Santander:20.72,BBVA:21.49,ING:28.02},
-{week: '49',month:"diciembre",Resto:11.53,Bankia:4.38,CaixaBank:26.55,Santander:29.39,BBVA:16.45,ING:11.71},
-{week: '50',month:"diciembre",Resto:10.99,Bankia:3.42,CaixaBank:20.61,Santander:8.50,BBVA:24.63,ING:31.84},
-{week: '51',month:"diciembre",Resto:7.13,Bankia:3.12,CaixaBank:20.42,Santander:7.27,BBVA:19.23,ING:42.83},
-{week: '52',month:"diciembre",Resto:7.61,Bankia:2.69,CaixaBank:20.03,Santander:4.27,BBVA:2.77,ING:62.63},
-];
+
 
 $("#stackedchart").empty();
 var stackColumnWidth = 12
@@ -216,10 +163,12 @@ $.prepareDataForBarChart = function(totalArray,data) {
     week_hash["month"] = null;
     if (data[index] != null) {
       week_hash["month"] = data[index]["month"];
-      $.prepareCompanyPercentages(data[index]["campaigns"],total);
+      week_companies = $.prepareCompanyPercentages(data[index]["campaigns"],total);
     } else {
-      week_hash["Resto"] = 0
+      week_companies = {Resto:0,Bankia:0,CaixaBank:0,Santander:0,BBVA:0,ING:0};
     }
+    //Merge the two week objects
+    for (var attrname in week_companies) { week_hash[attrname] = week_companies[attrname]; }
     weeks_array[index] = week_hash
   });
   return weeks_array
@@ -227,10 +176,25 @@ $.prepareDataForBarChart = function(totalArray,data) {
 // END FUNCTION: $.prepareDataForBarChart()
 
 $.prepareCompanyPercentages = function(campaigns,total) {
+  week_object = {Resto:0,Bankia:0,CaixaBank:0,Santander:0,BBVA:0,ING:0};
   $.each(campaigns,function(key, value) {
-    debugger
-    total_week += data[index]["campaigns"][key]["total"]
+    switch(this.company) {
+      case "Bankia":
+      case "CaixaBank":
+      case "Santander":
+      case "BBVA":
+      case "ING":
+          week_object[this.company] += this.total
+          break;
+      default:
+          week_object["Resto"] += this.total
+    };
   });
+  $.each(week_object,function(key,value){ 
+    week_object[key] = +(value/total*100).toFixed(2)
+
+  });
+  return week_object;
 };
 
 //END doc READY
