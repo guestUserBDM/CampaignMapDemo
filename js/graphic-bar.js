@@ -151,9 +151,9 @@ $.drawLegend = function() {
 /*****************************************************
   This functions draw the legend for the graphic Bar
   [
-{week: '1',month:"enero",Resto:8.16,Bankia:10.42,CaixaBank:17.80,Santander:18.61,BBVA:0.19,ING:44.82},
-{week: '2',month:"enero",Resto:9.57,Bankia:19.18,CaixaBank:20.09,Santander:13.43,BBVA:1.67,ING:36.06}
-]
+    {week: '1',month:"enero",Resto:8.16,Bankia:10.42,CaixaBank:17.80,Santander:18.61,BBVA:0.19,ING:44.82},
+    {week: '2',month:"enero",Resto:9.57,Bankia:19.18,CaixaBank:20.09,Santander:13.43,BBVA:1.67,ING:36.06}
+  ]
 *****************************************************/
 $.prepareDataForBarChart = function(totalArray,data) {
   weeks_array = Array.apply(null, { length: 52 })

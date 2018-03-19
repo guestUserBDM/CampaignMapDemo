@@ -20,7 +20,10 @@ $( document ).ready(function() {
       })
       .done(function( data ) {
         arrayDataLinearChart = $.prepareDataForLinearChart(data);
-        dataBarChart = $.prepareDataForBarChart(arrayDataLinearChart,data)
+        dataBarChart = $.prepareDataForBarChart(arrayDataLinearChart,data);
+        dataTotalInvestment = $.getFullYearInvestment(arrayDataLinearChart);
+        dataHeatMap = $.prepareDataForHeatMap(dataTotalInvestment,data);
+        debugger
         $.drawLineChart(arrayDataLinearChart);
         $.drawBarChart(dataBarChart);
         $.drawLegend();
@@ -28,10 +31,12 @@ $( document ).ready(function() {
       .fail(function(data) {
         alert( "Fallo en la carga de datos" );
     });
- //END Ajax Calls
+//END Ajax Calls
 
-//BEGUIN render of graph in page
-// $.drawLineChart(undefined);
-//END render of graph in page
+$.getFullYearInvestment = function(totalArray) {
+	sum = 0
+	$.each(totalArray,function(){sum+= this || 0;});
+	return sum
+};
 //END doc READY
 });
