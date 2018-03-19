@@ -183,8 +183,11 @@ $.prepareCompanyPercentages = function(campaigns,total) {
       case "CaixaBank":
       case "Santander":
       case "BBVA":
-      case "ING":
-          week_object[this.company] += this.total
+         week_object[this.company] += this.total
+          break;
+      case "ING Direct":
+          ing = "ING";
+          week_object[ing] += this.total
           break;
       default:
           week_object["Resto"] += this.total
