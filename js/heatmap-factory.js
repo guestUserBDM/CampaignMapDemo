@@ -1,143 +1,21 @@
  $( document ).ready(function() {
 
+  // - Constants for graphics
+    var legend_ranges =  [2, 4, 6, 8,10]
+    var legend_ranges_detail = []
+    var strong_color = "rgb(80,80,80)"
+    var light_color = "rgb(200,200,200)"
+    var empty_color = "rgb(240,240,240)"
+    var startDate = new Date(2017, 0, 1)
   // -- define your functions
-  //This function returns campaigns hash unix timestamps and percentage value per media
-  $.prepareDataForHeatMap = function(dataTotalInvestment,data) {
-    hash_response = {};
-    $.each(data,function(key,campaignsObject){
-      $.each(campaignsObject["campaigns"],function(key,campaign){
-        if (!(key in hash_response)) {
-          hash_response[key] = {};
-        } 
-        hash_response[key][this.unixtime] = this
-      })
-    });
-    return hash_response;
-  };
-
-
-
- var legend_ranges =  [2, 4, 6, 8,10]
-      var legend_ranges_detail = []
-      var strong_color = "rgb(80,80,80)"
-      var light_color = "rgb(200,200,200)"
-      var empty_color = "rgb(240,240,240)"
-
-      var json_total = {
-        "1485734400":0.67808981670842,
-        "1486339200":5.88792238838733,
-        "1486944000":4.24504874703506,
-        "1487548800":3.1372894019066,
-        "1488153600":2.70620979034787,
-        "1488758400":2.73453792135683,
-        "1489363200":2.3003255453965,
-        "1489968000":2.04957527206337,
-        "1490572800":2.29714701728068,
-        "1491177600":2.45666280423934,
-        "1493596800":0.0103647728042109,
-        "1494201600":0.00757032223712614,
-        "1494806400":0.00412061848937417,
-        "1495411200":0.00382429994726338,
-        "1496016000":0.276887051998117,
-        "1496620800":0.00178044363210696,
-        "1496620800":3.49248229910031,
-        "1497225600":3.64287716377149,
-        "1497830400":3.34831568600402,
-        "1498435200":0.536097251363252,
-        "1499040000":1.67017849510866,
-        "1499644800":1.30908037545581,
-        "1502668800":0.0129332235797671,
-        "1503273600":2.97595673821398,
-        "1503878400":4.05320324748553,
-        "1504483200":2.27304963311945,
-        "1505088000":2.3997098619108,
-        "1505692800":2.25210564923755,
-        "1506297600":7.92002193602544,
-        "1506902400":8.04180909801197,
-        "1507507200":3.74764025422101,
-        "1508112000":2.90116021319883,
-        "1508716800":1.37450634285049,
-        "1509321600":5.75255464825244,
-        "1509926400":3.34161184452568,
-        "1510531200":1.10709599737779,
-        "1511136000":3.46266108923118,
-        "1511740800":2.37127036650113,
-        "1512345600":0.339705135851639,
-        "1512950400":1.39155758,
-        "1513555200":1.45217942480666,
-        "1514160000":0.03288023,
-      }
-
-
-      var data_json_ing = {
-        "1485734400":0.67808981670842,
-        "1486339200":5.88792238838733,
-        "1486944000":4.24504874703506,
-        "1487548800":3.1372894019066,
-        "1488153600":2.70620979034787,
-        "1488758400":2.73453792135683,
-        "1489363200":2.3003255453965,
-        "1489968000":2.04957527206337,
-        "1490572800":2.29714701728068,
-        "1491177600":2.45666280423934,
-        "1493596800":0.0103647728042109,
-        "1494201600":0.00757032223712614,
-        "1494806400":0.00412061848937417,
-        "1495411200":0.00382429994726338,
-        "1496016000":0.276887051998117,
-        "1496620800":0.00178044363210696,
-        "1496620800":3.49248229910031,
-        "1497225600":3.64287716377149,
-        "1497830400":3.34831568600402,
-        "1498435200":0.536097251363252,
-        "1499040000":1.67017849510866,
-        "1499644800":1.30908037545581,
-        "1502668800":0.0129332235797671,
-        "1503273600":2.97595673821398,
-        "1503878400":4.05320324748553,
-        "1504483200":2.27304963311945,
-        "1505088000":2.3997098619108,
-        "1505692800":1.47406696120977,
-        "1506297600":1.5968183417426,
-        "1506902400":1.32797075034697,
-        "1507507200":0.130914972949041,
-        "1508112000":0.608223276740797,
-        "1508716800":0.520012059504436,
-        "1509321600":1.6764050433569,
-        "1509926400":1.64221792088731,
-        "1510531200":0.818667023124397,
-        "1511136000":0.419244460867207,
-        "1511740800":0.297705321329139,
-        "1512345600":0.015827371513701,
-        "1513555200":0.182120288217653,
-      }//end data_json
-
-      /*CAMPAÑA VOLAR */
-
-      var data_json_volar = {
-        "1485734400":0.67808981670842,
-        "1486339200":5.88792238838733,
-        "1486944000":4.24504874703506,
-        "1487548800":3.1372894019066,
-        "1488153600":2.70620979034787,
-        "1488758400":2.73453792135683,
-        "1489363200":2.3003255453965,
-        "1489968000":2.04957527206337,
-        "1490572800":2.29714701728068,
-        "1491177600":2.45666280423933,
-        "1493596800":1.0103647728042109,
-        "1494201600":0.00757032223712614,
-        "1494806400":0.00412061848937417,
-        "1495411200":0.00382429994726338,
-        "1496016000":0.00719215357375878,
-        "1496620800":0.00178044363210696,
-      }
-      var cal_volar = new CalHeatMap();
-        cal_volar.init({
-        itemSelector: "#campaign_volar",
+  //this function is the graph skeleton script
+  $.drawHeatMapGraphic = function(campaign_id,json_data) {
+        var heatmap = new CalHeatMap();
+        heatmap.init({
+        itemSelector: `#campaign_${campaign_id}`,
         itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_volar,
+        start: startDate,
+        data: json_data,
         domain: "year",
         subDomain: "week",
         domainMargin:0,
@@ -179,235 +57,96 @@
         upper: "Más de {max} € de {name}"
         }
       });
+  };
+  //This function returns campaigns hash unix timestamps and percentage value per media
+  $.prepareDataForHeatMap = function(dataTotalInvestment,data) {
+    hash_response = {};
+    $.each(data,function(key,campaignsObject){
+      $.each(campaignsObject["campaigns"],function(key,campaign){
+        if (!(key in hash_response)) {
+          hash_response[key] = {};
+        } 
+        hash_response[key][this.unixtime] = $.getHeatMapWeek(dataTotalInvestment,this);
+      })
+    });
+    return hash_response;
+  };
 
-       var data_json_volar_tv = {
-        "1485734400":0.67808981670842,
-        "1486339200":5.0936551426622,
-        "1486944000":3.75313707020035,
-        "1487548800":2.65149171809813,
-        "1488153600":2.21617870672273,
-        "1488758400":2.22296186594289,
-        "1489363200":2.28208086696835,
-        "1489968000":1.33628236637104,
-        "1490572800":1.37426805800393,
-        "1491177600":1.4399139655679,
-      }
+  $.getHeatMapWeek = function (dataTotalInvestment,week_object) {
+    for (var key in week_object) {
+      if ((key != "company") && key != "unixtime") {
+        week_object[key] =  (week_object[key] / dataTotalInvestment) * 100;
+      };
+    };
+    return week_object
+  };
 
-      var cal_volar_tv = new CalHeatMap();
-        cal_volar_tv.init({
-        itemSelector: "#campaign_volar_tv",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_volar_tv,
-        domain: "year",
-        subDomain: "week",
-        //subDomainTextFormat: "%W",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat: "",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
+  /* FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
+  $.render_total_html = function(campaign_id,campaigns_counter) {
+    string = '<div class="row level-step no-gutters">' +
+                '<div class="col-2 campaign_name pl-1">' +
+                   '<a href="#item-'+ campaigns_counter +'-1" class="list-group-item list-group-item-action whiteBack pl-1 pr-1" data-toggle="collapse">' +
+                    '<img class="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">'+
+                    campaign_id +
+                    '<span class="oi oi-caret-right pl-1 rigthCaret"  aria-hidden="true"></span>' +
+                  '</a>' +
+                '</div>' +
+                '<div class="col-9 full_investment list-group-item">' +
+                  '<div id="campaign_'+ campaign_id +'" class="graph-container"></div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="list-group collapse " id="item-'+ campaigns_counter +'-1"></div>';
+    return string
+  };
 
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 1,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: empty_color
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
+  $.render_media_html = function(campaign_id, media){
+    string = '<div class="row level-step no-gutters">' +
+                              '<div class="col-2 media_name">' +
+                                '<a href="#" class="list-group-item">' +
+                                  media +
+                                '</a>' +
+                              '</div>' +
+                              '<div class="col-9 full_investment list-group-item">' +
+                                '<div id="campaign_'+ campaign_id +'_'+ media +'" class="graph-container"></div>' +
+                              '</div>' +
+                            '</div>';
+    return string
+  }
+
+  /* /FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
+
+  $.drawHeatMap = function(dataHeatMap) {
+    $.each(dataHeatMap,function(key,values){ 
+      campaign_id = key
+      campaigns_counter = 1
+      json_response = {};
+      json_response[key] = {};
+      $.map(values,function(values_by_week,unixtime){
+        $.each(values_by_week, function(key_media,value){
+          if(!isInArray(key,["company","unixtime"])) {
+            if (!(key_media in json_response[key] )){
+              json_response[key][key_media] = {}
+            }
+            json_response[key][key_media][unixtime] = value
+          }
+        });
+      });
+      debugger
+      $("#item-1").append($.render_total_html(key,campaigns_counter));
+      $.drawHeatMapGraphic(key,json_response[key]["total"]);
+      $.each(json_response[key],function(key_media,json_value){
+        if(!isInArray(key_media,["company","unixtime","total"])) {
+          debugger
+          media_counter = 1
+          $("#item-"+ campaigns_counter).append($.render_media_html(campaign_id, key_media))
+          $.drawHeatMapGraphic(campaign_id +'_'+ key_media, json_value);
+          media_counter += 1
+        };
       });
 
-
-       var data_json_volar_radio = {
-"1489968000":0.713292905692322,
-"1490572800":0.922878959276751,
-"1491177600":1.01674883867144,
-
-
-      }
-
-      var cal_volar_radio = new CalHeatMap();
-        cal_volar_radio.init({
-        itemSelector: "#campaign_volar_radio",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_volar_radio,
-        domain: "year",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat:"",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
-
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la {date}"
-        },
-        range: 1,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: empty_color
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
-
-
-       var data_json_volar_prensa = {
-"1486339200":0.794267245725132,
-"1486944000":0.49191167683471,
-"1487548800":0.485797683808464,
-"1488153600":0.455003452359731,
-"1488758400":0.44517239359665,
-
-      }
-
-      var cal_volar_prensa = new CalHeatMap();
-        cal_volar_prensa.init({
-        itemSelector: "#campaign_volar_prensa",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_volar_prensa,
-        domain: "year",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat: "",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
-
-
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 1,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: empty_color
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
-
-       var data_json_volar_online = {
-"1488153600":0.0350276312654075,
-"1488758400":0.0664036618172969,
-"1489363200":0.018244678428145,
-"1493596800":0.0103647728042109,
-"1494201600":0.00757032223712614,
-"1494806400":0.00412061848937417,
-"1495411200":0.00382429994726338,
-"1496016000":0.00719215357375878,
-"1496620800":0.00178044363210696,
-
-      }
-
-      var cal_volar_online = new CalHeatMap();
-        cal_volar_online.init({
-        itemSelector: "#campaign_volar_online",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_volar_online,
-        domain: "year",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat: "",
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
-
-
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 1,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: empty_color
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      });
-      /*/CAMPAÑA VOLAR */
+      campaigns_counter += 1;
+    });
+  };
       /*CAMPAÑA LIMÓN */
 
       var data_json_limon = {

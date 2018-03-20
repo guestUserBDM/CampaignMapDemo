@@ -23,9 +23,9 @@ $( document ).ready(function() {
         dataBarChart = $.prepareDataForBarChart(arrayDataLinearChart,data);
         dataTotalInvestment = $.getFullYearInvestment(arrayDataLinearChart);
         dataHeatMap = $.prepareDataForHeatMap(dataTotalInvestment,data);
-        debugger
         $.drawLineChart(arrayDataLinearChart);
         $.drawBarChart(dataBarChart);
+        $.drawHeatMap(dataHeatMap);
         $.drawLegend();
     })
       .fail(function(data) {
