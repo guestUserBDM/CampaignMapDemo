@@ -19,6 +19,7 @@ $( document ).ready(function() {
         'Authorization': 'Token token=44d7817dc75942288e8b36425cfbdea12'},
       })
       .done(function( data ) {
+      	debugger
         arrayDataLinearChart = $.prepareDataForLinearChart(data);
         dataBarChart = $.prepareDataForBarChart(arrayDataLinearChart,data);
         dataTotalInvestment = $.getFullYearInvestment(arrayDataLinearChart);

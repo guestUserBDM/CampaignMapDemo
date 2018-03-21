@@ -1,6 +1,6 @@
  $( document ).ready(function() {
 
-  // - Constants for graphics
+  // -- Constants for graphics
     var legend_ranges =  [2, 4, 6, 8,10]
     var legend_ranges_detail = []
     var strong_color = "rgb(80,80,80)"
@@ -60,6 +60,7 @@
         }
       });
   };
+  // END FUNCTION: $.drawHeatMapGraphic()
   //This function returns campaigns hash unix timestamps and percentage value per media
   $.prepareDataForHeatMap = function(dataTotalInvestment,data) {
     hash_response = {};
@@ -73,23 +74,24 @@
     });
     return hash_response;
   };
-
+  // END FUNCTION: $.prepareDataForHeatMap()
+  //This function return adapted values per week for the heat map
   $.getHeatMapWeek = function (dataTotalInvestment,week_object) {
     for (var key in week_object) {
-      if (key != "company" && key != "company_id" && key != "unixtime") {
+      if (key != "company" && key != "campaign_name" && key != "company_id" && key != "unixtime") {
         week_object[key] =  (week_object[key] / dataTotalInvestment) * 100;
       };
     };
     return week_object
   };
-
+  // END FUNCTION: $.getHeatMapWeek()
   /* FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
-  $.render_total_html = function(campaign_id,campaigns_counter,company_id) {
+  $.render_total_html = function(campaign_name,campaign_id,campaigns_counter,company_id) {
     string = '<div class="row level-step no-gutters">' +
                 '<div class="col-2 campaign_name pl-1">' +
                    '<a href="#item-1-'+ campaigns_counter +'" class="list-group-item list-group-item-action whiteBack pl-1 pr-1" data-toggle="collapse">' +
                     '<img class="d-inline-block align-top mr-1" src="assets/images/logos/'+ company_id +'.jpg" width="20" height="20" alt="Bufete de Márketing">'+
-                    campaign_id +
+                    '<span title="'+ campaign_name + '">' + campaign_name + '</span>' + 
                     '<span class="oi oi-caret-right pl-1 rigthCaret"  aria-hidden="true"></span>' +
                   '</a>' +
                 '</div>' +
@@ -114,22 +116,26 @@
                             '</div>';
     return string
   }
-
-  /* /FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
-
+  /* END FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
+  // This is the core funtions wich draws the graphic and prepare html for it
   $.drawHeatMap = function(dataHeatMap) {
     campaigns_counter = 1
     $.each(dataHeatMap,function(key,values){ 
       campaign_id = key
       json_response = {};
       json_response[key] = {};
-      company_id = ""
+      company_id = "";
+      campaign_name = "";
       $.map(values,function(values_by_week,unixtime){
         $.each(values_by_week, function(key_media,value){
           if (key_media === "company_id") {
             company_id = values_by_week[key_media]
           }
-          if(!isInArray(key,["company","company_id","unixtime"])) {
+          debugger
+          if (key_media === "campaign_name") {
+            campaign_name = values_by_week[key_media]
+          }
+          if(!isInArray(key,["company","company_id","campaign_name","unixtime"])) {
             if (!(key_media in json_response[key] )){
               json_response[key][key_media] = {}
             }
@@ -137,11 +143,11 @@
           }
         });
       });
-      $("#item-1").append($.render_total_html(key,campaigns_counter,company_id));
+      $("#item-1").append($.render_total_html(campaign_name,key,campaigns_counter,company_id));
       $.drawHeatMapGraphic(key,json_response[key]["total"]);
         media_counter = 1
       $.each(json_response[key],function(key_media,json_value){
-        if(!isInArray(key_media,["company","company_id","unixtime","total"])) {
+        if(!isInArray(key_media,["company","company_id","campaign_name","unixtime","total"])) {
           $("#item-1-"+ campaigns_counter).append($.render_media_html(campaign_id, key_media))
           $.drawHeatMapGraphic(campaign_id +'_'+ hash_media_name[key_media], json_value);
           media_counter += 1
@@ -151,8 +157,7 @@
       campaigns_counter += 1;
     });
   };
-      
-
+  // END FUNCTION: $.drawHeatMap()
       /*var cal_bco_online = new CalHeatMap();
         cal_bco_online.init({
         itemSelector: "#campaign_bco_online",

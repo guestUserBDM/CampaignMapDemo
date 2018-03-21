@@ -417,3 +417,7 @@ rect.highlight{
   100% { transform: rotate(360deg); }
 }
 /* LOADER CSS */
+
+a.list-group-item {
+  font-size: 12px !important;
+}
