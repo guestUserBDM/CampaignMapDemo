@@ -12,7 +12,8 @@
   //this function is the graph skeleton script
   $.drawHeatMapGraphic = function(campaign_id,json_data) {
         var heatmap = new CalHeatMap();
-        new CalHeatMap().init({
+        //Render graphic BEGUINS
+        heatmap.init({
         itemSelector: `#campaign_${campaign_id}`,
         itemName: ["inversión", "inversión"],
         start: startDate,
@@ -44,7 +45,7 @@
           position: "top",
           height: 15
         },
-        highlight: new Date("Mon Feb 06 2017 00:00:00 GMT+0100 (CET)"),
+        highlight: $.getMaxInvestmentWeek(json_data),
         displayLegend: false,
         legend: legend_ranges,
         legendColors: {
@@ -57,6 +58,12 @@
         lower: "Menos de {min} € de {name}",
         inner: "Entre {down} € y {up} € de {name}",
         upper: "Más de {max} € de {name}"
+        },
+        onComplete: function() {
+        var rect = $(this)[0].root[0][0].getElementsByClassName("highlight")[0];
+        var parent= rect.parentNode;
+        str = '<a xlink:href="http://bit.bufetedemarketing.com/trackitems/4571283" target="_blank" width="14" height"14"><text x="' + (rect.x.baseVal.value + 7 ) + '" y="50%" style="text-anchor: middle">&nbsp;&nbsp;</text></a>'
+        parent.insertAdjacentHTML( 'beforeend', str );
         }
       });
   };
@@ -94,6 +101,21 @@
     return campaign_string 
   }
   // END FUNCTION: $.prepareCampaignName()
+  //This function returns the date of max investmen in the selected data
+  $.getMaxInvestmentWeek = function(json_data){
+    var array_weeks = [];
+    var array_investment = [];
+    Object.keys( json_data ).map(function ( key,index ) { 
+      array_investment[index] = json_data[key]; 
+      array_weeks[index] = key
+    });
+    var max = Math.max.apply( null, array_investment);
+    max_week = array_weeks[$.inArray(max,array_investment)];
+    var date = new Date(0);
+    date.setUTCSeconds(max_week);
+    return date
+  };
+  // END FUNCTION: $.getMaxInvestmentWeek()
 
   /* FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
   $.render_total_html = function(campaign_name,campaign_id,campaigns_counter,company_id) {
@@ -167,73 +189,6 @@
     });
   };
   // END FUNCTION: $.drawHeatMap()
-      /*var cal_bco_online = new CalHeatMap();
-        cal_bco_online.init({
-        itemSelector: "#campaign_bco_online",
-        itemName: ["inversión", "inversión"],
-        start: new Date(2017, 0, 1),
-        data: data_json_bco_online,
-        domain: "year",
-        subDomain: "week",
-        domainMargin:0,
-        domainGutter: 0,
-        cellSize: 14,
-        cellRadius: 1,
-        cellPadding: 1,
-        domainLabelFormat:"",
-
-        subDomainDateFormat: function(date,value) {
-          weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
-
-
-
-          return string; // Use the moment library to format the Date
-        },
-        //subDomainTextFormat: "%W",
-        subDomainTitleFormat: {
-          empty: "NO hay inversión para la fecha: {date}",
-          filled: "Hay {count} % de {name} para la  {date}"
-        },
-        range: 1,
-        label: {
-          position: "top",
-          height: 15
-        },
-        displayLegend: false,
-        legend: legend_ranges,
-        legendColors: {
-            min: light_color,
-            max: strong_color,
-            empty: empty_color
-            // Will use the CSS for the missing keys
-        },
-        legendTitleFormat: {
-        lower: "Menos de {min} € de {name}",
-        inner: "Entre {down} € y {up} € de {name}",
-        upper: "Más de {max} € de {name}"
-      },
-      onComplete: function() {
-        contador = 0
-        var subDomain = document.getElementsByClassName('graph-subdomain-group')
-        for (var i = 0; i < subDomain.length; i++) {
-          subDomain[i].setAttribute('x',"-14")
-          highlightSquare = subDomain[i].getElementsByClassName("highlight")
-          //SAMUEL: Contador y array para saber qué camapaña es según su índice 0= Volar, 1= Limon, 2= Bconomy
-          arrayLinks = [
-          "http://bit.bufetedemarketing.com/trackitems/4571283",
-          "http://bit.bufetedemarketing.com/trackitems/5264376",
-          "http://bit.bufetedemarketing.com/trackitems/5352432"
-          ]
-          if (highlightSquare.length > 0) {
-            str = '<a xlink:href="'+ arrayLinks[contador] +'" target="_blank" width="14" height"14"><text x="' + (highlightSquare[0].x.baseVal.value + 7 ) + '" y="50%" style="text-anchor: middle">&nbsp;&nbsp;</text></a>'
-            var parent= highlightSquare[0].parentNode;
-            parent.insertAdjacentHTML( 'beforeend', str );
-            contador += 1 
-          };
-        };
-      }
-      });*/
 
 //END doc READY
 });
