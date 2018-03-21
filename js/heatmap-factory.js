@@ -12,7 +12,6 @@
   //this function is the graph skeleton script
   $.drawHeatMapGraphic = function(campaign_id,json_data) {
         var heatmap = new CalHeatMap();
-        if (campaign_id === "251173") { debugger }
         new CalHeatMap().init({
         itemSelector: `#campaign_${campaign_id}`,
         itemName: ["inversión", "inversión"],
@@ -20,6 +19,7 @@
         data: json_data,
         domain: "year",
         subDomain: "week",
+        weekStartOnMonday: false,
         domainMargin:0,
         domainGutter: 0,
         cellSize: 14,
@@ -31,7 +31,7 @@
         //          },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
-          string = "Semana " + weekOfYear(date)
+          string = "Semana " + (parseInt(weekOfYear(date)) +1)
           return string; // Use the moment library to format the Date
         },
         //subDomainTextFormat: "%W",
@@ -76,7 +76,7 @@
 
   $.getHeatMapWeek = function (dataTotalInvestment,week_object) {
     for (var key in week_object) {
-      if ((key != "company") && key != "unixtime") {
+      if (key != "company" && key != "company_id" && key != "unixtime") {
         week_object[key] =  (week_object[key] / dataTotalInvestment) * 100;
       };
     };
@@ -84,11 +84,11 @@
   };
 
   /* FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
-  $.render_total_html = function(campaign_id,campaigns_counter) {
+  $.render_total_html = function(campaign_id,campaigns_counter,company_id) {
     string = '<div class="row level-step no-gutters">' +
                 '<div class="col-2 campaign_name pl-1">' +
                    '<a href="#item-1-'+ campaigns_counter +'" class="list-group-item list-group-item-action whiteBack pl-1 pr-1" data-toggle="collapse">' +
-                    '<img class="d-inline-block align-top mr-1" src="assets/images/ing.png" width="20" height="20" alt="Bufete de Márketing">'+
+                    '<img class="d-inline-block align-top mr-1" src="assets/images/logos/'+ company_id +'.jpg" width="20" height="20" alt="Bufete de Márketing">'+
                     campaign_id +
                     '<span class="oi oi-caret-right pl-1 rigthCaret"  aria-hidden="true"></span>' +
                   '</a>' +
@@ -112,7 +112,6 @@
                                 '<div id="campaign_'+ campaign_id +'_'+ hash_media_name[media] +'" class="graph-container"></div>' +
                               '</div>' +
                             '</div>';
-                            debugger
     return string
   }
 
@@ -124,9 +123,13 @@
       campaign_id = key
       json_response = {};
       json_response[key] = {};
+      company_id = ""
       $.map(values,function(values_by_week,unixtime){
         $.each(values_by_week, function(key_media,value){
-          if(!isInArray(key,["company","unixtime"])) {
+          if (key_media === "company_id") {
+            company_id = values_by_week[key_media]
+          }
+          if(!isInArray(key,["company","company_id","unixtime"])) {
             if (!(key_media in json_response[key] )){
               json_response[key][key_media] = {}
             }
@@ -134,13 +137,11 @@
           }
         });
       });
-      $("#item-1").append($.render_total_html(key,campaigns_counter));
-      if (key === "251173") { debugger }
+      $("#item-1").append($.render_total_html(key,campaigns_counter,company_id));
       $.drawHeatMapGraphic(key,json_response[key]["total"]);
         media_counter = 1
       $.each(json_response[key],function(key_media,json_value){
-        if(!isInArray(key_media,["company","unixtime","total"])) {
-          debugger
+        if(!isInArray(key_media,["company","company_id","unixtime","total"])) {
           $("#item-1-"+ campaigns_counter).append($.render_media_html(campaign_id, key_media))
           $.drawHeatMapGraphic(campaign_id +'_'+ hash_media_name[key_media], json_value);
           media_counter += 1

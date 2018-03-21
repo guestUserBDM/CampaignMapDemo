@@ -2613,17 +2613,18 @@ CalHeatMap.prototype = {
 			}
 
 			var subDomainsData = this._domains.get(domainUnit);
-
 			if (!temp.hasOwnProperty(domainUnit)) {
 				temp[domainUnit] = subDomainsData.map(extractTime);
 			}
-
 			var index = temp[domainUnit].indexOf(this._domainType[this.options.subDomain].extractUnit(date));
 
 			if (updateMode === this.RESET_SINGLE_ON_UPDATE) {
 				subDomainsData[index].v = data[d];
 			} else {
-				if (!isNaN(subDomainsData[index].v)) {
+				if (subDomainsData[index] == null) {
+					debugger
+					subDomainsData[52] = {t: parseInt(d + "000") , v: data[d]}
+				} else if (!isNaN(subDomainsData[index].v)) {
 					subDomainsData[index].v += data[d];
 				} else {
 					subDomainsData[index].v = data[d];
