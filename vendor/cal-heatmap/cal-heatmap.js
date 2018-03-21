@@ -2622,7 +2622,6 @@ CalHeatMap.prototype = {
 				subDomainsData[index].v = data[d];
 			} else {
 				if (subDomainsData[index] == null) {
-					debugger
 					subDomainsData[52] = {t: parseInt(d + "000") , v: data[d]}
 				} else if (!isNaN(subDomainsData[index].v)) {
 					subDomainsData[index].v += data[d];

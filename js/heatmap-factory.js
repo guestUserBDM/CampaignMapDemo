@@ -85,13 +85,23 @@
     return week_object
   };
   // END FUNCTION: $.getHeatMapWeek()
+  // This funcions trim campaign name to 17 characters plus three dots if its lenght size is > 20
+  $.prepareCampaignName = function(campaign_name) {
+    var campaign_string = campaign_name;
+    if (campaign_string.length > 20) {
+      campaign_string = campaign_string.slice(0,17) + "...";
+    };
+    return campaign_string 
+  }
+  // END FUNCTION: $.prepareCampaignName()
+
   /* FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
   $.render_total_html = function(campaign_name,campaign_id,campaigns_counter,company_id) {
     string = '<div class="row level-step no-gutters">' +
                 '<div class="col-2 campaign_name pl-1">' +
                    '<a href="#item-1-'+ campaigns_counter +'" class="list-group-item list-group-item-action whiteBack pl-1 pr-1" data-toggle="collapse">' +
                     '<img class="d-inline-block align-top mr-1" src="assets/images/logos/'+ company_id +'.jpg" width="20" height="20" alt="Bufete de Márketing">'+
-                    '<span title="'+ campaign_name + '">' + campaign_name + '</span>' + 
+                    '<span title="'+ campaign_name + '">' + $.prepareCampaignName(campaign_name) + '</span>' + 
                     '<span class="oi oi-caret-right pl-1 rigthCaret"  aria-hidden="true"></span>' +
                   '</a>' +
                 '</div>' +
@@ -131,7 +141,6 @@
           if (key_media === "company_id") {
             company_id = values_by_week[key_media]
           }
-          debugger
           if (key_media === "campaign_name") {
             campaign_name = values_by_week[key_media]
           }
