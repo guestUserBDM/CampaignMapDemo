@@ -10,7 +10,7 @@
     var hash_media_name= {"On line": "online", "Prensa": "prensa", "Radio" : "radio", "Televisión" : "tv" ,"total" : "total"}
   // -- define your functions
   //this function is the graph skeleton script
-  $.drawHeatMapGraphic = function(campaign_id,json_data) {
+  $.drawHeatMapGraphic = function(campaign_id,trackitem_id,json_data) {
         var heatmap = new CalHeatMap();
         //Render graphic BEGUINS
         heatmap.init({
@@ -60,10 +60,10 @@
         upper: "Más de {max} € de {name}"
         },
         onComplete: function() {
-        var rect = $(this)[0].root[0][0].getElementsByClassName("highlight")[0];
-        var parent= rect.parentNode;
-        str = '<a xlink:href="http://bit.bufetedemarketing.com/trackitems/4571283" target="_blank" width="14" height"14"><text x="' + (rect.x.baseVal.value + 7 ) + '" y="50%" style="text-anchor: middle">&nbsp;&nbsp;</text></a>'
-        parent.insertAdjacentHTML( 'beforeend', str );
+          var rect = $(this)[0].root[0][0].getElementsByClassName("highlight")[0];
+          var parent= rect.parentNode;
+          str = '<a xlink:href="http://bit.bufetedemarketing.com/trackitems/'+ trackitem_id +'" target="_blank" width="14" height"14"><text x="' + (rect.x.baseVal.value + 7 ) + '" y="50%" style="text-anchor: middle">&nbsp;&nbsp;</text></a>'
+          parent.insertAdjacentHTML( 'beforeend', str );
         }
       });
   };
@@ -85,7 +85,7 @@
   //This function return adapted values per week for the heat map
   $.getHeatMapWeek = function (dataTotalInvestment,week_object) {
     for (var key in week_object) {
-      if (key != "company" && key != "campaign_name" && key != "company_id" && key != "unixtime") {
+      if (key != "company" && key != "campaign_name" && key != "company_id" && key != "unixtime" && key != "trackitem_id") {
         week_object[key] =  (week_object[key] / dataTotalInvestment) * 100;
       };
     };
@@ -158,15 +158,19 @@
       json_response[key] = {};
       company_id = "";
       campaign_name = "";
+      trackitem_id = ""
       $.map(values,function(values_by_week,unixtime){
         $.each(values_by_week, function(key_media,value){
           if (key_media === "company_id") {
-            company_id = values_by_week[key_media]
+            company_id = values_by_week[key_media];
           }
           if (key_media === "campaign_name") {
-            campaign_name = values_by_week[key_media]
+            campaign_name = values_by_week[key_media];
+          };
+          if (key_media === "trackitem_id") {
+            trackitem_id = String(values_by_week[key_media]);
           }
-          if(!isInArray(key,["company","company_id","campaign_name","unixtime"])) {
+          if(!isInArray(key,["company","company_id","campaign_name","unixtime","trackitem_id"])) {
             if (!(key_media in json_response[key] )){
               json_response[key][key_media] = {}
             }
@@ -175,12 +179,12 @@
         });
       });
       $("#item-1").append($.render_total_html(campaign_name,key,campaigns_counter,company_id));
-      $.drawHeatMapGraphic(key,json_response[key]["total"]);
+      $.drawHeatMapGraphic(key, trackitem_id, json_response[key]["total"]);
         media_counter = 1
       $.each(json_response[key],function(key_media,json_value){
-        if(!isInArray(key_media,["company","company_id","campaign_name","unixtime","total"])) {
+        if(!isInArray(key_media,["company","company_id","campaign_name","unixtime","total","trackitem_id"])) {
           $("#item-1-"+ campaigns_counter).append($.render_media_html(campaign_id, key_media))
-          $.drawHeatMapGraphic(campaign_id +'_'+ hash_media_name[key_media], json_value);
+          $.drawHeatMapGraphic(campaign_id +'_'+ hash_media_name[key_media], trackitem_id, json_value);
           media_counter += 1
         };
       });
