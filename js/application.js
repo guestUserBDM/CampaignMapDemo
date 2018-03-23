@@ -27,6 +27,7 @@ $( document ).ready(function() {
         $.drawBarChart(dataBarChart);
         $.drawHeatMap(dataHeatMap);
         $.drawLegend();
+        $('button.handCursor').removeClass('hidden_campaign')
     })
       .fail(function(data) {
         alert( "Fallo en la carga de datos" );

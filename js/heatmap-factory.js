@@ -27,9 +27,6 @@
         cellRadius: 1,
         cellPadding: 1,
         domainLabelFormat: "",
-        // domainLabelFormat: function(date) {
-        //            return moment(date).locale('es').format("YYYY"); // Use the moment library to format the Date
-        //          },
         subDomainDateFormat: function(date,value) {
           weekOfYear = d3.time.format("%W")
           string = "Semana " + (parseInt(weekOfYear(date)) +1)
@@ -63,9 +60,11 @@
           date_since = moment(max_week_date).format('YYYY-MM-DD');
           date_until = moment(max_week_date).add(6, 'day').format('YYYY-MM-DD');
           var rect = $(this)[0].root[0][0].getElementsByClassName("highlight")[0];
-          var parent= rect.parentNode;
-          str = '<a xlink:href="http://bit.bufetedemarketing.com/timeline/search/id:' + campaign_id + '/date_since/'+ date_since +'/date_until/'+ date_until +'" target="_blank" width="14" height"14"><text x="' + (rect.x.baseVal.value + 7 ) + '" y="50%" style="text-anchor: middle">&nbsp;&nbsp;</text></a>'
-          parent.insertAdjacentHTML( 'beforeend', str );
+          if (rect != undefined) {
+            var parent= rect.parentNode;
+            str = '<a xlink:href="http://bit.bufetedemarketing.com/timeline/search/id:' + campaign_id + '/date_since/'+ date_since +'/date_until/'+ date_until +'" target="_blank" width="14" height"14"><text x="' + (rect.x.baseVal.value + 7 ) + '" y="50%" style="text-anchor: middle">&nbsp;&nbsp;</text></a>'
+            parent.insertAdjacentHTML( 'beforeend', str );
+          };
         }
       });
 
@@ -141,8 +140,8 @@
   // END FUNCTION: $.getOrderedCampaigns()
 
   /* FUNCTIONS FOR APPEND HTML IN HEATMAP GRAPH */
-  $.render_total_html = function(campaign_name,campaign_id,campaigns_counter,company_id) {
-    string = '<div class="row level-step no-gutters">' +
+  $.render_total_html = function(campaign_name,campaign_id,campaigns_counter,company_id,hidden_campaign) {
+    string = '<div class="row level-step no-gutters '+hidden_campaign+'">' +
                 '<div class="col-2 campaign_name pl-1">' +
                    '<a href="#item-1-'+ campaigns_counter +'" class="list-group-item list-group-item-action whiteBack pl-1 pr-1" data-toggle="collapse">' +
                     '<img class="d-inline-block align-top rounded mr-1" src="assets/images/logos/'+ company_id +'.jpg" width="20" height="20" alt="Bufete de Márketing">'+
@@ -183,6 +182,10 @@
       json_response[id] = {};
       company_id = "";
       campaign_name = "";
+      hidden_campaign = ""
+      if (campaigns_counter > 5) {
+        hidden_campaign = "hidden_campaign"
+      }
       campaign_values = dataHeatMap[campaign_id]
       delete campaign_values["total_campaign"];
       $.map(campaign_values,function(values_by_week,unixtime){
@@ -201,7 +204,7 @@
           }
         });
       });
-      $("#item-1").append($.render_total_html(campaign_name,campaign_id,campaigns_counter,company_id));
+      $("#item-1").append($.render_total_html(campaign_name,campaign_id,campaigns_counter,company_id,hidden_campaign));
       $.drawHeatMapGraphic(campaign_id, json_response[campaign_id]["total"]);
         media_counter = 1
       $.each(json_response[campaign_id],function(key_media,json_value){
@@ -216,6 +219,19 @@
     });
   };
   // END FUNCTION: $.drawHeatMap()
-
+//This event displays campaigns from five to five
+$('button.handCursor').click(function(event) {
+  /* Act on the event */
+  var hidden_campaigns = document.getElementsByClassName("hidden_campaign");
+  var counter = 0;
+  $.each(hidden_campaigns,function(id,campaign){
+    $(campaign).removeClass("hidden_campaign");
+    if(counter == 4) {
+      return false;
+    } else {
+      counter ++;
+    }
+  })
+});
 //END doc READY
 });

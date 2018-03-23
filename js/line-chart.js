@@ -115,6 +115,7 @@ $.prepareDataForLinearChart = function(data) {
     if (data[index] != null) {
        total_week = 0
        $.each(data[index]["campaigns"],function(key, value) {
+        if(data[index]["campaigns"][key]["total"] == undefined) { debugger }
          total_week += data[index]["campaigns"][key]["total"]
        });
        weeks_array[index] = total_week

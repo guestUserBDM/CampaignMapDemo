@@ -421,3 +421,6 @@ rect.highlight{
 a.list-group-item {
   font-size: 12px !important;
 }
+.hidden_campaign {
+  display: none;
+}
