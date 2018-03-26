@@ -359,7 +359,7 @@ path {
   border-bottom: 1px solid rgba(0,0,0,.125)
 }
 .customDatepickerWidth{
-  width: 16rem;
+  width: 18em;
 }
 .customDatepicker{
   height: 2.2rem;
@@ -424,3 +424,4 @@ a.list-group-item {
 .hidden_campaign {
   display: none;
 }
+

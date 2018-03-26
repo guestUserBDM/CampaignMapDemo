@@ -74,9 +74,8 @@
         <h2>Mapa de campañas</h2>
       </div>
       <div class="col-3 pl-6">
-        <div class="input-group date customDatepickerWidth">
-            <input type="text" placeholder="2017-01-01 hasta 2017-12-31" class="form-control customDatepicker" id="datepicker">
-
+        <div class="input-group date customDatepickerWidth ">
+            <input id="dateInput" type="text" name="daterange" value="01/01/2017 - 31/12/2017" >
         </div>
       </div>
 
@@ -773,8 +772,6 @@
         </div>
       </footer>
 
-
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -782,7 +779,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="vendor/daterangepicker/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
 
     <link rel="stylesheet" href="vendor/cal-heatmap/cal-heatmap.css" />
     <script type="text/javascript" src="vendor/cal-heatmap/cal-heatmap.js"></script>
@@ -790,8 +789,9 @@
     <script type="text/javascript" src="js/graphic-bar.js"></script>
     <script type="text/javascript" src="js/heatmap-factory.js"></script>
     <script type="text/javascript" src="js/application.js"></script>
+    
     <script type="text/javascript">
-    $('#datepicker').datepicker();
+
     function showOrHide(element){
       if ($(element).css('display') == 'block') {
         $(element).css("display", "none")
@@ -808,15 +808,6 @@
     $(document).ready(function(){
       $('[data-toggle="popover"]').popover();
     });
-    </script>
-    <script type="text/javascript">
-      $(function() {
-        $('.list-group-item').on('click', function() {
-          $('.oi', this)
-            .toggleClass('oi-caret-right')
-            .toggleClass('oi-caret-bottom');
-        });
-      });
     </script>
   </body>
 </html>
