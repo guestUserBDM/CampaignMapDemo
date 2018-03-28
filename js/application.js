@@ -58,7 +58,7 @@ $.getUserSubscriptions = function(mail){
   .done(function(data){
     $.each(data, function(index, val) {
        /* iterate through array or object */
-       $('#subscription_list').append('<li><a href="/sessions/change_subscription?id=' + val.id + '" class="subscription radius-3 " data-method="put" rel="nofollow">' + val.name + '</a></li>')
+       $('#subscription_list').append('<li><a href="/sessions/change_subscription?id=' + val.id + '&bit_controller=comparative" class="subscription radius-3 " data-method="put" rel="nofollow">' + val.name + '</a></li>')
     });
 
   })
