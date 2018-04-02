@@ -10,7 +10,7 @@ $( document ).ready(function() {
 // -- define your functions
 //This function receive the data response and render all graphics
 $.renderFullPage = function(data){
-  arrayDataLinearChart = $.prepareDataForLinearChart(data);
+    arrayDataLinearChart = $.prepareDataForLinearChart(data);
     dataBarChart = $.prepareDataForBarChart(arrayDataLinearChart,data);
     dataTotalInvestment = $.getFullYearInvestment(arrayDataLinearChart);
     dataHeatMap = $.prepareDataForHeatMap(dataTotalInvestment,data);
@@ -26,7 +26,7 @@ $.getFullYearInvestment = function(totalArray) {
   $.each(totalArray,function(){sum+= this || 0;});
   return sum
 };//END FUNCTION: $.getFullYearInvestment()
-
+//Function to parse params and return in strings
  $.parse_query_string = function(query) {
   var vars = query.split("&");
   var query_string = {};
@@ -45,14 +45,25 @@ $.getFullYearInvestment = function(totalArray) {
     }
   }
   return query_string;
-} //END FUNCTION: $.parse_query_string
+} //END FUNCTION: $.parse_query_string()
 
+//This funtions returns html string for display spinners
+$.renderSpinnerHtml = function() {
+  return '<div class="loader-container">' +
+                            '<div class="mx-auto">' +
+                              '<p class="text-center">Estamos cargando datos, por favor espere.</p>' +
+                            '</div>' +
+                           '<div class="mx-auto loader"></div>' +
+                        '</div>'
+}; ///END FUNCTION: $.renderSpinnerHtml()
+
+//This function gets json response with user subscriptions
 $.getUserSubscriptions = function(mail){
   $.ajax({
     method: "GET",
     crossDomain: true,
     dataType: "JSON",
-    url: "http://localhost:3000/subscriptions/from_user",
+    url: "/subscriptions/from_user",
     data: {bit_mail: mail}
   })
   .done(function(data){
@@ -67,21 +78,18 @@ $.getUserSubscriptions = function(mail){
     });
 } //END FUNCTION: $.getUserSubscriptions
 
-//Render path BEGUIN
-//Sets user from params
-var query = window.location.search.substring(1);
-params = $.parse_query_string(query);
-$('#user-mail').append(params.user)
-$.getUserSubscriptions(params.user)
-// Ajax calls after render user
-    $.ajax({
+//This function renders data on all graphics
+$.getGraphicsData = function(dateSince, dateUntil) {
+  $.ajax({
       method: "GET",
       crossDomain: true,
       dataType: "JSON",
-      url: "http://localhost:3000/comparative/get_campaign_map_json",
+      url: "/comparative/get_campaign_map_json",
       beforeSend: function(xhr){
         xhr.setRequestHeader('x-bit-subscription', 20);
         xhr.setRequestHeader('x-bit-user', params.user);
+        xhr.setRequestHeader('date_since', dateSince);
+        xhr.setRequestHeader('date_until', dateUntil);
       },
       headers: {
         'Authorization': 'Token token=44d7817dc75942288e8b36425cfbdea12'}
@@ -93,25 +101,50 @@ $.getUserSubscriptions(params.user)
       .fail(function(data) {
         alert( "Fallo en la carga de datos" );
     });
-//END Ajax Calls
-//Render path END
+};//END FUNCTION: $.getGraphicsData
+
+  /********************
+    RENDER PATH BEGUIN
+  ********************/
+//SET initial date for datepicker
+var start = moment().startOf('year');
+var end = moment();
+$('#dateSpan').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+//SET ranges object for datepicker
+  rangesObject = {
+           '2015': [moment().startOf('year').subtract(3,"y"), moment().endOf("year").subtract(3,"y")],
+           '2016': [moment().startOf('year').subtract(2,"y"), moment().endOf("year").subtract(2,"y")],
+           '2017': [moment().startOf('year').subtract(1,"y"), moment().endOf("year").subtract(1,"y")],
+           '2018': [start, end],
+          };
+//Sets user from params
+var query = window.location.search.substring(1);
+params = $.parse_query_string(query);
+$('#user-mail').append(params.user);
+$.getUserSubscriptions(params.user);
+// Ajax call after render user
+$.getGraphicsData(start,end);
+
+  /*****************
+  //RENDER PATH END
+  ******************/
 
 //DOM ELEMENTS EVENTS
-  $('input[name="daterange"]').daterangepicker({
-        "showWeekNumbers": true,
+  $('#reportrange').daterangepicker({
         "autoApply": true,
-        //"parentEl": ".customDatepickerWidth",
-        "linkedCalendars": false,
+        "ranges": rangesObject,
         "showCustomRangeLabel": false,
-        "startDate": "01/01/2017",
-        "endDate": "31/12/2017",
-        "opens": "center",
-        "locale": { 
-          "weekLabel": "S"
-         }
+        "startDate": start,
+        "endDate": end,
+        "buttonClasses": "d-none"
     }, function(start, end, label) {
-      console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-    });
+      $('#dateSpan').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+      $("#linechart").empty().append($.renderSpinnerHtml());
+      $("#stackedchart").empty().append($.renderSpinnerHtml());
+      $("#item-1").empty().append($.renderSpinnerHtml());
+      $("#legend-div").empty();
+      $.getGraphicsData(start,end);
+   });
   $('body').on('click','.list-group-item', function() {
           $('.oi', this)
             .toggleClass('oi-caret-right')

@@ -175,7 +175,7 @@
   $.drawHeatMap = function(dataHeatMap) {
     ordered_campaigns = $.getOrderedCampaigns(dataHeatMap);
     campaigns_counter = 1
-
+    $("#item-1").empty();
     $.each(ordered_campaigns,function(key,id){ 
       campaign_id = id
       json_response = {};

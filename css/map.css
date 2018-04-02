@@ -3,8 +3,8 @@ html {
   font-family: font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 body {
-  font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  background-color: #F0F0F0;
+	font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	background-color: #F0F0F0;
 }
 
 @include media-breakpoint-up(sm) {
@@ -58,14 +58,14 @@ a {font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Hel
 .campaign_name > a {padding-left: 10px;}
 .media_name > a {padding-left: 25px;}
 .company_name > a {
-  height: 100%;
-  padding-left: 5px;
+	height: 100%;
+	padding-left: 5px;
     /*padding-top: 25px;*/
 }
 .last-campaign, .last-company{padding-bottom: 5px !important;}
 .company-title {
-  font-size: 18px;
-  font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-size: 18px;
+	font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 
 .collapse {
@@ -76,44 +76,44 @@ a {font-family: apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Hel
 }
 div.list-group-item, a.list-group-item {border-top: 0 none;}
 /*.level-step {
-  border-radius: 0;
+	border-radius: 0;
     border-width: 1px 0 0 0;
     border: 1px solid rgba(0,0,0,.125);
 }*/
 .list-group-item-action {background-color:rgb(248, 249, 250);}
 .graph-container{margin-top: -10px}
 .level-step * {
-  padding-top: 0px;
-  padding-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
 /*
  * MAIN MENU
  */
 #bit-mainmenu {
-  padding-right: 0px
+	padding-right: 0px
 }
 #bit-mainmenu-en {
-  position: relative;
-  right: -180px;
-  top: 12px;
+	position: relative;
+	right: -180px;
+	top: 12px;
 }
 #bit-mainmenu DIV {
-  cursor: pointer;
-  float: left;
-  height: 51px !important;
-  margin-top: 0px;
-  padding-top: 0px !important;
-  background-image: url(../assets/images/menu/main_menu_background.png);
+	cursor: pointer;
+	float: left;
+	height: 51px !important;
+	margin-top: 0px;
+	padding-top: 0px !important;
+	background-image: url(../assets/images/menu/main_menu_background.png);
 }
 #bit-mainmenu-en DIV {
-  cursor: pointer;
-  float: left;
-  height: 51px !important;
-  margin-top: 0px;
-  width: 123px;
-  padding-top: 0px !important;
-  background-image: url(layout/main_menu_background_en.png);
+	cursor: pointer;
+	float: left;
+	height: 51px !important;
+	margin-top: 0px;
+	width: 123px;
+	padding-top: 0px !important;
+	background-image: url(layout/main_menu_background_en.png);
 }
 
 #bit-mainmenu *{
@@ -130,31 +130,31 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
     display: block;
 }
 #bit-mainmenu DIV.dashboard, #bit-mainmenu DIV.dashboard A {
-  width: 141px;
+	width: 141px;
 }
 #bit-mainmenu-en DIV.dashboard, #bit-mainmenu-en DIV.dashboard A {
-  width: 141px;
+	width: 141px;
 }
 
 #bit-mainmenu DIV.observatory, #bit-mainmenu DIV.observatory A {
-  width: 152px;
+	width: 152px;
 }
 #bit-mainmenu-en DIV.observatory, #bit-mainmenu-en DIV.observatory A {
-  width: 152px;
+	width: 152px;
 }
 
 #bit-mainmenu DIV.analysis, #bit-mainmenu DIV.analysis A {
-  width: 115px;
+	width: 115px;
 }
 #bit-mainmenu-en DIV.analysis, #bit-mainmenu-en DIV.analysis A {
-  width: 115px;
+	width: 115px;
 }
 
 #bit-mainmenu DIV.reports, #bit-mainmenu DIV.reports A {
-  width: 129px;
+	width: 129px;
 }
 #bit-mainmenu-en DIV.reports, #bit-mainmenu-en DIV.reports A {
-  width: 129px;
+	width: 129px;
 }
 
 #bit-mainmenu DIV.dashboard {
@@ -186,59 +186,59 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 }
 
 #bit-mainmenu DIV.dashboard.active {
-  background-position: -1px 113px;
+	background-position: -1px 113px;
 }
 #bit-mainmenu-en DIV.dashboard.active {
-  background-position: -1px 113px;
+	background-position: -1px 113px;
 }
 
 #bit-mainmenu DIV.observatory.active {
-  background-position: -142px 113px;
+	background-position: -142px 113px;
 }
 #bit-mainmenu-en DIV.observatory.active {
-  background-position: -142px 113px;
+	background-position: -142px 113px;
 }
 
 #bit-mainmenu DIV.analysis.active {
-  background-position: -294px 113px;
+	background-position: -294px 113px;
 }
 #bit-mainmenu-en DIV.analysis.active {
-  background-position: -294px 113px;
+	background-position: -294px 113px;
 }
 
 #bit-mainmenu DIV.reports.active {
-  background-position: -409px 113px;
+	background-position: -409px 113px;
 }
 #bit-mainmenu-en DIV.reports.active {
-  background-position: -409px 113px;
+	background-position: -409px 113px;
 }
 
 #bit-mainmenu DIV.dashboard:hover {
-  background-position: -1px -120px;
+	background-position: -1px -120px;
 }
 #bit-mainmenu-en DIV.dashboard:hover {
-  background-position: -1px -120px;
+	background-position: -1px -120px;
 }
 
 #bit-mainmenu DIV.observatory:hover {
-  background-position: -142px -120px;
+	background-position: -142px -120px;
 }
 #bit-mainmenu-en DIV.observatory:hover {
-  background-position: -142px -120px;
+	background-position: -142px -120px;
 }
 
 #bit-mainmenu DIV.analysis:hover {
-  background-position: -294px -120px;
+	background-position: -294px -120px;
 }
 #bit-mainmenu-en DIV.analysis:hover {
-  background-position: -294px -120px;
+	background-position: -294px -120px;
 }
 
 #bit-mainmenu DIV.reports:hover {
-  background-position: -409px -120px;
+	background-position: -409px -120px;
 }
 #bit-mainmenu-en DIV.reports:hover {
-  background-position: -409px -120px;
+	background-position: -409px -120px;
 }
 
 .wrapper_title{
@@ -262,15 +262,15 @@ div.list-group-item, a.list-group-item {border-top: 0 none;}
 }
 
 .graph-tooltip {
-  position: absolute;
-  text-align: center;
-  width: auto;
-  height: auto;
-  padding: 5px;
-  font: 12px sans-serif;
-  background: rgba(246, 247, 250, 0.88);
-  border: 0.5px solid rgba(0, 0, 0, 0.76);;
-  pointer-events: none;
+	position: absolute;
+	text-align: center;
+	width: auto;
+	height: auto;
+	padding: 5px;
+	font: 12px sans-serif;
+	background: rgba(246, 247, 250, 0.88);
+	border: 0.5px solid rgba(0, 0, 0, 0.76);;
+	pointer-events: none;
 }
 
 circle, rect {cursor: pointer;}
@@ -300,8 +300,8 @@ path {
 }
 
 .animate{
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s;
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
 }
 
 .action-button{
@@ -315,9 +315,9 @@ path {
 }
 
 .action-button:active{
-  transform: translate(0px,5px);
+	transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
-  border-bottom: 1px solid;
+	border-bottom: 1px solid;
 }
 .action-button:focus{
   outline:0px;
@@ -366,6 +366,14 @@ path {
 }
 .datepickerIcon{
   font-size: 2rem;
+}
+
+div.divInput {
+  background: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  width: 100%;
 }
 
 .calendarDiv{
